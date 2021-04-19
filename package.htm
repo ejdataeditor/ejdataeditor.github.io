@@ -40,9 +40,6 @@
         })();
     </script-->
 	
-    <!-- ICON IMAGE IN TABS -->
-    <link href="Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
     <!-- RESPONSIVE STYLE -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -57,18 +54,15 @@
 <body>
     
 	<!-- Header -->
-    <header class="w3-panel w3-white" style="max-width:1200px; margin-left:auto;margin-right:auto">
-        <div class="w3-display-container w3-col s3">
-            <img src="Images/Logo-colour-screen.svg" style="width:220px">
-        </div>
-        <div class="w3-bar w3-col s9">
-            <div class="w3-container w3-row w3-padding-top-32 w3-right">
-                <a href="index.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Home</b></a>
-                <a href="before.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Before you submit</b></a>
-                <a href="package.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Prepare the package</b></a>
-                <a href="replicate.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Replicate</b></a>
-                <a href="FAQs.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>FAQs</b></a>
-                <a href="data-editor.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Data Editor</b></a>
+    <header class="w3-container w3-padding w3-white">
+        <div class="w3-bar w3-center w3-mobile" style="max-width:1300px;margin-left:auto;margin-right: auto">
+            <div class="w3-row">
+                <a href="index.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:13%"><b>Home</b></a>
+                <a href="before.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:21%"><b>Before you submit</b></a>
+                <a href="package.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:22%"><b>Prepare the package</b></a>
+                <a href="replicate.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:16%"><b>Replicate</b></a>
+                <a href="FAQs.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:13%"><b>FAQs</b></a>
+                <a href="data-editor.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:15%"><b>Data Editor</b></a>
                 <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-large w3-hover-white w3-large"
                    onclick="navibar()" title="Toggle Navigation Menu">&#9776;</a>
             </div>
@@ -122,9 +116,6 @@
     <div class="w3-container">
         <div class="w3-content w3-text-dark-grey w3-padding-64" style="max-width:1000px">
             
-             <p class="w3-text-red w3-center">
-                <b>THIS SITE IS STILL UNDER CONSTRUCTION AND NOT YET MEANT TO BE PUBLIC<br>DO NOT REFER TO ANY OF ITS CONTENT WITHOUT PERMISSION</b>
-            </p>
             <h1>Prepare and submit your replication package</h1>
             <p>
                 After your Managing Editor conditionally accepts your paper (and before she sees your final response and proceeds to final acceptance) your paper will go through reproducibility and anti-plagiarism checks. Therefore, in your last re-submission you are requested to submit, via Editorial Express, your final files for production, your online appendices, and your replication package. It is important that you carefully follow the instructions below to ensure that your paper and your replication package are not mishandled. This page provides you with detailed information that will help you preparing your replication package. Read it carefully before you submit!
@@ -155,7 +146,7 @@
             <h2 id="contents">Contents</h2>
             
             <p>
-                As indicated in the journal's <a href="https://academic.oup.com/ej/pages/General_Instructions#data">Data Policy</a> all packages should include the following information:
+                As indicated in the journal's <a href="https://academic.oup.com/ej/pages/General_Instructions#data">Data and Code Availability Policy</a> all packages should include the following information:
             </p>
             <ul>
                 <li>A ReadMe file in PDF format (ReadMe.pdf). We strongly recommend using the following <a href="https://social-science-dataeditors.github.io/guidance/template-README.html">template</a>.</li>
@@ -222,6 +213,7 @@
                 <li>Make your code produce all tables and figures as they appear in the manuscript: you will save a lot of time!</li>
                 <li>Set the paths at the top of the master-file and then use either relative paths or global variables, so that users don't have to change the paths in multiple parts of your code.</li>
                 <li>Whenever possible, write paths in a way that is compatible across different operating systems. For example, in Stata, always use forward slashes &quot;/&quot; to separate directories, even if you use Windows.</li>
+                <li>Run your codes from the replication folder before you submit and make sure it runs and all your results are reproduced.</li>
             </ul>
             <p>
                 The Data Editors of the American Economic Association (<a href="https://www.vilhuber.com/lars/">Lars Vilhuber</a>) the Review of Economic Studies (<a href="https://koren.mk/">Mikl&oacute;s Koren</a>), the Canadian Journal of Economics (<a href="http://www.connolly.uqam.ca/index_en.html">Marie Connolly</a>) and the Economic Journal (<a href="http://pareto.uab.cat/jllull/">Joan Llull</a>) are coordinating reproduciblity requirements and guidelines across different journals. An example of this cooperation is this <a href="https://social-science-data-editors.github.io/guidance/">common guidance by Social Science Data Editors</a>.
@@ -230,10 +222,10 @@
             <h2 id="submit">Submit your package</h2>
             
             <p>
-                Submit your final files and replication package via <a href="https://editorialexpress.com/ej">Editorial Express</a>. If size permits, submit all files into one zip file. If necessary, you can split your zip file into multiple smaller size files (for example using <a href="https://kb.winzip.com/help/winzip/help_splitdlg.htm">this</a>). 
+                Submit your final files and replication package via <a href="https://editorialexpress.com/ej">Editorial Express</a>. If size permits, submit all files into one zip file. If necessary, you can split your zip file into multiple smaller size files (for example using <a href="https://kb.winzip.com/help/winzip/help_splitdlg.htm">this</a>).
             </p>
             <p>
-                If the files are still too large for the Editorial Express platform, please contact the Data Editor at <a href="mailto:ejdataeditor@gmail.com">ejdataeditor&#64;gmail.com</a>.
+                If, even <a href="https://kb.winzip.com/help/winzip/help_splitdlg.htm">splitting zip files</a>, the files are still too large for the Editorial Express platform, please arrange an alternative transfer method with the Data Editor at <a href="mailto:ejdataeditor@gmail.com">ejdataeditor&#64;gmail.com</a>.
             </p>
             <p>
                 If you were granted a data exemption <b>at the time of first submission</b> (see <a href="before.htm#exemptions">here</a>,  <a href="FAQs.htm#exemptions">here</a>, and <a href="FAQs.htm#exemption-granted">here</a> for details), and you are allowed to provide the Data Editor and the replication team with temporary access to your restricted data for the sole purpose of the reproducibility checks, you should include the confidential data <b>in a separate folder</b> named &quot;4 Confidential data not for publication&quot;.
@@ -298,16 +290,16 @@
     
     <footer class="w3-darkgray w3-container w3-padding w3-display-bottom">
         <div class="w3-small w3-text-white w3-margin-bottom" style="max-width:1200px;margin-left:auto;margin-right: auto">
-            <img src="Images/logo-footer-v2.svg" alt="Logo-footer" class="w3-left" style="max-width:225px">
-            <p>
-                    2 Dean Trench St, Westminster, London, SW1P 3HE<br>
-                    Telephone: +44 (0) 203 137 6301<br>
-                    Email: resoffice@res.org.uk<br>&nbsp;<br>
-                    The Royal Economic Society is a Registered Charity no. 231508.
+            <img src="Images/title-footer.png" alt="Logo-footer" class="w3-left" style="max-width:120px">
+            <p style="margin-left:160px">
+                    Contacts:<br>
+                    Data Editor: <a href="mailto:ejdataeditor@gmail.com">ejdataeditor&#64;gmail.com</a><br>
+                    Editorial Office: <a href="mailto:ej@res.org.uk">ej@res.org.uk</a>
             </p>
-            
             <hr style="color:white">
-            Copyright &copy;2021, Joan Llull and Royal Economic Society
+            <p style="margin-left:160px">
+                Copyright &copy;2021, Joan Llull
+            </p>
         </div>
     </footer>
         
