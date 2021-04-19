@@ -28,6 +28,10 @@
             margin: 15px 0;
         }
 
+        .footer-image {
+            background-image: url("Images/title-footer.png");
+            max-width:120px;
+        }
 
 
 /* Extract from W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes (goes till the end)*/
