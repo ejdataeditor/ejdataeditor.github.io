@@ -39,9 +39,6 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script-->
-	
-    <!-- ICON IMAGE IN TABS -->
-    <link href="Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- RESPONSIVE STYLE -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,21 +54,19 @@
 <body>
     
 	<!-- Header -->
-    <header class="w3-panel w3-white" style="max-width:1200px; margin-left:auto;margin-right:auto">
-        <div class="w3-display-container w3-col s3">
-            <img src="Images/Logo-colour-screen.svg" style="width:220px">
-        </div>
-        <div class="w3-bar w3-col s9">
-            <div class="w3-container w3-row w3-padding-top-32 w3-right">
-                <a href="index.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Home</b></a>
-                <a href="before.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Before you submit</b></a>
-                <a href="package.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Prepare the package</b></a>
-                <a href="replicate.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Replicate</b></a>
-                <a href="FAQs.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>FAQs</b></a>
-                <a href="data-editor.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray"><b>Data Editor</b></a>
+    <header class="w3-container w3-padding w3-white">
+        <div class="w3-bar w3-center w3-mobile" style="max-width:1300px;margin-left:auto;margin-right: auto">
+            <div class="w3-row">
+                <a href="index.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:13%"><b>Home</b></a>
+                <a href="before.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:21%"><b>Before you submit</b></a>
+                <a href="package.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:22%"><b>Prepare the package</b></a>
+                <a href="replicate.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:16%"><b>Replicate</b></a>
+                <a href="FAQs.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:13%"><b>FAQs</b></a>
+                <a href="data-editor.htm" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-text-dark-gray" style="width:15%"><b>Data Editor</b></a>
                 <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-large w3-hover-white w3-large"
                    onclick="navibar()" title="Toggle Navigation Menu">&#9776;</a>
             </div>
+
 
             <!-- Navbar on small screens -->
             <div id="navibar" class="w3-bar-block w3-hide w3-hide-large w3-white w3-padding-top-24">
@@ -122,14 +117,11 @@
     <div class="w3-container">
         <div class="w3-content w3-text-dark-grey w3-padding-64" style="max-width:1000px">
             
-             <p class="w3-text-red w3-center">
-                <b>THIS SITE IS STILL UNDER CONSTRUCTION AND NOT YET MEANT TO BE PUBLIC<br>DO NOT REFER TO ANY OF ITS CONTENT WITHOUT PERMISSION</b>
-            </p>
             <h1>
                 Frequently Asked Questions
             </h1>
             <p>
-                The following lines provide answers to some frequently asked questions about different aspects of the reproducibility checks and our data policy. Click on each question to display the answer.
+                The following lines provide answers to some frequently asked questions about different aspects of the reproducibility checks and our data and code availability policy. Click on each question to display the answer.
             </p>
             
             <h3 id="scope">
@@ -172,7 +164,7 @@
             <div>&nbsp;</div>
             
             <h3 id="exemptions">
-                Data and Code Publication Policy and Exemptions
+                Data and Code Availability Policy and Exemptions
             </h3>
             
             <div>&nbsp;</div>
@@ -202,7 +194,7 @@
             </button>
             <div class="content">
                 <p>
-                    Yes, you can request an exemption on the grounds that the data are restricted-access. The request should be made <b><i>at the time of initial submission</i></b>, in a cover letter addressed to the Editor. The Editor in charge of your submission will determine whether your request is justified before submitting the paper to referees. If the Editor decides against the exemption, the manuscript will not be sent to referees, and you will be requested to either accept the data policy or otherwise the paper will be rejected. Submission fees will not be returned in that case. When an exemption is needed for a dataset that is incorporated to the analysis during the editorial process, the exemption should be requested at the first iteration in which the new data are incorporated.
+                    Yes, you can request an exemption on the grounds that the data are restricted-access. The request should be made <b><i>at the time of initial submission</i></b>, in a cover letter addressed to the Editor. The Editor in charge of your submission will determine whether your request is justified before submitting the paper to referees. If the Editor decides against the exemption, the manuscript will not be sent to referees, and you will be requested to either accept the data and code availability policy or otherwise the paper will be rejected. Submission fees will not be returned in that case. When an exemption is needed for a dataset that is incorporated to the analysis during the editorial process, the exemption should be requested at the first iteration in which the new data are incorporated.
                 </p>
             </div>
             <div>&nbsp;</div>  
@@ -302,7 +294,7 @@
             </button>
             <div class="content">
                 <p>
-                    No. The goal of our data policy is to ensure transparency and reproducibility of research, and this requires publishing the data you collected. If others can use your data, your research will gain visibility.
+                    No. The goal of our data and code availability policy is to ensure transparency and reproducibility of research, and this requires publishing the data you collected. If others can use your data, your research will gain visibility.
                 </p>
             </div>
             <div>&nbsp;</div>
@@ -788,16 +780,16 @@
     
     <footer class="w3-darkgray w3-container w3-padding w3-display-bottom">
         <div class="w3-small w3-text-white w3-margin-bottom" style="max-width:1200px;margin-left:auto;margin-right: auto">
-            <img src="Images/logo-footer-v2.svg" alt="Logo-footer" class="w3-left" style="max-width:225px">
-            <p>
-                    2 Dean Trench St, Westminster, London, SW1P 3HE<br>
-                    Telephone: +44 (0) 203 137 6301<br>
-                    Email: resoffice@res.org.uk<br>&nbsp;<br>
-                    The Royal Economic Society is a Registered Charity no. 231508.
+            <img src="Images/title-footer.png" alt="Logo-footer" class="w3-left" style="max-width:120px">
+            <p style="margin-left:160px">
+                    Contacts:<br>
+                    Data Editor: <a href="mailto:ejdataeditor@gmail.com">ejdataeditor&#64;gmail.com</a><br>
+                    Editorial Office: <a href="mailto:ej@res.org.uk">ej@res.org.uk</a>
             </p>
-            
             <hr style="color:white">
-            Copyright &copy;2021, Joan Llull and Royal Economic Society
+            <p style="margin-left:160px">
+                Copyright &copy;2021, Joan Llull
+            </p>
         </div>
     </footer>
         
