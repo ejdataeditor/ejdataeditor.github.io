@@ -92,7 +92,7 @@
                 <a href="#exemption-granted" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-black w3-text-white w3-mobile" style="width:14.285%">Granted Exemptions</a>
                 <a href="#checks" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-black w3-text-white w3-mobile" style="width:14.285%">Checks</a>
                 <a href="#package" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-black w3-text-white w3-mobile" style="width:14.285%">Package</a>
-                <a href="#certification" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-black w3-text-white w3-mobile" style="width:14.285%">Certification</a>
+                <a href="#datacitations" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-black w3-text-white w3-mobile" style="width:14.285%">Data Citations</a>
                 <a href="#publication" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-black w3-text-white w3-mobile" style="width:14.285%">Publication</a>
                 <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-large w3-hover-black w3-large"
                    onclick="navibar2()" title="Toggle Navigation Menu">&#9776;</a>
@@ -105,7 +105,7 @@
                 <a href="#exemption-granted" class="w3-bar-item w3-button w3-block w3-text-white">Granted Exemptions</a>
                 <a href="#checks" class="w3-bar-item w3-button w3-block w3-text-white">Checks</a>
                 <a href="#package" class="w3-bar-item w3-button w3-block w3-text-white">Package</a>
-                <a href="#certification" class="w3-bar-item w3-button w3-block w3-text-white">Certification</a>
+                <a href="#datacitations" class="w3-bar-item w3-button w3-block w3-text-white">Data Citations</a>
                 <a href="#publication" class="w3-bar-item w3-button w3-block w3-text-white">Publication</a>
             </div>
         </div>
@@ -578,21 +578,24 @@
                 <ul>                    
                     <li> A ReadMe file called ReadMe.pdf in PDF format. We recommend to use the following <a href="https://social-science-data-editors.github.io/template_README/template-README.html">template</a>, which includes all the information required by the journal. Specifically, the ReadMe should include the following information:
                         <ul style="list-style-type: square">
-                            <li>Description of the content of the replication package.</li>
-                            <li>Precise instructions on how to run the code and indications on where to find the output saved/displayed.</li>
-                            <li>Software used (including software version and operating system).</li>
-                            <li>All packages and libraries that need to be installed to run the code and either provide them or indicate how to obtain them.</li>
-                            <li>Expected running time (even if it is a few seconds). When relevant, include the setup that the estimated time refers to.</li>
-                            <li>Precise indications on how the final datasets were generated from the raw files (unless raw data files and codes are submitted) and of data sources, including citations.</li>
+							<li>Description of the content of the package (datasets, programs, folders, etc.)</li>
+							<li>Data Availability Statement: precise indications on how the data were obtained, including required registrations, memberships, application procedures, monetary cost, or other qualifications, and, if applicable, URL to download them (which is typically part of the data citation).</li>
+							<li>Precise instructions on how to run the code.</li>
+							<li>Indications on where to find each output saved/displayed in the package's output.</li>
+							<li>Software requirements, including the software version and operating system used by the authors.</li>
+							<li>All packages and libraries that need to be installed to run the code and a clear indication on how to obtain them.</li>
+							<li>Expected running time (even if it is a few seconds). When relevant, include the hardware that the estimated time refers to.</li>
+							<li>Data citations: all datasets used in the paper (with no exceptions) should be listed in the references section of the paper in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the ReadMe file. You can find some examples in page 7 of <a href="https://bit.ly/3ivH38d">this document</a>.</li>
                         </ul>
-                    <li> All final datasets that are necessary to generate all tables and figures from the main text and appendices (including online appendix) as well as all figures quoted in the text. This applies also to simulated/synthetic datasets generated as a result of a data exemption.</li>
-                    <li> A copy of all datasets in a non-proprietary format (ASCII, csv, etc.), including both original datasets and simulated/synthetic datasets.</li>
+						<li>The raw datasets used in the paper and online appendices, including a complete, transparent and precise documentation describing all variables. You can additionally provide the analysis data if this is helpful, but they are not required if the raw data are provided. If you were granted a data exemption at the time of first submission (see <a href="before.htm#exemptions">here</a>,  <a href="FAQs.htm#exemptions">here</a>, and <a href="FAQs.htm#exemption-granted">here</a> for details), you should either provide temporary access to the replication team for the sole purpose of reproducibility checks, or you should submit a synthetic/simulated dataset that allows running the code and produce all outputs in the paper and appendices, even if the results do not match those in the paper.</li>
+						<li>The data cleaning codes and the analysis codes that produce all reproducible outputs reported in the article, appendix, and online appendices (including figures, tables, and numbers reported in the text). If some results are produced without scripts (e.g. ArcGIS maps), the ReadMe file should include step-by-step very detailed instructions on how to produce that output. In case of simulation/Monte Carlo studies, the authors are requested to set a seed so that the exact numbers that are reported can be obtained.</li>
+						<li>If data are provided in proprietary format (e.g. Stata's .dta), a copy of the data in non-proprietary format (e.g. ASCII, csv).</li>
                     <li> Additional documentation for experimental papers (if these files are part of the paper or of an appendix, copy them again in a separate document included in the replication package):
                         <ul style="list-style-type: square">
-                            <li>A PDF document outlining the design of the experiment, including information on the selection and eligibility of participants.</li>
-                            <li>A PDF copy of the instructions given to participants in both original language and an English translation.</li>
-                            <li>A PDF copy of the approval of the Institutional Review Board of one of the authors' institution (IRB approval number, date, name of the institution).</li>
-                            <li>Raw data collected from the experiment, including a copy in non-proprietary format (ASCII, csv, etc.).</li>
+							<li>A document outlining the design of the experiment.</li>
+							<li>A copy of the instructions given to participants, in both the original language and an English translation.</li>
+							<li>Information on the selection and eligibility of participants.</li>
+							<li>A PDF copy of the Institutional Review Board (IRB) approval of one of the authors' institutions (IRB approval number, date, name of the institution) or an explicit mention that an exemption has been granted by the Editorial Board.</li>
                         </ul>
                     <li> Confidential data that is provided to grant temporary access to the reproducibility team should be included in a separate folder &quot;4 Confidential data not for publication&quot; to ensure it will be treated as such, and it not be published.</li>
                 </ul>
@@ -637,12 +640,15 @@
                   The ReadMe file should be called ReadMe.pdf and it should be in PDF format. We recommend to use the following <a href="https://social-science-data-editors.github.io/template_README/template-README.html">template</a>, which includes all the information required by the journal. Specifically, the ReadMe should include the following information:
                 </p>
                 <ul>
-                        <li>Description of the content of the replication package.</li>
-                        <li>Precise instructions on how to run the code and indications on where to find the output saved/displayed.</li>
-                        <li>Software used (including software version and operating system).</li>
-                        <li>All packages and libraries that need to be installed to run the code and either provide them or indicate how to obtain them.</li>
-                        <li>Expected running time (even if it is a few seconds). When relevant, include the setup that the estimated time refers to.</li>
-                        <li>Precise indications on how the final datasets were generated from the raw files (unless raw data files and codes are submitted) and of data sources, including citations.</li>
+							<li>Description of the content of the package (datasets, programs, folders, etc.)</li>
+							<li>Data Availability Statement: precise indications on how the data were obtained, including required registrations, memberships, application procedures, monetary cost, or other qualifications, and, if applicable, URL to download them (which is typically part of the data citation).</li>
+							<li>Precise instructions on how to run the code.</li>
+							<li>Indications on where to find each output saved/displayed in the package's output.</li>
+							<li>Software requirements, including the software version and operating system used by the authors.</li>
+							<li>All packages and libraries that need to be installed to run the code and a clear indication on how to obtain them.</li>
+							<li>Expected running time (even if it is a few seconds). When relevant, include the hardware that the estimated time refers to.</li>
+							<li>Data citations: all datasets used in the paper (with no exceptions) should be listed in the references section of the paper in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the ReadMe file. You can find some examples in page 7 of <a href="https://bit.ly/3ivH38d">this document</a>.</li>
+
                 </ul>
             </div>
             <div>&nbsp;</div>
@@ -652,20 +658,10 @@
             </button>
             <div class="content">
                 <p>
-                   Our current policy does not make it mandatory to submit them. However, it is strongly encouraged. Authors not submitting these are expected to cooperate with researchers seeking access to these datasets for replication purposes.
+                   Yes, this is requested by our Data and Code Availability Policy. 
                 </p>
             </div>
             <div>&nbsp;</div>
- 
-            <button type="button" class="collapsible">
-                <b>Should I submit the raw data files and the code that generates my final dataset from them?</b>
-            </button>
-            <div class="content">
-                <p>
-                   Our current policy does not make it mandatory to submit them. However, it is strongly encouraged. Authors not submitting these are expected to cooperate with researchers seeking access to these datasets for replication purposes.
-                </p>
-            </div>
-            <div>&nbsp;</div>    
   
             <button type="button" class="collapsible">
                 <b>Why do I need to supply all text documents (ReadMe, IRB, etc.) in PDF format?</b>
@@ -687,8 +683,57 @@
             </div>
             <div>&nbsp;</div>
             
-            <h3 id="certification">
-                Reproducibility Certification
+            <h3 id="datacitations">
+                Data Citations
+            </h3>
+            
+            <div>&nbsp;</div>
+
+            <button type="button" class="collapsible">
+                <b>What data should I cite? </b>
+            </button>
+            <div class="content">
+                <p>
+                    All datasets used in the paper (with no exceptions) should be cited both in the paper and in a dedicated section of the ReadMe file.
+                </p>
+            </div>
+            <div>&nbsp;</div>
+            
+
+            <button type="button" class="collapsible">
+                <b>If I mention my datasets in the Online Appendix or in the ReadMe file, should I cite them? </b>
+            </button>
+            <div class="content">
+                <p>
+                    Yes, all datasets used in the paper (with no exceptions) should be listed in the references section of the <b>paper</b> in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the <b>ReadMe</b> file.
+                </p>
+            </div>
+            <div>&nbsp;</div>
+
+    
+            <button type="button" class="collapsible">
+                <b>How should I cite my data? </b>
+            </button>
+            <div class="content">
+                <p>
+                    You should cite all datasets used in the paper (with no exceptions) in the references section of the <b>paper</b> in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the <b>ReadMe</b> file. You can find some examples in page 7 of <a href="https://bit.ly/3ivH38d">this document</a>. More specific guidance on data citations is available <a href="https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html">here</a>.
+                </p>
+            </div>
+            <div>&nbsp;</div>			
+
+    
+            <button type="button" class="collapsible">
+                <b>Why should I cite my data? </b>
+            </button>
+            <div class="content">
+                <p>
+                    Data citations are as fundamental as citations to other papers, if not more. Giving proper credit to data providers is in line with all scientific ethical standards. Moreover, giving proper credit to data providers ensures that they can keep receiving external funding to make their datasets publicly available for research.
+                </p>
+            </div>
+            <div>&nbsp;</div>			
+            
+            <h3 id="publication">
+                Reproducibility Certification, Publication of the Replication Package and Copyright Issues
             </h3>
             
             <div>&nbsp;</div>
@@ -709,12 +754,6 @@
             </div>
             <div>&nbsp;</div>
             
-            <h3 id="publication">
-                Publication of the Replication Package and Copyright Issues
-            </h3>
-            
-            <div>&nbsp;</div>
-
             <button type="button" class="collapsible">
                 <b>Where will the replication package be published? </b>
             </button>
