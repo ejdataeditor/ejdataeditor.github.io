@@ -5,31 +5,31 @@ title: "{{< var ej.full >}}'s Data Editor Website"
 This website provides all the relevant information regarding the Data and Code Availability Policy and pre-acceptance reproducibility checks implemented at [{{< var ej.full >}}]({{< var ej.url >}}). On the  pages of this website you will find the following information: 
 
 <br>
-[**Before Submitting Your Package**](before.qmd){.btn .btn-primary .btn role="button"}
+[**Before Submitting Your Package**](before.qmd){.btn .btn-secondary .btn role="button"}
 
 Learn about our Data and Code Availability Policy, possible exemptions to it, and make sure you comply with all requirements before you submit the paper for the first time. Exemptions can only be granted if you apply _when you first submit your paper_.
 
 <br>
-[**Best Practices**](best.qmd){.btn .btn-primary .btn role="button"}
+[**Best Practices**](best.qmd){.btn .btn-secondary .btn role="button"}
 
 Have a look at our list recommended best practices for putting together a replication package which will go through the process as smooth as possible. Our mission is to help you with that.
 
 <br>
-[**Preparing the package**](package.qmd){.btn .btn-primary .btn role="button"}
+[**Preparing the package**](package.qmd){.btn .btn-secondary .btn role="button"}
 
 Learn how to prepare and submit your replication package. We give you precise step by step guidance throughout the process.
 
 <br>
-[**Frequently Asked Questions**](faqs.qmd){.btn .btn-primary .btn role="button"}
+[**Frequently Asked Questions**](faqs.qmd){.btn .btn-secondary .btn role="button"}
 
 We have collected a _long_ list of good questions and our answers regarding many different aspects of the process, so maybe those can clarify some queries you may have.
 
 <br>
-[**Replicate EJ Papers**](replicate.qmd){.btn .btn-primary .btn role="button"}
+[**Replicate EJ Papers**](replicate.qmd){.btn .btn-secondary .btn role="button"}
 
 Looking for papers which have been checked for reproducibility and which you want to replicate? Have a look at our community on [zenodo.org]({{< var ej.zenodo >}})
 
 <br>
-[**Data Editor**](de.qmd){.btn .btn-primary .btn role="button"}
+[**Data Editor**](de.qmd){.btn .btn-secondary .btn role="button"}
 
 Find more about our Data Editor, including contact information. 
