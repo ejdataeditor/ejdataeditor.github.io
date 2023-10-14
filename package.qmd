@@ -4,21 +4,19 @@ preview:
     port: 6017
     browser: false
     watch-inputs: true
+number-sections: true
 ---
 
-After your Managing Editor conditionally accepts your paper (and before she sees your final response and proceeds to final acceptance) your paper will go through reproducibility and anti-plagiarism checks. Therefore, in your last re-submission you are requested to submit, via Editorial Express, your final files for production, your online appendices, and your replication package. It is important that you carefully follow the instructions below to ensure that your paper and your replication package are not mishandled. This page provides you with detailed information that will help you preparing your replication package. Read it carefully before you submit! 
+After your Managing Editor conditionally accepts your paper (and before she sees your final response and proceeds to final acceptance) your paper will go through reproducibility and anti-plagiarism checks. It is important that you carefully follow the instructions below to ensure that your paper and your replication package are not mishandled. This page provides you with detailed information that will help you preparing your replication package. Read it carefully before you submit! 
 
 
-## Preliminaries
+## Preliminaries {#sec-prelims}
 
 You are **requested** to submit a single `zip` file with the following **folder structure** (please name your folders in this _exact_ way! Notice there should be _no spaces_ in folder names, and _no capital letters_). In short, the content of your `zip` file looks as follows:
 
-```
-├── 1-paper
-├── 2-appendices
-├── 3-replication-package.zip
-└── 4-confidential-data-not-for-publication.zip  (Optional)
-```
+
+{{< include _folder-structure.qmd >}}
+
 
 ::: {.callout-tip}
 
@@ -34,15 +32,16 @@ For folders 1 and 2, please refer to the Economic Journal's [General Instruction
 
 ::: {.callout-important}
 # Sign and Submit Checklist ☑
-Along with your package, you are requested to download, fill, sign and submit [this checklist](/static/Checklist_for_authors_July2023.pdfchecklist.pdf), which refers to the content of the package below
+Along with your package, you are requested to download, fill, sign and submit [this checklist](checklist.pdf), which refers to the content of the package below
 :::
 
 ## Contents of Replication Package
 
 As indicated in the journal's [Data and Code Availability Policy](https://academic.oup.com/ej/pages/General_Instructions#data) all packages should include the following information: 
 
-* A `README` file in PDF format (`README.pdf`). We strongly recommend using [this template](https://social-science-data-editors.github.io/template_README/). You may find in [this web app](https://www.templatereadme.org/) a convenient tool to create your `README` file.
-* The **raw datasets** used in the paper and online appendices, including a complete, transparent and precise documentation describing all variables. You can additionally provide the analysis data if this is helpful, but they are not required if the raw data are provided. If you were granted a data exemption at the time of first submission (see [here](before.qmd#apply-to-exemptions-to-the-data-and-code-availability-policy), [here](faqs.qmd#data-and-code-availability-policy-and-exemptions), and [here](faqs.qmd#procedures-when-exemptions-are-granted) for details), you should either provide the replication team with **temporary access** to the data for the sole purpose of performing the reproducibility checks, or you should submit a **synthetic/simulated** dataset that allows running the code and produce all outputs in the paper and appendices, even if the results do not match those in the paper.
+* A `README` file in PDF format (`README.pdf`). We strongly recommend using [this template](https://social-science-data-editors.github.io/template_README/).  You may find in [this web app](https://www.templatereadme.org/) a convenient tool to create your `README` file.
+* The **raw datasets** used in the paper and online appendices, including a complete, transparent and precise documentation describing all variables. You can additionally provide the analysis data if this is helpful, but they are not required if the raw data are provided. 
+* If you were granted a data exemption at the time of first submission (see [here](before.qmd#apply-to-exemptions-to-the-data-and-code-availability-policy), [here](faqs.qmd#data-and-code-availability-policy-and-exemptions), and [here](faqs.qmd#procedures-when-exemptions-are-granted) for details), you should either provide the replication team with **temporary access** to the data for the sole purpose of performing the reproducibility checks, or you should submit a **synthetic/simulated** dataset that allows running the code and produce all outputs in the paper and appendices, even if the results do not match those in the paper. If you can provide temporary access but you cannot share the data in the `4-confidential-data-not-for-publication.zip` folder, please contact the Data Editor at {{< var de.mail >}} to arrange an alternative access method. The content of this folder will be destroyed after the reproducibility checks are completed. All replicators and the Data Editor have signed confidentiality agreements that protect your submission.
 * Both the data cleaning codes and the analysis codes that produce all reproducible outputs reported in the article, appendix, and online appendices (including figures, tables, and numbers reported in the text). If some results are produced without scripts (e.g. ArcGIS maps), the `README` file should include step-by-step _very detailed instructions_ on how to produce that output. In case of simulation/Monte Carlo studies, the authors are requested to set a seed so that the exact numbers that are reported can be obtained.
 * If data are provided in proprietary format (e.g. Stata's `.dta`), a copy of the data in non-proprietary format (e.g. `ASCII`, `.csv`).
 
@@ -85,37 +84,21 @@ More specific guidance, and examples, on data citations is available [here](http
 
 ## [Best Practices](best.qmd)
 
-The Social Sciences Data Editors collaborate to establish a set of best practices for reproducibility packages. Please click [here](best.qmd) to consult our version of this list.
-
+We do not require you to adhere to a particular structure within your folders `3-replication-package.zip` and `4-confidential-data-not-for-publication.zip`, as long as the content is clearly structured. We recommend at a minimum to keep `code`, `data` and `output` separated. This and other tips for best practice on how to structure your package can be found [here](best.qmd).
 
 ## Submitting Your Package
 
-Submit your final files and replication package via [The EJ Editorial Express](https://editorialexpress.com/ej). If size permits, submit all files into one zip file. If necessary, you can split your zip file into multiple smaller size files - for example using [this](https://kb.winzip.com/help/winzip/help_splitdlg.htm) on windows or a version of this command on `*nix` systems:
+You will be *invited* to submit your package via an upload link by the Data Editor. This invitation will be generated *after* you have submitted the following items via [The EJ Editorial Express](https://editorialexpress.com/ej) as a resubmission of your paper:
 
-```
-# creates chunks of max 100MB
-$ zip -r -s 100M split_package.zip replication-package/
+1. `1-paper` (see @sec-prelims)
+2. `2-appendix` (see @sec-prelims)
+3. Signed and dated [checklist.pdf](checklist.pdf)
 
-$ ls -l split*                                        
--rw-r--r--  1 floswald  staff  104857600 Jul 26 16:54 split_package.z01
--rw-r--r--  1 floswald  staff  104857600 Jul 26 16:54 split_package.z02
--rw-r--r--  1 floswald  staff  104857600 Jul 26 16:54 split_package.z03
--rw-r--r--  1 floswald  staff  104857600 Jul 26 16:54 split_package.z04
--rw-r--r--  1 floswald  staff   41394717 Jul 26 16:54 split_package.zip
-```
-(notice that you would have to submit _all file files_ in this case, _also the `.zip` file_)
-
-If, even splitting zip files, the files are still too large for the Editorial Express platform, please arrange an alternative transfer method with the Data Editor at {{< var de.mail >}}.
-
-If you were granted a data exemption at the time of first submission (see [here](before.qmd#apply-to-exemptions-to-the-data-and-code-availability-policy), [here](faqs.qmd#faqs-about-exemptions), and [here](faqs.qmd#granted-exemptions) for details) , and you are allowed to provide the Data Editor and the replication team with temporary access to your restricted data for the sole purpose of the reproducibility checks, you should include the confidential data in a separate folder named `4-confidential-data-not-for-publication`.
-
-The content of this folder will be destroyed after the reproducibility checks are completed. All replicators and the Data Editor have signed confidentiality agreements that protect your submission.
-
-If you can provide temporary access but not by sharing the data in the `4-confidential-data-not-for-publication` folder, please contact the Data Editor at {{< var de.mail >}} to arrange an alternative access method.
+Notice that you will submit `1-paper` and `2-appendix` twice, once on Editorial Express to trigger the invitation link, and once as part of your replication package (see @sec-prelims).
 
 A few days after you submitted the package (in most of the cases, within two weeks) you will be contacted by the Data Editor with the outcome of the reproducibility checks, regardless of whether the checks were successful or there are modifications to be made. **Please add {{< var de.mail >}} and ej_foswald@editorialexpress.com to your safe contacts to avoid that the Data Editor's messages go to spam!**
 
-If you need to implement modifications of your package, you will be instructed to do so in the Data Editor's response. You will iterate with the Data Editor until the reproducibility checks are satisfactory concluded.
+If you need to implement modifications of your package, you will be instructed to do so in the Data Editor's response. You will iterate with the Data Editor until the reproducibility checks are satisfactorily concluded.
 
 
 ## After the reproducibility checks are completed: publish your package!

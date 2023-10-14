@@ -30,36 +30,13 @@ The editorial board of the Economic Journal reserves the right to refuse publica
 
 Once the paper is accepted for publication, the replication package will be posted on the journal's repository at [zenodo.org]({{< var ej.zenodo >}}) and it will be linked with the paper. Alternative repositories may be acceptable as long as they are considered “trusted” by the journal. Submission on such online repositories indicates that the authors license users to download, copy, and modify this material. Users of the material must acknowledge all authors as the original creators and cite both the replication package and the paper accordingly.
 
-### Empirical papers
+::: {.callout-tip}
 
-For papers that contain descriptive, econometric or simulated analysis of data, the authors must provide sufficient detail in the paper (or in an appendix) for the reader to understand the nature of the data used and how it was analyzed to produce the results. Importantly, they also must provide a *replication package* containing the following: 
+# Instructions for Replication Package
 
-1. A `README` file (`README.pdf`) describing the content of the package, the data sources (including citations), any manipulation that was carried out to generate the final datasets, how the data and programs can be used to replicate the results in the paper, the version of the software the code was written for and the respective versions of extra packages, as well as an estimate of the computation time. In case of commercially available or restricted access data sources, detailed instructions (e.g. extraction code) to obtain the datasets should be included in the `README` file. Click [here](https://social-science-data-editors.github.io/template_README/template-README.html) for a `README` template which we *strongly recommend to follow*, and [here](https://www.templatereadme.org/) for a highly recommended `README` online generator app.
-2. The raw datasets used in the paper and appendices (including online), including a complete, transparent and precise documentation describing all variables. If the data is provided in a proprietary format, such as in Stata format, then a non-proprietary version (`.csv` for instance) should also be provided for each data set.
-3. All computer code necessary to produce the analysis data and to re-produce all releveant output in the paper: tables, figures, and in-text numbers appearing in the paper as well as supplements and appendices. In case of simulation studies and other proceedures which depend on a sequence of random numbers, the authors are requested to appropriately seed their random number generators, so that the exact numbers that are reported can be obtained. If the code uses additional packages that are not part of a standard distribution of a certain software package, then these packages should be included so that the code still runs after many years. 
+Please follow precise instructions on how to structure your replication package [here](package.qmd).
 
-Authors who have requested an exemption for the publication of their datasets can either (1) grant temporary distance or physical access to the data to the journal's staff for the sole purpose of replication (the data will not be published), or (2) supply a simulated dataset or a synthetic dataset instead of the actual dataset(s) used for the analysis for replication purposes. The nature of the data used for the reproducibility checks will be indicated on the published version of the paper. 
-
-
-### Experimental Papers
-
-For papers that contain analysis of experimental data (i.e. data which *they generated* with the help of experimental subjects), we require the authors to provide at the time of submission of the paper the following items (authors are asked to include all information as part of the main pdf file rather than as separate items): 
-
-1. A document outlining the design of the experiment. 
-2. A copy of the instructions given to participants, in both the original language and an English translation.
-3. Information on the selection and eligibility of participants.
-4. Explicit reference to the approval of the Institutional Review Board of one of the authors' institutions (IRB approval number, date, name of the institution). Alternatively, authors (including all co-authors) who did not have an ethics board at their institution when the study was conducted may apply for an exemption. Authors who apply for an exemption will be expected to certify that the study complies with the requirements set out in [this document](https://res.org.uk/wp-content/uploads/2022/12/EJethicsrequirements.pdf). The editorial board of the Economic Journal reserves the right to deny exemptions.
-
-In addition, before final acceptance, the authors will be asked to submit a replication package containing: 
-
-1. A `README` file (`README.pdf`) describing the content of the package, the data sources (including citations), any manipulation that was carried out to generate the final datasets, how the data and programs can be used to replicate the results in the paper, the version of the software the code was written for and the respective versions of extra packages, as well as an estimate of the computation time. In case of commercially available or restricted access data sources, detailed instructions (e.g. extraction code) to obtain the datasets should be included in the `README` file. Click [here](https://social-science-data-editors.github.io/template_README/template-README.html) for a `README` template which we *strongly recommend to follow*, and [here](https://www.templatereadme.org/) for a highly recommended `README` online generator app.
-2. The programs used to analyze the data and/or run the experiment.
-3. The raw data collected from the experiment (also in non-proprietary format such as `.csv`)
-4. A document outlining the design of the experiment.
-5. A copy of the instructions given to participants, in both the original language and an English translation. 
-6. Information on the selection and eligibility of participants. 
-7. A copy of the IRB approval or confirmation that an exemption has been granted by the editorial board. 
-
+:::
 
 
 ## Apply to exemptions to the Data and Code Availability Policy
