@@ -4,6 +4,8 @@ project:
     port: 6017
     browser: false
     watch-inputs: true
+  post-render:
+    - "cp -rnv static/. _site/"
 
 website:
   title: "{{< var ej.short >}} Data Editor"
