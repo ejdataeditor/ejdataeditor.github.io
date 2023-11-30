@@ -1,0 +1,43 @@
+---
+title: "Replicator Resources"
+preview:
+    port: 6017
+    browser: false
+    watch-inputs: true
+---
+
+## Environments
+
+* What is an environment?
+* Why does my code not work on your computer
+
+
+### python
+
+
+* create a conda env from a supplied yml file
+
+```bash
+(base) 11:49:15 - nuvolos:/files$ conda env create -f /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate ectj_abt
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+(base) 09:52:23 - nuvolos:/files/Replication_package$ conda activate ectj_abt
+(ectj_abt) 09:55:17 - nuvolos:/files/Replication_package$ python --version
+Python 3.9.7
+(ectj_abt) 09:55:31 - nuvolos:/files/Replication_package$ python Main.py
+Conda environment ectj_abt already exists. Skipping creation.
+Running the estimation for dml_JJ...
+
+```
+
+
+
