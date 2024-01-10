@@ -5,7 +5,7 @@ project:
     browser: false
     watch-inputs: true
   post-render:
-    - "cp -rnv static/. _site/"
+    - "cp -rv static/. _site/"
 
 website:
   title: "{{< var ej.short >}} Data Editor"
