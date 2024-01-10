@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "replicator-resources.html",
+    "href": "replicator-resources.html",
+    "title": "Replicator Resources",
+    "section": "",
+    "text": "What is an environment?\nWhy does my code not work on your computer\n\n\n\n\ncreate a conda env from a supplied yml file\n\n(base) 11:49:15 - nuvolos:/files$ conda env create -f /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml\n\ndone\n#\n# To activate this environment, use\n#\n#     $ conda activate ectj_abt\n#\n# To deactivate an active environment, use\n#\n#     $ conda deactivate\n\n(base) 09:52:23 - nuvolos:/files/Replication_package$ conda activate ectj_abt\n(ectj_abt) 09:55:17 - nuvolos:/files/Replication_package$ python --version\nPython 3.9.7\n(ectj_abt) 09:55:31 - nuvolos:/files/Replication_package$ python Main.py\nConda environment ectj_abt already exists. Skipping creation.\nRunning the estimation for dml_JJ..."
+  },
+  {
+    "objectID": "replicator-resources.html#environments",
+    "href": "replicator-resources.html#environments",
+    "title": "Replicator Resources",
+    "section": "",
+    "text": "What is an environment?\nWhy does my code not work on your computer\n\n\n\n\ncreate a conda env from a supplied yml file\n\n(base) 11:49:15 - nuvolos:/files$ conda env create -f /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml\n\ndone\n#\n# To activate this environment, use\n#\n#     $ conda activate ectj_abt\n#\n# To deactivate an active environment, use\n#\n#     $ conda deactivate\n\n(base) 09:52:23 - nuvolos:/files/Replication_package$ conda activate ectj_abt\n(ectj_abt) 09:55:17 - nuvolos:/files/Replication_package$ python --version\nPython 3.9.7\n(ectj_abt) 09:55:31 - nuvolos:/files/Replication_package$ python Main.py\nConda environment ectj_abt already exists. Skipping creation.\nRunning the estimation for dml_JJ..."
+  },
+  {
+    "objectID": "replicator-resources.html#data-citations-for-exeriments",
+    "href": "replicator-resources.html#data-citations-for-exeriments",
+    "title": "Replicator Resources",
+    "section": "Data Citations for exeriments",
+    "text": "Data Citations for exeriments\nIf you generate your own data via an experiment, of course you cannot cite it. If you use data from a previously published experiment, you could cite it. So: no, you don’t need either citation or a DAS if you use exclusively your own generated data. You do not need the zenodo DOI. you will obtain this at the very end of the process, so that people (including yourselves) can cite your package (including generated data) in the future."
+  },
+  {
     "objectID": "before.html",
     "href": "before.html",
     "title": "Before you submit your paper for the first time",
