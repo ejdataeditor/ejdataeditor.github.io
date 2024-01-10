@@ -65,11 +65,11 @@ The `README` file should provide enough instructions so that all users (level of
 5. **Software requirements**, including the software version and operating system used by the authors.
 6. All **packages and libraries** that need to be installed to run the code and a clear indication on how to obtain them.
 7. **Expected running time** (even if it is a few seconds). When relevant, include the hardware that the estimated time refers to.
-8. **Data citations**: all datasets used in the paper (with no exceptions) should be listed in the references section of the paper in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the ReadMe file. You can find some examples in page 7 of this document.
+8. **Data citations**: all datasets used in the paper (with no exceptions) should be listed in the references section of the paper in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the ReadMe file. You can find some examples [here](https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html)
 
 ## Data Citations
 
-All datasets used in the paper (with no exceptions) should be listed _in the references section of the paper_ in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the `README` file. You can find some examples in page 7 of [this document](https://static.primary.prod.gcms.the-infra.com/static/site/ej/document/Guide_for_Accepted_Authors_30.4.2021.pdf?node=e998887d8e15edce6462&version=332396:eb395244bcce871a1378).
+All datasets used in the paper (with no exceptions) should be listed _in the references section of the paper_ in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the `README` file.
 
 If the data used in the study is part of the replication package of another paper, both the paper and the replication package should be cited. 
 
