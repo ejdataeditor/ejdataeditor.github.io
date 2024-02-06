@@ -103,33 +103,21 @@ If you need to implement modifications of your package, you will be instructed t
 
 ## After the reproducibility checks are completed: publish your package!
 
-Once the reproducibility checks are concluded, you will be requested to perform an additional step:  publish your replication package at the Economic Journal's [community of Zenodo]({{< var ej.zenodo >}}). To do so, you need to complete the following steps: 
+Once the reproducibility checks are concluded, and upon invitation of the Data Editor, you will be requested to perform a final step:  publish your replication package at the Economic Journal's [community of Zenodo]({{< var ej.zenodo >}}). To do so, you need to do the following: 
 
 1. Sign up [here](https://zenodo.org/signup/) for a free zenodo account, if you don't have one already.
-2. Go to the Economic Journal's community of Zenodo at {{< var ej.zenodo >}}.
-3. Start a new upload within the community using the top-right green button in the below figure.
-  ![](/img/zenodo1.png)
-1. Upload the `zip` compressed version of your replication package (i.e. the **exact same** archive `3-replication-package.zip` you sent us in your final iteration of the replication package). Drag-and-drop the zip file to upload it, as shown below. Make sure you only publish the replication package and _not_ the paper or online appendices. Especially, **do not publish the content of the `4-confidential-data-not-for-publication.zip` folder**! ![](/img/zenodo2.png)
-2. Click on the Start upload green button to upload.![](/img/zenodo3.png)
-3. If you didn't skip step 2, your upload is already linked to the Economic Journal's community.![](/img/Zenodo_community_1.png)
-If your upload is not directly linked to the Economic Journal's community, you can search the community on the search bar.![](/img/Zenodo_community_2.png)
-4. Fill the required metadata: 
-   1. Upload type: Software (or Dataset if you more applicable).
+2. Go to the Economic Journal's community of Zenodo at [{{< var ej.zenodo >}}]({{< var ej.zenodo >}}).
+3. Start a new upload within the community using the top-right green button in the below figure. ![](img/zenodo-1.png)
+1. Upload the `zip` compressed version of your replication package (i.e. the **exact same** archive `3-replication-package.zip` you sent us in your final iteration of the replication package). Drag-and-drop the zip file to upload it, as shown below. Make sure you only publish the replication package and _not_ the paper or online appendices. Especially, **do not publish the content of the `4-confidential-data-not-for-publication.zip` folder**! 
+3. After your upload completes, indicate that you do **not** have a DOI for this package already, but that you want to **Get a DOI now!** ![](img/zenodo-2.png)
+4. Fill in the required metadata: 
+   1. Resource type: Software or Dataset (what you find more applicable).
    2. Publication date: leave the default today's date.
    3. Title: Replication package for: "{full title of your manuscript}".
    4. Authors: Typically the same authors as the manuscript, but you can add others who have contributed significantly to the code you are uploading, such as research assistants (in that case, you are making them coauthors of your replication package, but not of the paper).
    5. Description: write a full citation to your manuscript as a description of what the replication package contains.
-   6. Other optional metadata: don't worry about this, you can leave it blank.
-   ![](/img/Zenodo_metadata.png)
-5. Select an open-access license for your upload.![](/img/Zenodo_license.png)
-6. Save the "Digital Object Identifier" (DOI) issued by Zenodo (see the image above) and email it to the Editorial Office at ej@res.org.uk. This DOI will appear in your published paper, and will hence link your article and your package.
-7.  Save and then Publish using the corresponding buttons that appear both at the bottom and at the page.![](/img/Zenodo_save_publish.png)
-  
-    ::: {.callout-important}
-    # Important Note
-
-    once you press `publish`, you will not be able to edit or delete your uploaded files. You can create new versions of your upload at any point in the future, but these versions will have a different DOI (they will be linked to your earlier and future versions of the package, but they will not be directly linked to your paper). Please double-check that you publish the files that went through the reproducibility checks, and that you are **not** publishing the content you submitted in the folder `4-confidential-data-not-for-publication.zip`. 
-    :::
-8.  Send an email to the Data Editor which includes the `md5` string displayed on the zenodo page of your replication package (see below). This string serves to check whether the files included in the package, which the Data Editor has accepted, are **exactly identical** to the ones you uploaded to zenodo. This string is like an electronic fingerprint of your replication package. It's important to note that you must not modify your package after final acceptance in any way (add/remove files or make edits), or this check will fail. What you upload needs to be **exactly identical** (at the bit-level of the contained files) to what you sent us in your final iteration.![](/img/zenodo-md5.png)
+5. Use the default license _Creative Commons Attribution 4.0 International_
+6. Feel free to fill in any additional meta data, but nothing more is required from our side.
+7. Finally, click _submit for review_ top right of the page, as illustrated in the figure below. This action will notify the Data Editor of your new upload. We will then check the digital fingerprint of your package against what we have on file, and accept your package into our community. ![](img/zenodo-3.png)
 
 
