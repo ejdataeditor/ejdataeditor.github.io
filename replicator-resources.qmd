@@ -45,4 +45,29 @@ Running the estimation for dml_JJ...
 If you generate your own data via an experiment, of course you cannot cite it. If you use data from a previously published experiment, you could cite it. So: no, you don't need either citation or a DAS if you use exclusively your own generated data. You do not need the zenodo DOI. you will obtain this at the very end of the process, so that people (including yourselves) can cite your package (including generated data) in the future.
 
 
+## working on nuvolos
+
+### creating a new instance
+
+![](img/nuvolos-create-1.png)
+
+
+![](img/nuvolos-create-2.png)
+
+![](img/nuvolos-create-3.png)
+
+### large files
+
+![](img/nuvolos-large-upload.png)
+
+```
+(base) nuvolos@nuvolos:/files$ ls
+'"Daniel Ershov - MS20210603_replication.zip"; filename*=UTF-8'\'''\''Daniel%20Ershov%20-%20MS20210603_replication.zip'   replication
+(base) nuvolos@nuvolos:/files$ mv '"Daniel Ershov - MS20210603_replication.zip"; filename*=UTF-8'\'''\''Daniel%20Ershov%20-%20MS20210603_replication.zip' package.zip
+(base) nuvolos@nuvolos:/files$ ls
+package.zip  replication
+(base) nuvolos@nuvolos:/files$ mv package.zip /space_mounts/large_files/ershov/
+```
+
+
 
