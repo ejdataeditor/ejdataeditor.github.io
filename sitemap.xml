@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/replicator-resources.html</loc>
-    <lastmod>2024-02-06T21:57:00.189Z</lastmod>
-  </url>
-  <url>
-    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/before.html</loc>
-    <lastmod>2024-02-06T21:57:00.751Z</lastmod>
-  </url>
-  <url>
-    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/faqs.html</loc>
-    <lastmod>2024-02-06T21:57:02.806Z</lastmod>
-  </url>
-  <url>
-    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/package.html</loc>
-    <lastmod>2024-02-06T21:57:03.630Z</lastmod>
-  </url>
-  <url>
-    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/index.html</loc>
-    <lastmod>2024-02-06T21:57:04.031Z</lastmod>
+    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/replicate.html</loc>
+    <lastmod>2023-07-27T20:55:58.876Z</lastmod>
   </url>
   <url>
     <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/best.html</loc>
-    <lastmod>2024-02-06T21:57:11.201Z</lastmod>
+    <lastmod>2023-07-27T20:55:58.867Z</lastmod>
+  </url>
+  <url>
+    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/package.html</loc>
+    <lastmod>2024-02-06T21:55:37.904Z</lastmod>
+  </url>
+  <url>
+    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/before.html</loc>
+    <lastmod>2023-10-14T14:04:43.849Z</lastmod>
+  </url>
+  <url>
+    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/posts/20240505-stataversions/index.html</loc>
+    <lastmod>2024-05-08T07:00:23.659Z</lastmod>
+  </url>
+  <url>
+    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/replicator-resources.html</loc>
+    <lastmod>2024-05-03T12:34:17.250Z</lastmod>
+  </url>
+  <url>
+    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/faqs.html</loc>
+    <lastmod>2023-07-27T20:55:58.867Z</lastmod>
+  </url>
+  <url>
+    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/index.html</loc>
+    <lastmod>2024-05-03T12:37:38.546Z</lastmod>
+  </url>
+  <url>
+    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/posts.html</loc>
+    <lastmod>2024-05-03T12:39:53.006Z</lastmod>
   </url>
   <url>
     <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/de.html</loc>
-    <lastmod>2024-02-06T21:57:11.564Z</lastmod>
-  </url>
-  <url>
-    <loc>git@github-ej:ejdataeditor/ejdataeditor.github.io.git/replicate.html</loc>
-    <lastmod>2024-02-06T21:57:11.918Z</lastmod>
+    <lastmod>2023-10-14T14:05:24.501Z</lastmod>
   </url>
 </urlset>
