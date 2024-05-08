@@ -31,6 +31,7 @@ website:
         text: Prepare the Package
       - href: faqs.qmd
         text: FAQs
+      - href: posts.qmd
       - href: de.qmd
         text: Data Editor
   google-analytics:
