@@ -33,7 +33,7 @@ STATA has a command `version x` which, if called, will mimick the STATA interpre
 
 # Data Editors do not care about backward compatibility
 
-In general, Data Editors would not require that _your code needs to be reproducible with all versions of STATA_; quite on the contrary, we want a _very specific_ description of the required environment. Another aim of this post is thus to clarify some (unexpected) effects of the `version` command, and to counter the believe that setting `version` will _guarantee_ cross version reproducibility. 
+In general, Data Editors would not require that _your code needs to be reproducible with all versions of STATA_; quite on the contrary, we want a _very specific_ description of the required environment. Another aim of this post is thus to clarify some (unexpected) effects of the `version` command, and to counter the belief that setting `version` will _guarantee_ cross version reproducibility. 
 
 :::
 
@@ -50,12 +50,12 @@ An often overlooked issue in STATA versioning is that users are sometimes led to
 ::: {.callout-tip} 
 # 🏆 Data Editor Award for Excellent Collaboration
 
-I chose Burchardi et al package also because of the high quality of code and exceptional collaboration on behalf of the authors. All results replicate **exactly** on STATA version 16, as indicated in their package readme. They were the first to point out the issue with `xporegress` to me. Thanks to them! 🤝
+The Burchardi et al package features high quality of code and exceptional collaboration on behalf of the authors. All results replicate **exactly** on STATA version 16, as indicated in their package readme. They were the first to point out the issue with `xporegress` to me. Thanks to them! 🤝
 :::
 
 ### Step 1: Safe Environment via `docker`
 
-* We want to minimize the risk that anything in our findings is driven by my local STATA installation, and it's interaction with my OS. A good solution to this is a containerized environment, for example via `docker`.
+* We want to minimize the risk that anything in our findings is driven by my local STATA installation, and its interaction with my OS. A good solution to this is a containerized environment, for example via `docker`.
 * We want to have 2 docker containers with version 16 and 18 respectively. We basically want to test the effect of the `version 16` command on the stata 18 binary.
 * The dedicated repository of [docker images](https://github.com/AEADataEditor/docker-stata) provided by the [AEA Data Editor Lars Vilhuber](https://github.com/AEADataEditor) is going to be very helpful here. The prebuilt docker images for different stata versions are available [here on dockerhub](https://hub.docker.com/search?q=dataeditors). 
     * We can run STATA 16 and STATA 18 as if we had two separate machines inside an isolated environment (a _container_) on our own computer.
