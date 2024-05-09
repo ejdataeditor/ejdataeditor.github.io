@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Florian Oswald">
-<meta name="dcterms.date" content="2024-05-08">
+<meta name="dcterms.date" content="2024-05-09">
 <meta name="description" content="Challenges when reproducing results with different versions of STATA">
 
 <title>EJ Data Editor - STATA Versioning</title>
@@ -194,7 +194,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 8, 2024</p>
+        <p class="date">May 9, 2024</p>
       </div>
     </div>
     
@@ -248,7 +248,7 @@ Data Editors do not care about backward compatibility
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In general, Data Editors would not require that <em>your code needs to be reproducible with all versions of STATA</em>; quite on the contrary, we want a <em>very specific</em> description of the required environment. Another aim of this post is thus to clarify some (unexpected) effects of the <code>version</code> command, and to counter the believe that setting <code>version</code> will <em>guarantee</em> cross version reproducibility.</p>
+<p>In general, Data Editors would not require that <em>your code needs to be reproducible with all versions of STATA</em>; quite on the contrary, we want a <em>very specific</em> description of the required environment. Another aim of this post is thus to clarify some (unexpected) effects of the <code>version</code> command, and to counter the belief that setting <code>version</code> will <em>guarantee</em> cross version reproducibility.</p>
 </div>
 </div>
 <!-- ## User-contributed Code: Packages
@@ -272,13 +272,13 @@ An often overlooked issue in STATA versioning is that users are sometimes led to
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>I chose Burchardi et al package also because of the high quality of code and exceptional collaboration on behalf of the authors. All results replicate <strong>exactly</strong> on STATA version 16, as indicated in their package readme. They were the first to point out the issue with <code>xporegress</code> to me. Thanks to them! 🤝</p>
+<p>The Burchardi et al package features high quality of code and exceptional collaboration on behalf of the authors. All results replicate <strong>exactly</strong> on STATA version 16, as indicated in their package readme. They were the first to point out the issue with <code>xporegress</code> to me. Thanks to them! 🤝</p>
 </div>
 </div>
 <section id="step-1-safe-environment-via-docker" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-safe-environment-via-docker">Step 1: Safe Environment via <code>docker</code></h3>
 <ul>
-<li>We want to minimize the risk that anything in our findings is driven by my local STATA installation, and it’s interaction with my OS. A good solution to this is a containerized environment, for example via <code>docker</code>.</li>
+<li>We want to minimize the risk that anything in our findings is driven by my local STATA installation, and its interaction with my OS. A good solution to this is a containerized environment, for example via <code>docker</code>.</li>
 <li>We want to have 2 docker containers with version 16 and 18 respectively. We basically want to test the effect of the <code>version 16</code> command on the stata 18 binary.</li>
 <li>The dedicated repository of <a href="https://github.com/AEADataEditor/docker-stata">docker images</a> provided by the <a href="https://github.com/AEADataEditor">AEA Data Editor Lars Vilhuber</a> is going to be very helpful here. The prebuilt docker images for different stata versions are available <a href="https://hub.docker.com/search?q=dataeditors">here on dockerhub</a>.
 <ul>
