@@ -67,7 +67,7 @@
     "href": "package.html#the-readme-file",
     "title": "Prepare and Submit your Replication Package",
     "section": "3 The README File",
-    "text": "3 The README File\nThe README file should provide enough instructions so that all users (level of an advanced PhD student and above) can reproduce all the results in the paper in a reasonable amount of time and without problems. We strongly recommend using this template.You may find in this web app a convenient tool to create your README file. The minimum required information includes:\n\nA verbal description of the content of the package (datasets, programs, folders, etc.)\nData Availability Statement: precise indications on how the data were obtained, including required registrations, memberships, application procedures, monetary cost, or other qualifications, and, if applicable, URL to download them (which is typically part of the data citation).\nPrecise instructions on how to run the code.\nIndications on where each piece of output is saved or displayed. (See best practices below)\nSoftware requirements, including the software version and operating system used by the authors.\nAll packages and libraries that need to be installed to run the code and a clear indication on how to obtain them.\nExpected running time (even if it is a few seconds). When relevant, include the hardware that the estimated time refers to.\nData citations: all datasets used in the paper (with no exceptions) should be listed in the references section of the paper in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the ReadMe file. You can find some examples here"
+    "text": "3 The README File\nThe README file should provide enough instructions so that all users (level of an advanced PhD student and above) can reproduce all the results in the paper in a reasonable amount of time and without problems. We strongly recommend using this template.You may find in this web app a convenient tool to create your README file. The minimum required information includes:\n\nA verbal description of the content of the package (datasets, programs, folders, etc.)\nData Availability Statement: precise indications on how the data were obtained, including required registrations, memberships, application procedures, monetary cost, or other qualifications, and, if applicable, URL to download them (which is typically part of the data citation).\nThe following Statement about Rights:\n\nI certify that the author(s) of the manuscript have legitimate access to and permission to use the data used in this manuscript.\nI certify that the author(s) of the manuscript have documented permission to redistribute/publish the data contained within this replication package. Appropriate permission are documented in the LICENSE.txt file (if applicable).\n\nPrecise instructions on how to run the code.\nIndications on where each piece of output is saved or displayed. (See best practices below)\nSoftware requirements, including the software version and operating system used by the authors.\nAll packages and libraries that need to be installed to run the code and a clear indication on how to obtain them.\nExpected running time (even if it is a few seconds). When relevant, include the hardware that the estimated time refers to.\nData citations: all datasets used in the paper (with no exceptions) should be listed in the references section of the paper in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the ReadMe file. You can find some examples here"
   },
   {
     "objectID": "package.html#data-citations",
@@ -182,6 +182,13 @@
     "text": "Things that don’t work\n\nyou cannot just include your direct dependencies in the package and hope that just works.\nyou will miss upstream dependencies. RcppEigen was not provided here.\n\n&gt; install.packages(\"HDLPrepro_1.12.tar.gz\", repos = NULL, type = \"source\")\nInstalling package into ‘/usr/local/lib/R/site-library’\n(as ‘lib’ is unspecified)\nERROR: dependencies ‘bigtime’, ‘desla’, ‘ggpubr’, ‘rrpack’, ‘tsDyn’, ‘vars’, ‘RcppProgress’, ‘sitmo’ are not available for package ‘HDLPrepro’\n* removing ‘/usr/local/lib/R/site-library/HDLPrepro’\nWarning in install.packages :\n  installation of package ‘HDLPrepro_1.12.tar.gz’ had non-zero exit status\n&gt; \n&gt; install.packages(\"Backup copies of other packages/bigtime_0.2.2.tar.gz\", repos = NULL, type = \"source\")\nInstalling package into ‘/usr/local/lib/R/site-library’\n(as ‘lib’ is unspecified)\nERROR: dependencies ‘corrplot’, ‘RcppEigen’ are not available for package ‘bigtime’\n* removing ‘/usr/local/lib/R/site-library/bigtime’\nWarning in install.packages :\n  installation of package ‘Backup copies of other packages/bigtime_0.2.2.tar.gz’ had non-zero exit status"
   },
   {
+    "objectID": "replicator-resources.html#unzipping-large-files-on-macos-does-not-work",
+    "href": "replicator-resources.html#unzipping-large-files-on-macos-does-not-work",
+    "title": "Replicator Resources",
+    "section": "Unzipping Large files on MacOS does not work",
+    "text": "Unzipping Large files on MacOS does not work\n\nFor zip files larger than 4GB, the macOS default archiver utility often fails with cryptic errors.\na good solution is the p7zip utility. Install via brew install p7zip\nused like this:\n\n7za x large_package_to_unzip.zip dest_name"
+  },
+  {
     "objectID": "faqs.html",
     "href": "faqs.html",
     "title": "Frequently Asked Questions",
@@ -249,7 +256,7 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "STATA Versioning\n\n\n\nSTATA\n\n\nversions\n\n\npackages\n\n\n\nChallenges when reproducing results with different versions of STATA\n\n\n\nFlorian Oswald\n\n\nMay 9, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "STATA Versioning\n\n\n\nSTATA\n\n\nversions\n\n\npackages\n\n\n\nChallenges when reproducing results with different versions of STATA\n\n\n\nFlorian Oswald\n\n\nJun 5, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "de.html",

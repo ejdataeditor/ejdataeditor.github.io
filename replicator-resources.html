@@ -205,6 +205,7 @@ cookieconsent.run({
   <li><a href="#large-files" id="toc-large-files" class="nav-link" data-scroll-target="#large-files">large files</a></li>
   </ul></li>
   <li><a href="#things-that-dont-work" id="toc-things-that-dont-work" class="nav-link" data-scroll-target="#things-that-dont-work">Things that don’t work</a></li>
+  <li><a href="#unzipping-large-files-on-macos-does-not-work" id="toc-unzipping-large-files-on-macos-does-not-work" class="nav-link" data-scroll-target="#unzipping-large-files-on-macos-does-not-work">Unzipping Large files on MacOS does not work</a></li>
   </ul>
 </nav>
     </div>
@@ -305,6 +306,15 @@ package.zip  replication
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>bigtime’</span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  installation of package ‘Backup copies of other packages<span class="sc">/</span>bigtime_0.<span class="dv">2</span>.<span class="fl">2.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="unzipping-large-files-on-macos-does-not-work" class="level2">
+<h2 class="anchored" data-anchor-id="unzipping-large-files-on-macos-does-not-work">Unzipping Large files on MacOS does not work</h2>
+<ul>
+<li>For zip files larger than 4GB, the macOS default archiver utility often fails with cryptic errors.</li>
+<li>a good solution is the <a href="https://sourceforge.net/projects/p7zip/"><code>p7zip</code></a> utility. Install via <code>brew install p7zip</code></li>
+<li>used like this:</li>
+</ul>
+<pre><code>7za x large_package_to_unzip.zip dest_name</code></pre>
 
 
 </section>
