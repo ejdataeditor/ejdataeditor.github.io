@@ -60,12 +60,15 @@ The `README` file should provide enough instructions so that all users (level of
 
 1. A **verbal description** of the content of the package (datasets, programs, folders, etc.)
 2. **Data Availability Statement**: precise indications on how the data were obtained, including required registrations, memberships, application procedures, monetary cost, or other qualifications, and, if applicable, URL to download them (which is typically part of the data citation).
-3. Precise **instructions** on how to run the code.
-4. Indications on where each piece of output is saved or displayed. (See best practices below)
-5. **Software requirements**, including the software version and operating system used by the authors.
-6. All **packages and libraries** that need to be installed to run the code and a clear indication on how to obtain them.
-7. **Expected running time** (even if it is a few seconds). When relevant, include the hardware that the estimated time refers to.
-8. **Data citations**: all datasets used in the paper (with no exceptions) should be listed in the references section of the paper in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the ReadMe file. You can find some examples [here](https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html)
+3. The following **Statement about Rights**: 
+   - [ ] I certify that the author(s) of the manuscript have legitimate access to and permission to use the data used in this manuscript.
+   - [ ] I certify that the author(s) of the manuscript have documented permission to redistribute/publish the data contained within this replication package. Appropriate permission are documented in the LICENSE.txt file (if applicable).
+4. Precise **instructions** on how to run the code.
+5. Indications on where each piece of output is saved or displayed. (See best practices below)
+6. **Software requirements**, including the software version and operating system used by the authors.
+7. All **packages and libraries** that need to be installed to run the code and a clear indication on how to obtain them.
+8. **Expected running time** (even if it is a few seconds). When relevant, include the hardware that the estimated time refers to.
+9.  **Data citations**: all datasets used in the paper (with no exceptions) should be listed in the references section of the paper in the same way that we cite other papers, and a copy of these citations should appear in a dedicated section of the ReadMe file. You can find some examples [here](https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html)
 
 ## Data Citations
 

@@ -70,6 +70,7 @@ I confirm that `3-replication-package.zip` contains:
 
   - [ ] A verbal description of the content of the package (datasets, programs, folders, etc.)
   - [ ] A Data Availability Statement
+  - [ ] A Statement about Rights, certifying that a) the author(s) of the manuscript have legitimate access to and permission to use the data used in this manuscript, and b) that the author(s) of the manuscript have **documented** permission to redistribute/publish the data contained within this replication package. Appropriate permission are documented in the LICENSE.txt file.
   - [ ] Precise instructions on how to run the code.
   - [ ] Indications on where each piece of output is saved or displayed
   - [ ] Software requirements, including the software version and operating system used by the authors.

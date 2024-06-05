@@ -1,9 +1,5 @@
 ---
 title: "Replicator Resources"
-preview:
-    port: 6017
-    browser: false
-    watch-inputs: true
 ---
 
 ## Environments
@@ -70,4 +66,37 @@ package.zip  replication
 ```
 
 
+## Things that don't work
 
+* you cannot just include your direct dependencies in the package and hope that just works.
+* you will miss upstream dependencies. RcppEigen was not provided here.
+
+```R
+> install.packages("HDLPrepro_1.12.tar.gz", repos = NULL, type = "source")
+Installing package into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+ERROR: dependencies ‘bigtime’, ‘desla’, ‘ggpubr’, ‘rrpack’, ‘tsDyn’, ‘vars’, ‘RcppProgress’, ‘sitmo’ are not available for package ‘HDLPrepro’
+* removing ‘/usr/local/lib/R/site-library/HDLPrepro’
+Warning in install.packages :
+  installation of package ‘HDLPrepro_1.12.tar.gz’ had non-zero exit status
+> 
+> install.packages("Backup copies of other packages/bigtime_0.2.2.tar.gz", repos = NULL, type = "source")
+Installing package into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+ERROR: dependencies ‘corrplot’, ‘RcppEigen’ are not available for package ‘bigtime’
+* removing ‘/usr/local/lib/R/site-library/bigtime’
+Warning in install.packages :
+  installation of package ‘Backup copies of other packages/bigtime_0.2.2.tar.gz’ had non-zero exit status
+
+```
+
+
+## Unzipping Large files on MacOS does not work
+
+* For zip files larger than 4GB, the macOS default archiver utility often fails with cryptic errors.
+* a good solution is the [`p7zip`](https://sourceforge.net/projects/p7zip/) utility. Install via `brew install p7zip`
+* used like this:
+
+```
+7za x large_package_to_unzip.zip dest_name
+```
