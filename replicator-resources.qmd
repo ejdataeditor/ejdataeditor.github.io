@@ -5,7 +5,7 @@ title: "Replicator Resources"
 ## Environments
 
 * What is an environment?
-* Why does my code not work on your computer
+* Why does my code not work on your computer?
 
 
 ### python
@@ -35,13 +35,47 @@ Running the estimation for dml_JJ...
 
 ```
 
+### stata
+
+There is an excellent guide for how to lock in add-on stata packages into a certain state. By default, there is no mechanism in stata which would version add-on packages (the user is responsible to install the _correct_ version - which may be extremely difficult in practice because older versions may no longer be retrievable). 
+
+::: {.callout-info}
+
+# Stata Library Guide
+
+The relevant guide is by Julian Reif and accessible [here](https://julianreif.com/guide/#libraries).
+
+:::
+
+
+### julia
+
+Environment creating is built-in with base julia in the package manager. In any given directory, type `]` to enter `Pkg` mode. Here we create an environment at the current directory `.` and add two packages. The resulting files `Project.toml` and `Manifest.toml` encode the exact versions of all component packages (i.e. including dependencies of the packages we are asking for). Any user can use those 2 files to recreate the exact same software environment as the author.
+
+```
+(@v1.10) pkg> activate .
+  Activating new project at `~/replications/Oswald-123456/full-package/3-replication-package`
+
+(3-replication-package) pkg> add GLM DataFrames
+   Resolving package versions...
+   Installed LogExpFunctions ─ v0.3.28
+   Installed Distributions ─── v0.25.109
+    Updating `~/replications/Oswald-123456/full-package/3-replication-package/Project.toml`
+  [a93c6f00] + DataFrames v1.6.1
+  [38e38edf] + GLM v1.9.0
+    Updating `~/replications/Oswald-123456/full-package/3-replication-package/Manifest.toml`
+
+```
 
 ## Data Citations for exeriments
 
 If you generate your own data via an experiment, of course you cannot cite it. If you use data from a previously published experiment, you could cite it. So: no, you don't need either citation or a DAS if you use exclusively your own generated data. You do not need the zenodo DOI. you will obtain this at the very end of the process, so that people (including yourselves) can cite your package (including generated data) in the future.
 
 
-## working on nuvolos
+## Working on Nuvolos
+
+1. Always invite the Data Editor to any instance you create
+2. Always configure any app you are running to run in *shared mode* so the DE can see what is running at any point in time.
 
 ### creating a new instance
 
@@ -52,7 +86,9 @@ If you generate your own data via an experiment, of course you cannot cite it. I
 
 ![](img/nuvolos-create-3.png)
 
-### large files
+### large files on nuvolos
+
+You can try the web-based uploader which will take any URL directly:
 
 ![](img/nuvolos-large-upload.png)
 
@@ -65,10 +101,25 @@ package.zip  replication
 (base) nuvolos@nuvolos:/files$ mv package.zip /space_mounts/large_files/ershov/
 ```
 
+For very large files, however, this does not work well and you need to use the [dropbox sync integration](https://docs.nuvolos.cloud/features/file-system-and-storage/mount-dropbox). This will map a specific folder in your dropbox onto your nuvolos instance at `/dropbox`
 
-## Things that don't work
 
-* you cannot just include your direct dependencies in the package and hope that just works.
+## Things that don't work in `R`
+
+* you cannot just include your direct dependencies in an R package and hope that just works.
+* By the way, `R` package need to be _installed_ via a specific process (`install.packages`); it is _not_ possible to copy a package directly into the local library location. For instance, for me this is
+
+```
+> .libPaths()
+[1] "/Users/floswald/Library/R/arm64/4.2/library"                         
+[2] "/Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library"
+```
+
+If an author provides me with a set of libraries by just copying them out of _their_ `libPaths()` and into the package, so that we could use them, this will _only work under certain conditions_; The OS and underlying compiler infrastructure need to be identical, for example. Simply put, if the author used MacOS 13.4.1, this will not work an any windows machine. It will most likely not work on any other MacOS either.
+
+> R package installation may use system libraries and tools in order to **build** the package _for your system_. Most packages are pre-built binaries which just download and plug in, but some are not. This is particularly true for older versions, for which binaries are no long available.
+
+
 * you will miss upstream dependencies. RcppEigen was not provided here.
 
 ```R
@@ -90,13 +141,43 @@ Warning in install.packages :
 
 ```
 
+In general, `R` is difficult in this regard if we have complicated version environments. The most advertised solution is [renv](https://rstudio.github.io/renv/articles/renv.html), but I have to say that even this fails often for reasons outside the `R` environment, for example, a certain `C` compiler or `fortran` compiler with certain support libraries being needed to build a *specific* version of an outdate R package. While `renv` is a great step ahead, it is not a silver bullet.
 
-## Unzipping Large files on MacOS does not work
 
-* For zip files larger than 4GB, the macOS default archiver utility often fails with cryptic errors.
-* a good solution is the [`p7zip`](https://sourceforge.net/projects/p7zip/) utility. Install via `brew install p7zip`
-* used like this:
+## Dealing with Large Files
+
+Large (data) files are complicated. Not only do they consume a lot of disk space, the real problem comes from transferring them over the internet. There may be losses along the way which invalidate the file. 
+
+::: {.callout-tip}
+
+# Check if files are Identical?
+
+Suppose you have a 6GB dataset and want to quickly check whether it is identical to the previous version you obtained. You don't want to check _each row_ of that dataset. Instead, you could compute the [`md5sum`](https://en.wikipedia.org/wiki/Md5sum), which is akin to counting bits in the file in a certain kind of way and summing them up. It's like a digital fingerprint of a file. For example to verify that `file_to_check.csv` is identical you would do on your linux/Mac terminal
 
 ```
-7za x large_package_to_unzip.zip dest_name
+md5sum file_to_check.csv
 ```
+
+in both versions of the package, and verify that the result is the same. On your windows powershell you would [do this](https://serverfault.com/questions/57529/how-do-i-get-the-md5-of-a-file-on-windows)
+
+```
+CertUtil -hashfile file_to_check.csv MD5
+```
+
+:::
+
+
+### Compression of files
+
+* There are several compression technologies out there, indicated by various filename endings `.zip`, `.tar`, `.gz`, `.7z` etc. 
+* 
+
+There are many different facets to compression which sometimes cause problems.
+
+1. The md5 hash of a zip file create on one machine is not necessarily identical to the md5 hash of the zip file created on another machine - **despite both having the exact same content**. This is because different systems use different algorithms to create the zip file. 
+2. For zip files larger than 4GB, the macOS default archiver utility often fails with cryptic errors.
+3. a good solution is the [`p7zip`](https://sourceforge.net/projects/p7zip/) utility. Install via `brew install p7zip` and used like this:
+    ```
+    7za x large_package_to_unzip.zip dest_name
+    ```
+4. We can split a zip into several smaller parts: https://superuser.com/questions/336219/how-do-i-split-a-zip-file-into-multiple-segments. For example we had to do this [on this package](https://zenodo.org/records/11202896).
