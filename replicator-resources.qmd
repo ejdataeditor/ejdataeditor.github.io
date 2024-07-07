@@ -8,10 +8,160 @@ title: "Replicator Resources"
 * Why does my code not work on your computer?
 
 
-### python
+### `python`
+
+::: {.callout-note}
+# Where to get `python`?
+
+First things first. How can you get `python` on your computer? I **strongly recommend** the [conda](https://conda.io/projects/conda/en/latest/index.html) distribution - please follow instructions to install. This is what is available on `nuvolos` (i.e. nothing to do for python on nuvolos, it's there.)
+:::
+
+Next, on to our case study. An author says:
+
+> We use python. You must install the `networkx` package from pip. The rest of the packages is standard.
+
+This is an incomplete specification on various counts. 
+
+1. We must know which `python` version to use. There are many.
+2. We cannot work with _the rest of the packages is standard_. There is no notion of _standard_ in this setting.
+3. Installing via `pip` for instance depends on which particular `python` version is installed, and how that particular version of `networkx` relates to those _standard_ packages mentioned above. 
+
+👉 It is highly likely that following those instructions, we end up with a vastly different set of package (and base `python`!) versions than what the authors used on their machine. 
+
+👉 Not good, because this alone could lead to diverging results and/or errors.
+
+::: {.callout-tip}
+
+# Solution: Virtual Environments
+
+Easiest with `anaconda` on `nuvolos` or your own machine, but base python also has a solution.
+
+* [conda solution](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+* [base python solution](https://docs.python.org/3/library/venv.html)
+
+I recommend the `conda` route.
+
+:::
+
+Let's solve this particular case. We will create a virtual environment for ourselves, making some assumptions along the way. We can at least communicate with the authors on that assumed basis. Therefore, we open `VScode` and look at the notebook file (notice this is much quicker than opening a `jupyterlab` session). We note that in the first code box they `import` the required libraries. We want to have an environment containing those packages.
+
+![Opening a jupyter notebook in VSCode to see package dependencies](img/condaenv1.png)
+
+There are two ways to create an environment: on the command line or by writing a `.yml` file. 
+
+#### Creating a `conda env` on the command line
+
+This is easy. 
+
+1. Open a terminal in VScode via the command palette (type shift-cmd-p or click cogwheel bottom left). In the command palette type `create new terminal` and hit enter.
+2. In the terminal window create the new environment, maybe called with the author's name, specifying all required versions, as well as an assumed python version:
+
+    ```bash
+    # creates new virtual env called `author-name`
+    # notice that the nuvolos terminal runs conda by default and tells
+    # you that your are in the (base) environment now:
+    (base) 11:35:56 - nuvolos:/files$ conda create -n author-name python=3.11 matplotlib pandas numpy networkx seaborn scipy  
+    
+    Channels:
+     - defaults
+     - conda-forge
+    Platform: linux-64
+    Collecting package metadata (repodata.json): done
+    Solving environment: - 
+    
+    ```
+
+3. hit `y` when asked whether to install packages:
+
+    ```bash
+    Downloading and Extracting Packages:
+                                                                   
+    Preparing transaction: done                                                                 
+    Verifying transaction: done                                                       
+    Executing transaction: done
+    #                                                          
+    # To activate this environment, use
+    #                              
+    #     $ conda activate author-name                                                          
+    #                                       
+    # To deactivate an active environment, use
+    #                                                                                        
+    #     $ conda deactivate 
+    ```
+                                                                                        
+4. After it's done, we can `activate` that environment. Notice the prompt switching to the new env.
+
+    ```bash
+    (base) 11:40:14 - nuvolos:/files$ conda activate author-name                                                                                                       
+    (author-name) 11:41:42 - nuvolos:/files$             
+    ```
+    
+    From that point on, we are _sure_ what versions are being used when we say `import networkx`, for example:
+
+    ```bash
+    (author-name) 11:41:42 - nuvolos:/files$ python --version      
+    Python 3.11.9  # we *asked* for that version!
+    (author-name) 11:42:20 - nuvolos:/files$ python
+    Python 3.11.9 (main, Apr 19 2024, 16:48:06) [GCC 11.2.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import networkx
+    >>> print(networkx.__version__)
+    3.3   # that is default version compatible with our env
+    >>> 
+```
+
+    So, we are now using `python` 3.11.9 and `networkx` 3.3. 
+
+5. Oftentimes, authors supply jupyter notebooks (as in the present case). We need a way to run those _inside_ our environment. So, we also install a notebook runner, while we are in the activated env:
+
+    ```bash
+    # install Python kernel in new conda env
+    (author-name) 11:42:20 - nuvolos:/files$ conda install ipykernel
+    # configure new notebook kernel
+    (author-name) 11:42:20 - nuvolos:/files$ ipython kernel install --user --name=author-kernel   
+    ```
+
+6. Now we can `select kernel` in the notebook view, i.e. we will choose the python engine which goes together with this particular environment.
+
+    ![Selecting a Kernel from a `python` environment](img/condaenv2.png)
+
+    ![choose our created `author-name` environment](img/condaenv3.png)
+
+6. Clicking on the ▶️ button left of each cell, we can run the contained code. Here I added two code cells to print python and `networkx` package versions.
+
+    ![executing code in notebook using our environment. Notice that python and networkx versions correspond to our specs above.](img/condaenv4.png)
+
+#### Creating a `conda env` via a `.yml` file
+
+We could have equally well created a full _recipe_ file, from which to build this environment. This may be useful to share with authors. You would save that as `author-env.yml` for instance:
+
+```bash
+name: author-name
+dependencies:
+  - python=3.11
+  - matplotlib
+  - seaborn
+  - netwworkx
+  - pandas
+  - numpy
+  - scipy
+  - ipykernel
+  - pip
+```
+
+Then, one can create the env via
+
+```bash
+conda env create -f author-env.yml
+```
 
 
-* create a conda env from a supplied yml file
+
+
+
+#### Creating a `conda env` from a supplie `.yml` file
+
+Some authors actually give us such a file! In this case, the same applies:
 
 ```bash
 (base) 11:49:15 - nuvolos:/files$ conda env create -f /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml
@@ -35,11 +185,19 @@ Running the estimation for dml_JJ...
 
 ```
 
-### stata
+::: {.callout-warning}
+# Enforce Best Practice
+
+If a python package does _not_ contain a virtual environment, you **must** recommend the authors to add this in your report.
+
+:::
+
+
+### `stata`
 
 There is an excellent guide for how to lock in add-on stata packages into a certain state. By default, there is no mechanism in stata which would version add-on packages (the user is responsible to install the _correct_ version - which may be extremely difficult in practice because older versions may no longer be retrievable). 
 
-::: {.callout-info}
+::: {.callout-tip}
 
 # Stata Library Guide
 
@@ -48,7 +206,7 @@ The relevant guide is by Julian Reif and accessible [here](https://julianreif.co
 :::
 
 
-### julia
+### `julia`
 
 Environment creating is built-in with base julia in the package manager. In any given directory, type `]` to enter `Pkg` mode. Here we create an environment at the current directory `.` and add two packages. The resulting files `Project.toml` and `Manifest.toml` encode the exact versions of all component packages (i.e. including dependencies of the packages we are asking for). Any user can use those 2 files to recreate the exact same software environment as the author.
 
@@ -66,6 +224,12 @@ Environment creating is built-in with base julia in the package manager. In any 
     Updating `~/replications/Oswald-123456/full-package/3-replication-package/Manifest.toml`
 
 ```
+
+::: {.callout-warning}
+# No `julia` without `Project.toml`!
+
+We **require** at least a `Project.toml` for _any_ `julia` project. We _strongly recommend_ supplying also a `Manifest.toml` from the authors.
+:::
 
 ## Data Citations for exeriments
 
