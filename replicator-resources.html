@@ -196,16 +196,21 @@ cookieconsent.run({
   <ul>
   <li><a href="#environments" id="toc-environments" class="nav-link active" data-scroll-target="#environments">Environments</a>
   <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">python</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python"><code>python</code></a></li>
+  <li><a href="#stata" id="toc-stata" class="nav-link" data-scroll-target="#stata"><code>stata</code></a></li>
+  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia"><code>julia</code></a></li>
   </ul></li>
   <li><a href="#data-citations-for-exeriments" id="toc-data-citations-for-exeriments" class="nav-link" data-scroll-target="#data-citations-for-exeriments">Data Citations for exeriments</a></li>
-  <li><a href="#working-on-nuvolos" id="toc-working-on-nuvolos" class="nav-link" data-scroll-target="#working-on-nuvolos">working on nuvolos</a>
+  <li><a href="#working-on-nuvolos" id="toc-working-on-nuvolos" class="nav-link" data-scroll-target="#working-on-nuvolos">Working on Nuvolos</a>
   <ul class="collapse">
   <li><a href="#creating-a-new-instance" id="toc-creating-a-new-instance" class="nav-link" data-scroll-target="#creating-a-new-instance">creating a new instance</a></li>
-  <li><a href="#large-files" id="toc-large-files" class="nav-link" data-scroll-target="#large-files">large files</a></li>
+  <li><a href="#large-files-on-nuvolos" id="toc-large-files-on-nuvolos" class="nav-link" data-scroll-target="#large-files-on-nuvolos">large files on nuvolos</a></li>
   </ul></li>
-  <li><a href="#things-that-dont-work" id="toc-things-that-dont-work" class="nav-link" data-scroll-target="#things-that-dont-work">Things that don’t work</a></li>
-  <li><a href="#unzipping-large-files-on-macos-does-not-work" id="toc-unzipping-large-files-on-macos-does-not-work" class="nav-link" data-scroll-target="#unzipping-large-files-on-macos-does-not-work">Unzipping Large files on MacOS does not work</a></li>
+  <li><a href="#things-that-dont-work-in-r" id="toc-things-that-dont-work-in-r" class="nav-link" data-scroll-target="#things-that-dont-work-in-r">Things that don’t work in <code>R</code></a></li>
+  <li><a href="#dealing-with-large-files" id="toc-dealing-with-large-files" class="nav-link" data-scroll-target="#dealing-with-large-files">Dealing with Large Files</a>
+  <ul class="collapse">
+  <li><a href="#compression-of-files" id="toc-compression-of-files" class="nav-link" data-scroll-target="#compression-of-files">Compression of files</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -235,31 +240,231 @@ cookieconsent.run({
 <h2 class="anchored" data-anchor-id="environments">Environments</h2>
 <ul>
 <li>What is an environment?</li>
-<li>Why does my code not work on your computer</li>
+<li>Why does my code not work on your computer?</li>
 </ul>
 <section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">python</h3>
+<h3 class="anchored" data-anchor-id="python"><code>python</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Where to get <code>python</code>?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>First things first. How can you get <code>python</code> on your computer? I <strong>strongly recommend</strong> the <a href="https://conda.io/projects/conda/en/latest/index.html">conda</a> distribution - please follow instructions to install. This is what is available on <code>nuvolos</code> (i.e.&nbsp;nothing to do for python on nuvolos, it’s there.)</p>
+</div>
+</div>
+<p>Next, on to our case study. An author says:</p>
+<blockquote class="blockquote">
+<p>We use python. You must install the <code>networkx</code> package from pip. The rest of the packages is standard.</p>
+</blockquote>
+<p>This is an incomplete specification on various counts.</p>
+<ol type="1">
+<li>We must know which <code>python</code> version to use. There are many.</li>
+<li>We cannot work with <em>the rest of the packages is standard</em>. There is no notion of <em>standard</em> in this setting.</li>
+<li>Installing via <code>pip</code> for instance depends on which particular <code>python</code> version is installed, and how that particular version of <code>networkx</code> relates to those <em>standard</em> packages mentioned above.</li>
+</ol>
+<p>👉 It is highly likely that following those instructions, we end up with a vastly different set of package (and base <code>python</code>!) versions than what the authors used on their machine.</p>
+<p>👉 Not good, because this alone could lead to diverging results and/or errors.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Virtual Environments
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Easiest with <code>anaconda</code> on <code>nuvolos</code> or your own machine, but base python also has a solution.</p>
 <ul>
-<li>create a conda env from a supplied yml file</li>
+<li><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda solution</a></li>
+<li><a href="https://docs.python.org/3/library/venv.html">base python solution</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:49:15</span> <span class="at">-</span> nuvolos:/files$ conda env create <span class="at">-f</span> /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># To activate this environment, use</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     $ conda activate ectj_abt</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># To deactivate an active environment, use</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     $ conda deactivate</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">09:52:23</span> <span class="at">-</span> nuvolos:/files/Replication_package$ conda activate ectj_abt</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">ectj_abt</span><span class="kw">)</span> <span class="ex">09:55:17</span> <span class="at">-</span> nuvolos:/files/Replication_package$ python <span class="at">--version</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.9.7</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">ectj_abt</span><span class="kw">)</span> <span class="ex">09:55:31</span> <span class="at">-</span> nuvolos:/files/Replication_package$ python Main.py</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">Conda</span> environment ectj_abt already exists. Skipping creation.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> the estimation for dml_JJ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I recommend the <code>conda</code> route.</p>
+</div>
+</div>
+<p>Let’s solve this particular case. We will create a virtual environment for ourselves, making some assumptions along the way. We can at least communicate with the authors on that assumed basis. Therefore, we open <code>VScode</code> and look at the notebook file (notice this is much quicker than opening a <code>jupyterlab</code> session). We note that in the first code box they <code>import</code> the required libraries. We want to have an environment containing those packages.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/condaenv1.png" class="img-fluid figure-img"></p>
+<figcaption>Opening a jupyter notebook in VSCode to see package dependencies</figcaption>
+</figure>
+</div>
+<p>There are two ways to create an environment: on the command line or by writing a <code>.yml</code> file.</p>
+<section id="creating-a-conda-env-on-the-command-line" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-conda-env-on-the-command-line">Creating a <code>conda env</code> on the command line</h4>
+<p>This is easy.</p>
+<ol type="1">
+<li><p>Open a terminal in VScode via the command palette (type shift-cmd-p or click cogwheel bottom left). In the command palette type <code>create new terminal</code> and hit enter.</p></li>
+<li><p>In the terminal window create the new environment, maybe called with the author’s name, specifying all required versions, as well as an assumed python version:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creates new virtual env called `author-name`</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># notice that the nuvolos terminal runs conda by default and tells</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># you that your are in the (base) environment now:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:35:56</span> <span class="at">-</span> nuvolos:/files$ conda create <span class="at">-n</span> author-name python=3.11 matplotlib pandas numpy networkx seaborn scipy  </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Channels:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a> <span class="ex">-</span> defaults</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> <span class="ex">-</span> conda-forge</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Platform:</span> linux-64</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Collecting</span> package metadata <span class="er">(</span><span class="ex">repodata.json</span><span class="kw">)</span><span class="bu">:</span> done</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Solving</span> environment: <span class="at">-</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>hit <code>y</code> when asked whether to install packages:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloading</span> and Extracting Packages:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Preparing</span> transaction: done                                                                 </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Verifying</span> transaction: done                                                       </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Executing</span> transaction: done</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#                                                          </span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># To activate this environment, use</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#                              </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     $ conda activate author-name                                                          </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#                                       </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># To deactivate an active environment, use</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#                                                                                        </span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     $ conda deactivate </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>After it’s done, we can <code>activate</code> that environment. Notice the prompt switching to the new env.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:40:14</span> <span class="at">-</span> nuvolos:/files$ conda activate author-name                                                                                                       </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:41:42</span> <span class="at">-</span> nuvolos:/files$             </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>From that point on, we are <em>sure</em> what versions are being used when we say <code>import networkx</code>, for example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:41:42</span> <span class="at">-</span> nuvolos:/files$ python <span class="at">--version</span>      </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.11.9  <span class="co"># we *asked* for that version!</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:42:20</span> <span class="at">-</span> nuvolos:/files$ python</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.11.9 <span class="er">(</span><span class="ex">main,</span> Apr 19 2024, 16:48:06<span class="kw">)</span> <span class="ex">[GCC</span> 11.2.0] on linux</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Type</span> <span class="st">"help"</span>, <span class="st">"copyright"</span>, <span class="st">"credits"</span> or <span class="st">"license"</span> for more information.</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> import <span class="ex">networkx</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="ex">networkx.__version__</span><span class="kw">)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">3.3</span>   <span class="co"># that is default version compatible with our env</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>So, we are now using <code>python</code> 3.11.9 and <code>networkx</code> 3.3.</p></li>
+<li><p>Oftentimes, authors supply jupyter notebooks (as in the present case). We need a way to run those <em>inside</em> our environment. So, we also install a notebook runner, while we are in the activated env:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install Python kernel in new conda env</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:42:20</span> <span class="at">-</span> nuvolos:/files$ conda install ipykernel</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># configure new notebook kernel</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:42:20</span> <span class="at">-</span> nuvolos:/files$ ipython kernel install <span class="at">--user</span> <span class="at">--name</span><span class="op">=</span>author-kernel   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Now we can <code>select kernel</code> in the notebook view, i.e.&nbsp;we will choose the python engine which goes together with this particular environment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/condaenv2.png" class="img-fluid figure-img"></p>
+<figcaption>Selecting a Kernel from a <code>python</code> environment</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/condaenv3.png" class="img-fluid figure-img"></p>
+<figcaption>choose our created <code>author-name</code> environment</figcaption>
+</figure>
+</div></li>
+<li><p>Clicking on the ▶️ button left of each cell, we can run the contained code. Here I added two code cells to print python and <code>networkx</code> package versions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/condaenv4.png" class="img-fluid figure-img"></p>
+<figcaption>executing code in notebook using our environment. Notice that python and networkx versions correspond to our specs above.</figcaption>
+</figure>
+</div></li>
+</ol>
+</section>
+<section id="creating-a-conda-env-via-a-.yml-file" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-conda-env-via-a-.yml-file">Creating a <code>conda env</code> via a <code>.yml</code> file</h4>
+<p>We could have equally well created a full <em>recipe</em> file, from which to build this environment. This may be useful to share with authors. You would save that as <code>author-env.yml</code> for instance:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> author-name</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dependencies:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> python=3.11</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> matplotlib</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> seaborn</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> netwworkx</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> pandas</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> numpy</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> scipy</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> ipykernel</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> pip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, one can create the env via</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> author-env.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="creating-a-conda-env-from-a-supplie-.yml-file" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-conda-env-from-a-supplie-.yml-file">Creating a <code>conda env</code> from a supplie <code>.yml</code> file</h4>
+<p>Some authors actually give us such a file! In this case, the same applies:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:49:15</span> <span class="at">-</span> nuvolos:/files$ conda env create <span class="at">-f</span> /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># To activate this environment, use</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     $ conda activate ectj_abt</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># To deactivate an active environment, use</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     $ conda deactivate</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">09:52:23</span> <span class="at">-</span> nuvolos:/files/Replication_package$ conda activate ectj_abt</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">ectj_abt</span><span class="kw">)</span> <span class="ex">09:55:17</span> <span class="at">-</span> nuvolos:/files/Replication_package$ python <span class="at">--version</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.9.7</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">ectj_abt</span><span class="kw">)</span> <span class="ex">09:55:31</span> <span class="at">-</span> nuvolos:/files/Replication_package$ python Main.py</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="ex">Conda</span> environment ectj_abt already exists. Skipping creation.</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> the estimation for dml_JJ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Enforce Best Practice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If a python package does <em>not</em> contain a virtual environment, you <strong>must</strong> recommend the authors to add this in your report.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="stata" class="level3">
+<h3 class="anchored" data-anchor-id="stata"><code>stata</code></h3>
+<p>There is an excellent guide for how to lock in add-on stata packages into a certain state. By default, there is no mechanism in stata which would version add-on packages (the user is responsible to install the <em>correct</em> version - which may be extremely difficult in practice because older versions may no longer be retrievable).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stata Library Guide
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The relevant guide is by Julian Reif and accessible <a href="https://julianreif.com/guide/#libraries">here</a>.</p>
+</div>
+</div>
+</section>
+<section id="julia" class="level3">
+<h3 class="anchored" data-anchor-id="julia"><code>julia</code></h3>
+<p>Environment creating is built-in with base julia in the package manager. In any given directory, type <code>]</code> to enter <code>Pkg</code> mode. Here we create an environment at the current directory <code>.</code> and add two packages. The resulting files <code>Project.toml</code> and <code>Manifest.toml</code> encode the exact versions of all component packages (i.e.&nbsp;including dependencies of the packages we are asking for). Any user can use those 2 files to recreate the exact same software environment as the author.</p>
+<pre><code>(@v1.10) pkg&gt; activate .
+  Activating new project at `~/replications/Oswald-123456/full-package/3-replication-package`
+
+(3-replication-package) pkg&gt; add GLM DataFrames
+   Resolving package versions...
+   Installed LogExpFunctions ─ v0.3.28
+   Installed Distributions ─── v0.25.109
+    Updating `~/replications/Oswald-123456/full-package/3-replication-package/Project.toml`
+  [a93c6f00] + DataFrames v1.6.1
+  [38e38edf] + GLM v1.9.0
+    Updating `~/replications/Oswald-123456/full-package/3-replication-package/Manifest.toml`
+</code></pre>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+No <code>julia</code> without <code>Project.toml</code>!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We <strong>require</strong> at least a <code>Project.toml</code> for <em>any</em> <code>julia</code> project. We <em>strongly recommend</em> supplying also a <code>Manifest.toml</code> from the authors.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="data-citations-for-exeriments" class="level2">
@@ -267,15 +472,20 @@ cookieconsent.run({
 <p>If you generate your own data via an experiment, of course you cannot cite it. If you use data from a previously published experiment, you could cite it. So: no, you don’t need either citation or a DAS if you use exclusively your own generated data. You do not need the zenodo DOI. you will obtain this at the very end of the process, so that people (including yourselves) can cite your package (including generated data) in the future.</p>
 </section>
 <section id="working-on-nuvolos" class="level2">
-<h2 class="anchored" data-anchor-id="working-on-nuvolos">working on nuvolos</h2>
+<h2 class="anchored" data-anchor-id="working-on-nuvolos">Working on Nuvolos</h2>
+<ol type="1">
+<li>Always invite the Data Editor to any instance you create</li>
+<li>Always configure any app you are running to run in <em>shared mode</em> so the DE can see what is running at any point in time.</li>
+</ol>
 <section id="creating-a-new-instance" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-new-instance">creating a new instance</h3>
 <p><img src="img/nuvolos-create-1.png" class="img-fluid"></p>
 <p><img src="img/nuvolos-create-2.png" class="img-fluid"></p>
 <p><img src="img/nuvolos-create-3.png" class="img-fluid"></p>
 </section>
-<section id="large-files" class="level3">
-<h3 class="anchored" data-anchor-id="large-files">large files</h3>
+<section id="large-files-on-nuvolos" class="level3">
+<h3 class="anchored" data-anchor-id="large-files-on-nuvolos">large files on nuvolos</h3>
+<p>You can try the web-based uploader which will take any URL directly:</p>
 <p><img src="img/nuvolos-large-upload.png" class="img-fluid"></p>
 <pre><code>(base) nuvolos@nuvolos:/files$ ls
 '"Daniel Ershov - MS20210603_replication.zip"; filename*=UTF-8'\'''\''Daniel%20Ershov%20-%20MS20210603_replication.zip'   replication
@@ -283,40 +493,77 @@ cookieconsent.run({
 (base) nuvolos@nuvolos:/files$ ls
 package.zip  replication
 (base) nuvolos@nuvolos:/files$ mv package.zip /space_mounts/large_files/ershov/</code></pre>
+<p>For very large files, however, this does not work well and you need to use the <a href="https://docs.nuvolos.cloud/features/file-system-and-storage/mount-dropbox">dropbox sync integration</a>. This will map a specific folder in your dropbox onto your nuvolos instance at <code>/dropbox</code></p>
 </section>
 </section>
-<section id="things-that-dont-work" class="level2">
-<h2 class="anchored" data-anchor-id="things-that-dont-work">Things that don’t work</h2>
+<section id="things-that-dont-work-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="things-that-dont-work-in-r">Things that don’t work in <code>R</code></h2>
 <ul>
-<li>you cannot just include your direct dependencies in the package and hope that just works.</li>
+<li>you cannot just include your direct dependencies in an R package and hope that just works.</li>
+<li>By the way, <code>R</code> package need to be <em>installed</em> via a specific process (<code>install.packages</code>); it is <em>not</em> possible to copy a package directly into the local library location. For instance, for me this is</li>
+</ul>
+<pre><code>&gt; .libPaths()
+[1] "/Users/floswald/Library/R/arm64/4.2/library"                         
+[2] "/Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library"</code></pre>
+<p>If an author provides me with a set of libraries by just copying them out of <em>their</em> <code>libPaths()</code> and into the package, so that we could use them, this will <em>only work under certain conditions</em>; The OS and underlying compiler infrastructure need to be identical, for example. Simply put, if the author used MacOS 13.4.1, this will not work an any windows machine. It will most likely not work on any other MacOS either.</p>
+<blockquote class="blockquote">
+<p>R package installation may use system libraries and tools in order to <strong>build</strong> the package <em>for your system</em>. Most packages are pre-built binaries which just download and plug in, but some are not. This is particularly true for older versions, for which binaries are no long available.</p>
+</blockquote>
+<ul>
 <li>you will miss upstream dependencies. RcppEigen was not provided here.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"HDLPrepro_1.12.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘bigtime’, ‘desla’, ‘ggpubr’, ‘rrpack’, ‘tsDyn’, ‘vars’, ‘RcppProgress’, ‘sitmo’ are not available <span class="cf">for</span> package ‘HDLPrepro’</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>HDLPrepro’</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  installation of package ‘HDLPrepro_1.<span class="fl">12.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"Backup copies of other packages/bigtime_0.2.2.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘corrplot’, ‘RcppEigen’ are not available <span class="cf">for</span> package ‘bigtime’</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>bigtime’</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  installation of package ‘Backup copies of other packages<span class="sc">/</span>bigtime_0.<span class="dv">2</span>.<span class="fl">2.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"HDLPrepro_1.12.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘bigtime’, ‘desla’, ‘ggpubr’, ‘rrpack’, ‘tsDyn’, ‘vars’, ‘RcppProgress’, ‘sitmo’ are not available <span class="cf">for</span> package ‘HDLPrepro’</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>HDLPrepro’</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  installation of package ‘HDLPrepro_1.<span class="fl">12.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"Backup copies of other packages/bigtime_0.2.2.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘corrplot’, ‘RcppEigen’ are not available <span class="cf">for</span> package ‘bigtime’</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>bigtime’</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  installation of package ‘Backup copies of other packages<span class="sc">/</span>bigtime_0.<span class="dv">2</span>.<span class="fl">2.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In general, <code>R</code> is difficult in this regard if we have complicated version environments. The most advertised solution is <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a>, but I have to say that even this fails often for reasons outside the <code>R</code> environment, for example, a certain <code>C</code> compiler or <code>fortran</code> compiler with certain support libraries being needed to build a <em>specific</em> version of an outdate R package. While <code>renv</code> is a great step ahead, it is not a silver bullet.</p>
 </section>
-<section id="unzipping-large-files-on-macos-does-not-work" class="level2">
-<h2 class="anchored" data-anchor-id="unzipping-large-files-on-macos-does-not-work">Unzipping Large files on MacOS does not work</h2>
+<section id="dealing-with-large-files" class="level2">
+<h2 class="anchored" data-anchor-id="dealing-with-large-files">Dealing with Large Files</h2>
+<p>Large (data) files are complicated. Not only do they consume a lot of disk space, the real problem comes from transferring them over the internet. There may be losses along the way which invalidate the file.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check if files are Identical?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose you have a 6GB dataset and want to quickly check whether it is identical to the previous version you obtained. You don’t want to check <em>each row</em> of that dataset. Instead, you could compute the <a href="https://en.wikipedia.org/wiki/Md5sum"><code>md5sum</code></a>, which is akin to counting bits in the file in a certain kind of way and summing them up. It’s like a digital fingerprint of a file. For example to verify that <code>file_to_check.csv</code> is identical you would do on your linux/Mac terminal</p>
+<pre><code>md5sum file_to_check.csv</code></pre>
+<p>in both versions of the package, and verify that the result is the same. On your windows powershell you would <a href="https://serverfault.com/questions/57529/how-do-i-get-the-md5-of-a-file-on-windows">do this</a></p>
+<pre><code>CertUtil -hashfile file_to_check.csv MD5</code></pre>
+</div>
+</div>
+<section id="compression-of-files" class="level3">
+<h3 class="anchored" data-anchor-id="compression-of-files">Compression of files</h3>
 <ul>
-<li>For zip files larger than 4GB, the macOS default archiver utility often fails with cryptic errors.</li>
-<li>a good solution is the <a href="https://sourceforge.net/projects/p7zip/"><code>p7zip</code></a> utility. Install via <code>brew install p7zip</code></li>
-<li>used like this:</li>
+<li>There are several compression technologies out there, indicated by various filename endings <code>.zip</code>, <code>.tar</code>, <code>.gz</code>, <code>.7z</code> etc.</li>
+<li></li>
 </ul>
-<pre><code>7za x large_package_to_unzip.zip dest_name</code></pre>
+<p>There are many different facets to compression which sometimes cause problems.</p>
+<ol type="1">
+<li>The md5 hash of a zip file create on one machine is not necessarily identical to the md5 hash of the zip file created on another machine - <strong>despite both having the exact same content</strong>. This is because different systems use different algorithms to create the zip file.</li>
+<li>For zip files larger than 4GB, the macOS default archiver utility often fails with cryptic errors.</li>
+<li>a good solution is the <a href="https://sourceforge.net/projects/p7zip/"><code>p7zip</code></a> utility. Install via <code>brew install p7zip</code> and used like this: <code>7za x large_package_to_unzip.zip dest_name</code></li>
+<li>We can split a zip into several smaller parts: https://superuser.com/questions/336219/how-do-i-split-a-zip-file-into-multiple-segments. For example we had to do this <a href="https://zenodo.org/records/11202896">on this package</a>.</li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
