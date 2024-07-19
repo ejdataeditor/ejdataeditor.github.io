@@ -194,7 +194,12 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#environments" id="toc-environments" class="nav-link active" data-scroll-target="#environments">Environments</a>
+  <li><a href="#important-things-to-look-our-for" id="toc-important-things-to-look-our-for" class="nav-link active" data-scroll-target="#important-things-to-look-our-for">Important Things to Look Our For 🧐</a>
+  <ul class="collapse">
+  <li><a href="#hard-coded-numbers" id="toc-hard-coded-numbers" class="nav-link" data-scroll-target="#hard-coded-numbers">Hard Coded Numbers</a></li>
+  <li><a href="#missing-software-libraries-in-readme" id="toc-missing-software-libraries-in-readme" class="nav-link" data-scroll-target="#missing-software-libraries-in-readme">Missing Software Libraries in <code>README</code></a></li>
+  </ul></li>
+  <li><a href="#environments" id="toc-environments" class="nav-link" data-scroll-target="#environments">Environments</a>
   <ul class="collapse">
   <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python"><code>python</code></a></li>
   <li><a href="#stata" id="toc-stata" class="nav-link" data-scroll-target="#stata"><code>stata</code></a></li>
@@ -236,6 +241,65 @@ cookieconsent.run({
 </header>
 
 
+<section id="important-things-to-look-our-for" class="level2">
+<h2 class="anchored" data-anchor-id="important-things-to-look-our-for">Important Things to Look Our For 🧐</h2>
+<section id="hard-coded-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="hard-coded-numbers">Hard Coded Numbers</h3>
+<ul>
+<li><p>Without proper documentation of how they were obtained, hard coded numbers are not admissible in code that generates results like plots or tables.</p></li>
+<li><p>Plots are particularly critical here.</p></li>
+<li><p>A fairly quick part of your work should be a scan of all source code to identify hard coded numbers and make sure everything is proper with those.</p></li>
+<li><p>Here is an example which triggers our suspicion: The below code is used to make a bar chart. However, the heights of the bars are hard coded as numbers. If it is not obvious where the numbers come from, then this fact should be a prominent feature in your report.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/replicators-hardcode.png" class="img-fluid figure-img"></p>
+<figcaption>hard coded numbers in code for a plot (python)</figcaption>
+</figure>
+</div></li>
+</ul>
+<section id="how-to-find-hard-coded-numbers" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-find-hard-coded-numbers">How to find hard coded numbers?</h4>
+<p>Regular expressions (Regex) are the perfect tool for this. I recommend opening the full replication package in VScode. Here is an example. You can download the example package as usual from our dropbox at <code>EJ-2-submitted-replication-packages/Oswald-123456-R1</code>.</p>
+<ol type="1">
+<li><p>Open Package in VScode</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/replicators-hardcode2.png" class="img-fluid figure-img"></p>
+<figcaption>opening full replication package in VScode</figcaption>
+</figure>
+</div></li>
+<li><p>Next, activate the search function, either by clicking or by typing <code>Cmd+Shift+F</code>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/replicators-hardcode3.png" class="img-fluid figure-img"></p>
+<figcaption>activating search in entire project</figcaption>
+</figure>
+</div></li>
+<li><p>Make sure to turn on <em>regex</em> search by clicking the symbol <code>.*</code> in the right of the search text box. Now you can enter <em>regex</em> search terms. Here, I’m entering <code>\d</code> for <em>digits</em> (i.e.&nbsp;<em>numbers</em>), and I’m saying <code>{3,10}</code> to instruct the search to look for sequences of numbers with length in between 3 and 10. That is, numbers ranging from 3 up to 10 digits. You can change that of course. Notice how the search returns immediately all occurences of such numbers in the project.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/replicators-hardcode4.png" class="img-fluid figure-img"></p>
+<figcaption>using regex search to look for numbers between 3 and 10 digits long. <code>plots.jl</code> seems to contain hard coded numbers as source code.</figcaption>
+</figure>
+</div></li>
+<li><p>Finally, look whether any of those numbers do appear in a code file. Here, the <code>plots.jl</code> seems to be suspicious. Double click on a particular search results opens the relevant source file. Gotcha!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/replicators-hardcode5.png" class="img-fluid figure-img"></p>
+<figcaption>Example of hard coded numbers to generate a plot. Unless the origin and reproducibililty of those numbers is clearly documented <em>in the readme and in the source code</em>, this is not admissible.</figcaption>
+</figure>
+</div></li>
+</ol>
+</section>
+</section>
+<section id="missing-software-libraries-in-readme" class="level3">
+<h3 class="anchored" data-anchor-id="missing-software-libraries-in-readme">Missing Software Libraries in <code>README</code></h3>
+<ul>
+<li>It is very common that authors forget to list all required software libraries, or do not list the version information that goes with those libraries.</li>
+<li>Best practice would be to use an <em>empty system</em> where <em>no libraries are pre-installed</em>. The <em>nuvolos</em> platform is helpful here, because this is the case there.</li>
+</ul>
+</section>
+</section>
 <section id="environments" class="level2">
 <h2 class="anchored" data-anchor-id="environments">Environments</h2>
 <ul>
