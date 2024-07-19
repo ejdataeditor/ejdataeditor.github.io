@@ -2,6 +2,47 @@
 title: "Replicator Resources"
 ---
 
+## Important Things to Look Our For 🧐
+
+### Hard Coded Numbers
+
+* Without proper documentation of how they were obtained, hard coded numbers are not admissible in code that generates results like plots or tables.
+* Plots are particularly critical here. 
+* A fairly quick part of your work should be a scan of all source code to identify hard coded numbers and make sure everything is proper with those.
+* Here is an example which triggers our suspicion: The below code is used to make a bar chart. However, the heights of the bars are hard coded as numbers. If it is not obvious where the numbers come from, then this fact should be a prominent feature in your report.
+
+    ![hard coded numbers in code for a plot (python)](img/replicators-hardcode.png)
+
+
+#### How to find hard coded numbers?
+
+Regular expressions (Regex) are the perfect tool for this. I recommend opening the full replication package in VScode. Here is an example. You can download the example package as usual from our dropbox at `EJ-2-submitted-replication-packages/Oswald-123456-R1`.
+
+1. Open Package in VScode
+
+    ![opening full replication package in VScode](img/replicators-hardcode2.png)
+
+2. Next, activate the search function, either by clicking or by typing `Cmd+Shift+F`:
+
+	![activating search in entire project](img/replicators-hardcode3.png)
+
+3. Make sure to turn on _regex_ search by clicking the symbol `.*` in the right of the search text box. Now you can enter _regex_ search terms. Here, I'm entering `\d` for _digits_ (i.e. _numbers_), and I'm saying `{3,10}` to instruct the search to look for sequences of numbers with length in between 3 and 10. That is, numbers ranging from 3 up to 10 digits. You can change that of course. Notice how the search returns immediately all occurences of such numbers in the project.
+
+	![using regex search to look for numbers between 3 and 10 digits long. `plots.jl` seems to contain hard coded numbers as source code.](img/replicators-hardcode4.png)
+
+4. Finally, look whether any of those numbers do appear in a code file. Here, the `plots.jl` seems to be suspicious. Double click on a particular search results opens the relevant source file. Gotcha!
+
+	![Example of hard coded numbers to generate a plot. Unless the origin and reproducibililty of those numbers is clearly documented _in the readme and in the source code_, this is not admissible.](img/replicators-hardcode5.png)
+
+
+
+
+### Missing Software Libraries in `README`
+
+* It is very common that authors forget to list all required software libraries, or do not list the version information that goes with those libraries.
+* Best practice would be to use an _empty system_ where _no libraries are pre-installed_. The _nuvolos_ platform is helpful here, because this is the case there.
+
+
 ## Environments
 
 * What is an environment?

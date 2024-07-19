@@ -36,6 +36,19 @@ function create_example_package(; name = "Oswald-123456-R1")
     # create code content
     Pkg.generate(joinpath(pkg,"code","Oswald.jl"))
 
+    open(joinpath(pkg,"code","Oswald.jl","src","plots.jl"), "w") do io
+        println(io,"# this contains code to make figure 1")
+        print(io,"""
+        using Plots
+        
+        function figure1()
+            x = [1.5234, 2.234, 3.1, 4.8913]
+            y = [-0.881, 1.442, 2.98, 6.189]
+            plot(x,y, title = "Figure 1")
+        end
+        """)
+    end
+
     # create a readme
     open(joinpath(pkg,"README.md"), "w") do io
         println(io, "# $name Replication Package")
