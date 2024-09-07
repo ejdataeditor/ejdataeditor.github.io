@@ -2,6 +2,15 @@
 title: "Replicator Resources"
 ---
 
+This page contains tips and tricks for replicators.
+
+## Rules of Behaviour
+
+1. Never contact an author without explicit instruction of the data editor. This serves mainly to protect your own privacy.
+2. If you find some inconsistencies between package output and paper content, don't stop at saying for example "table 3 does not correspond". Make sure to point out _in which way_ it does not correspond; The fact that it does not seem to correspond on your computer does not necessarily mean that it does not correspond on the author's computer as well (see [below on environments](#environments)).
+3. In your report, make good use of textual output from package (like produced tables) and output in paper side by side which does not correspond. Same holds for figures (best to include as screenshots).
+4. In your report, try to adopt a pleasant and forthcoming tone of language, it will make any interaction easier.
+
 ## Important Things to Look Our For 🧐
 
 ### Hard Coded Numbers
