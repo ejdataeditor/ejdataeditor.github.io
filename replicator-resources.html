@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EJ Data Editor - Replicator Resources</title>
+<title>Replicator Resources – EJ Data Editor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -149,7 +149,7 @@ cookieconsent.run({
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -180,7 +180,7 @@ cookieconsent.run({
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -194,7 +194,8 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#important-things-to-look-our-for" id="toc-important-things-to-look-our-for" class="nav-link active" data-scroll-target="#important-things-to-look-our-for">Important Things to Look Our For 🧐</a>
+  <li><a href="#rules-of-behaviour" id="toc-rules-of-behaviour" class="nav-link active" data-scroll-target="#rules-of-behaviour">Rules of Behaviour</a></li>
+  <li><a href="#important-things-to-look-our-for" id="toc-important-things-to-look-our-for" class="nav-link" data-scroll-target="#important-things-to-look-our-for">Important Things to Look Our For 🧐</a>
   <ul class="collapse">
   <li><a href="#hard-coded-numbers" id="toc-hard-coded-numbers" class="nav-link" data-scroll-target="#hard-coded-numbers">Hard Coded Numbers</a></li>
   <li><a href="#missing-software-libraries-in-readme" id="toc-missing-software-libraries-in-readme" class="nav-link" data-scroll-target="#missing-software-libraries-in-readme">Missing Software Libraries in <code>README</code></a></li>
@@ -241,6 +242,16 @@ cookieconsent.run({
 </header>
 
 
+<p>This page contains tips and tricks for replicators.</p>
+<section id="rules-of-behaviour" class="level2">
+<h2 class="anchored" data-anchor-id="rules-of-behaviour">Rules of Behaviour</h2>
+<ol type="1">
+<li>Never contact an author without explicit instruction of the data editor. This serves mainly to protect your own privacy.</li>
+<li>If you find some inconsistencies between package output and paper content, don’t stop at saying for example “table 3 does not correspond”. Make sure to point out <em>in which way</em> it does not correspond; The fact that it does not seem to correspond on your computer does not necessarily mean that it does not correspond on the author’s computer as well (see <a href="#environments">below on environments</a>).</li>
+<li>In your report, make good use of textual output from package (like produced tables) and output in paper side by side which does not correspond. Same holds for figures (best to include as screenshots).</li>
+<li>In your report, try to adopt a pleasant and forthcoming tone of language, it will make any interaction easier.</li>
+</ol>
+</section>
 <section id="important-things-to-look-our-for" class="level2">
 <h2 class="anchored" data-anchor-id="important-things-to-look-our-for">Important Things to Look Our For 🧐</h2>
 <section id="hard-coded-numbers" class="level3">
@@ -666,18 +677,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -709,7 +709,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("git@github-ej:ejdataeditor\/ejdataeditor\.github\.io\.git");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -744,7 +784,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
