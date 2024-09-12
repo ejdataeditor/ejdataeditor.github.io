@@ -317,8 +317,13 @@ package.zip  replication
 
 For very large files, however, this does not work well and you need to use the [dropbox sync integration](https://docs.nuvolos.cloud/features/file-system-and-storage/mount-dropbox). This will map a specific folder in your dropbox onto your nuvolos instance at `/dropbox`
 
+# `R` gotchas
 
-## Things that don't work in `R`
+## The `grf` Random Forests Package
+
+There is a well-documented problem with cross platform compatibility. Only a certain setting of the `regression_forest` command will reproduce results across different platforms. The setting concerns the arguments `num.threads` and `seed`. Please make sure those are set. Reference [here](https://grf-labs.github.io/grf/REFERENCE.html#forests-predict-different-values-depending-on-the-platform-even-though-the-seed-is-the-same) and example [issue here](https://github.com/grf-labs/grf/issues/793)
+
+## Sharing Full `R` Libraries does not work in general
 
 * you cannot just include your direct dependencies in an R package and hope that just works.
 * By the way, `R` package need to be _installed_ via a specific process (`install.packages`); it is _not_ possible to copy a package directly into the local library location. For instance, for me this is
