@@ -212,10 +212,14 @@ cookieconsent.run({
   <li><a href="#creating-a-new-instance" id="toc-creating-a-new-instance" class="nav-link" data-scroll-target="#creating-a-new-instance">creating a new instance</a></li>
   <li><a href="#large-files-on-nuvolos" id="toc-large-files-on-nuvolos" class="nav-link" data-scroll-target="#large-files-on-nuvolos">large files on nuvolos</a></li>
   </ul></li>
-  <li><a href="#things-that-dont-work-in-r" id="toc-things-that-dont-work-in-r" class="nav-link" data-scroll-target="#things-that-dont-work-in-r">Things that don’t work in <code>R</code></a></li>
+  <li><a href="#r-gotchas" id="toc-r-gotchas" class="nav-link" data-scroll-target="#r-gotchas"><code>R</code> gotchas</a>
+  <ul class="collapse">
+  <li><a href="#the-grf-random-forests-package" id="toc-the-grf-random-forests-package" class="nav-link" data-scroll-target="#the-grf-random-forests-package">The <code>grf</code> Random Forests Package</a></li>
+  <li><a href="#sharing-full-r-libraries-does-not-work-in-general" id="toc-sharing-full-r-libraries-does-not-work-in-general" class="nav-link" data-scroll-target="#sharing-full-r-libraries-does-not-work-in-general">Sharing Full <code>R</code> Libraries does not work in general</a></li>
   <li><a href="#dealing-with-large-files" id="toc-dealing-with-large-files" class="nav-link" data-scroll-target="#dealing-with-large-files">Dealing with Large Files</a>
   <ul class="collapse">
   <li><a href="#compression-of-files" id="toc-compression-of-files" class="nav-link" data-scroll-target="#compression-of-files">Compression of files</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -571,8 +575,14 @@ package.zip  replication
 <p>For very large files, however, this does not work well and you need to use the <a href="https://docs.nuvolos.cloud/features/file-system-and-storage/mount-dropbox">dropbox sync integration</a>. This will map a specific folder in your dropbox onto your nuvolos instance at <code>/dropbox</code></p>
 </section>
 </section>
-<section id="things-that-dont-work-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="things-that-dont-work-in-r">Things that don’t work in <code>R</code></h2>
+<section id="r-gotchas" class="level1">
+<h1><code>R</code> gotchas</h1>
+<section id="the-grf-random-forests-package" class="level2">
+<h2 class="anchored" data-anchor-id="the-grf-random-forests-package">The <code>grf</code> Random Forests Package</h2>
+<p>There is a well-documented problem with cross platform compatibility. Only a certain setting of the <code>regression_forest</code> command will reproduce results across different platforms. The setting concerns the arguments <code>num.threads</code> and <code>seed</code>. Please make sure those are set. Reference <a href="https://grf-labs.github.io/grf/REFERENCE.html#forests-predict-different-values-depending-on-the-platform-even-though-the-seed-is-the-same">here</a> and example <a href="https://github.com/grf-labs/grf/issues/793">issue here</a></p>
+</section>
+<section id="sharing-full-r-libraries-does-not-work-in-general" class="level2">
+<h2 class="anchored" data-anchor-id="sharing-full-r-libraries-does-not-work-in-general">Sharing Full <code>R</code> Libraries does not work in general</h2>
 <ul>
 <li>you cannot just include your direct dependencies in an R package and hope that just works.</li>
 <li>By the way, <code>R</code> package need to be <em>installed</em> via a specific process (<code>install.packages</code>); it is <em>not</em> possible to copy a package directly into the local library location. For instance, for me this is</li>
@@ -638,6 +648,7 @@ Check if files are Identical?
 </ol>
 
 
+</section>
 </section>
 </section>
 
