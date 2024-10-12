@@ -4,16 +4,16 @@ title: "Replicator Resources"
 
 This page contains tips and tricks for replicators.
 
-## Rules of Behaviour
+# Rules of Behaviour
 
 1. Never contact an author without explicit instruction of the data editor. This serves mainly to protect your own privacy.
 2. If you find some inconsistencies between package output and paper content, don't stop at saying for example "table 3 does not correspond". Make sure to point out _in which way_ it does not correspond; The fact that it does not seem to correspond on your computer does not necessarily mean that it does not correspond on the author's computer as well (see [below on environments](#environments)).
 3. In your report, make good use of textual output from package (like produced tables) and output in paper side by side which does not correspond. Same holds for figures (best to include as screenshots).
 4. In your report, try to adopt a pleasant and forthcoming tone of language, it will make any interaction easier.
 
-## Important Things to Look Our For 🧐
+# Important Things to Look Our For 🧐
 
-### Hard Coded Numbers
+## Hard Coded Numbers
 
 * Without proper documentation of how they were obtained, hard coded numbers are not admissible in code that generates results like plots or tables.
 * Plots are particularly critical here. 
@@ -23,7 +23,7 @@ This page contains tips and tricks for replicators.
     ![hard coded numbers in code for a plot (python)](img/replicators-hardcode.png)
 
 
-#### How to find hard coded numbers?
+### How to find hard coded numbers?
 
 Regular expressions (Regex) are the perfect tool for this. I recommend opening the full replication package in VScode. Here is an example. You can download the example package as usual from our dropbox at `EJ-2-submitted-replication-packages/Oswald-123456-R1`.
 
@@ -46,19 +46,19 @@ Regular expressions (Regex) are the perfect tool for this. I recommend opening t
 
 
 
-### Missing Software Libraries in `README`
+## Missing Software Libraries in `README`
 
 * It is very common that authors forget to list all required software libraries, or do not list the version information that goes with those libraries.
 * Best practice would be to use an _empty system_ where _no libraries are pre-installed_. The _nuvolos_ platform is helpful here, because this is the case there.
 
 
-## Environments
+# Environments
 
 * What is an environment?
 * Why does my code not work on your computer?
 
 
-### `python`
+## `python`
 
 ::: {.callout-note}
 # Where to get `python`?
@@ -99,7 +99,7 @@ Let's solve this particular case. We will create a virtual environment for ourse
 
 There are two ways to create an environment: on the command line or by writing a `.yml` file. 
 
-#### Creating a `conda env` on the command line
+### Creating a `conda env` on the command line
 
 This is easy. 
 
@@ -209,7 +209,7 @@ conda env create -f author-env.yml
 
 
 
-#### Creating a `conda env` from a supplie `.yml` file
+### Creating a `conda env` from a supplie `.yml` file
 
 Some authors actually give us such a file! In this case, the same applies:
 
@@ -243,7 +243,7 @@ If a python package does _not_ contain a virtual environment, you **must** recom
 :::
 
 
-### `stata`
+## `stata`
 
 There is an excellent guide for how to lock in add-on stata packages into a certain state. By default, there is no mechanism in stata which would version add-on packages (the user is responsible to install the _correct_ version - which may be extremely difficult in practice because older versions may no longer be retrievable). 
 
@@ -256,7 +256,7 @@ The relevant guide is by Julian Reif and accessible [here](https://julianreif.co
 :::
 
 
-### `julia`
+## `julia`
 
 Environment creating is built-in with base julia in the package manager. In any given directory, type `]` to enter `Pkg` mode. Here we create an environment at the current directory `.` and add two packages. The resulting files `Project.toml` and `Manifest.toml` encode the exact versions of all component packages (i.e. including dependencies of the packages we are asking for). Any user can use those 2 files to recreate the exact same software environment as the author.
 
@@ -281,26 +281,24 @@ Environment creating is built-in with base julia in the package manager. In any 
 We **require** at least a `Project.toml` for _any_ `julia` project. We _strongly recommend_ supplying also a `Manifest.toml` from the authors.
 :::
 
-## Data Citations for exeriments
+# Data Citations for exeriments
 
 If you generate your own data via an experiment, of course you cannot cite it. If you use data from a previously published experiment, you could cite it. So: no, you don't need either citation or a DAS if you use exclusively your own generated data. You do not need the zenodo DOI. you will obtain this at the very end of the process, so that people (including yourselves) can cite your package (including generated data) in the future.
 
 
-## Working on Nuvolos
+# Working on Nuvolos
 
-1. Always invite the Data Editor to any instance you create
-2. Always configure any app you are running to run in *shared mode* so the DE can see what is running at any point in time.
+> Ask the Data Editor to create a new instance for you.
 
-### creating a new instance
+## Memory Consumption
 
-![](img/nuvolos-create-1.png)
+* Nuvolos (and any shared resource like a HPC system) will strictly enforce memory (RAM) limits.
+* If your app consumes more than what is available, the app will be killed. You will not get an error message in most cases, but your app will just freeze or shut down.
+* You can increase the size (CPU + RAM) by clicking on the cogwheel next to the apps start button in the "Applications" view.
 
+![](img/nuvolos-memory1.png)
 
-![](img/nuvolos-create-2.png)
-
-![](img/nuvolos-create-3.png)
-
-### large files on nuvolos
+## large files on nuvolos
 
 You can try the web-based uploader which will take any URL directly:
 
@@ -316,6 +314,9 @@ package.zip  replication
 ```
 
 For very large files, however, this does not work well and you need to use the [dropbox sync integration](https://docs.nuvolos.cloud/features/file-system-and-storage/mount-dropbox). This will map a specific folder in your dropbox onto your nuvolos instance at `/dropbox`
+
+
+
 
 # `R` gotchas
 
