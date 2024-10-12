@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c7f82a0559412ef11589d7b3cd53b3e8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -197,19 +197,26 @@ cookieconsent.run({
   <li><a href="#rules-of-behaviour" id="toc-rules-of-behaviour" class="nav-link active" data-scroll-target="#rules-of-behaviour">Rules of Behaviour</a></li>
   <li><a href="#important-things-to-look-our-for" id="toc-important-things-to-look-our-for" class="nav-link" data-scroll-target="#important-things-to-look-our-for">Important Things to Look Our For 🧐</a>
   <ul class="collapse">
-  <li><a href="#hard-coded-numbers" id="toc-hard-coded-numbers" class="nav-link" data-scroll-target="#hard-coded-numbers">Hard Coded Numbers</a></li>
+  <li><a href="#hard-coded-numbers" id="toc-hard-coded-numbers" class="nav-link" data-scroll-target="#hard-coded-numbers">Hard Coded Numbers</a>
+  <ul class="collapse">
+  <li><a href="#how-to-find-hard-coded-numbers" id="toc-how-to-find-hard-coded-numbers" class="nav-link" data-scroll-target="#how-to-find-hard-coded-numbers">How to find hard coded numbers?</a></li>
+  </ul></li>
   <li><a href="#missing-software-libraries-in-readme" id="toc-missing-software-libraries-in-readme" class="nav-link" data-scroll-target="#missing-software-libraries-in-readme">Missing Software Libraries in <code>README</code></a></li>
   </ul></li>
   <li><a href="#environments" id="toc-environments" class="nav-link" data-scroll-target="#environments">Environments</a>
   <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python"><code>python</code></a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python"><code>python</code></a>
+  <ul class="collapse">
+  <li><a href="#creating-a-conda-env-on-the-command-line" id="toc-creating-a-conda-env-on-the-command-line" class="nav-link" data-scroll-target="#creating-a-conda-env-on-the-command-line">Creating a <code>conda env</code> on the command line</a></li>
+  <li><a href="#creating-a-conda-env-from-a-supplie-.yml-file" id="toc-creating-a-conda-env-from-a-supplie-.yml-file" class="nav-link" data-scroll-target="#creating-a-conda-env-from-a-supplie-.yml-file">Creating a <code>conda env</code> from a supplie <code>.yml</code> file</a></li>
+  </ul></li>
   <li><a href="#stata" id="toc-stata" class="nav-link" data-scroll-target="#stata"><code>stata</code></a></li>
   <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia"><code>julia</code></a></li>
   </ul></li>
   <li><a href="#data-citations-for-exeriments" id="toc-data-citations-for-exeriments" class="nav-link" data-scroll-target="#data-citations-for-exeriments">Data Citations for exeriments</a></li>
   <li><a href="#working-on-nuvolos" id="toc-working-on-nuvolos" class="nav-link" data-scroll-target="#working-on-nuvolos">Working on Nuvolos</a>
   <ul class="collapse">
-  <li><a href="#creating-a-new-instance" id="toc-creating-a-new-instance" class="nav-link" data-scroll-target="#creating-a-new-instance">creating a new instance</a></li>
+  <li><a href="#memory-consumption" id="toc-memory-consumption" class="nav-link" data-scroll-target="#memory-consumption">Memory Consumption</a></li>
   <li><a href="#large-files-on-nuvolos" id="toc-large-files-on-nuvolos" class="nav-link" data-scroll-target="#large-files-on-nuvolos">large files on nuvolos</a></li>
   </ul></li>
   <li><a href="#r-gotchas" id="toc-r-gotchas" class="nav-link" data-scroll-target="#r-gotchas"><code>R</code> gotchas</a>
@@ -247,8 +254,8 @@ cookieconsent.run({
 
 
 <p>This page contains tips and tricks for replicators.</p>
-<section id="rules-of-behaviour" class="level2">
-<h2 class="anchored" data-anchor-id="rules-of-behaviour">Rules of Behaviour</h2>
+<section id="rules-of-behaviour" class="level1">
+<h1>Rules of Behaviour</h1>
 <ol type="1">
 <li>Never contact an author without explicit instruction of the data editor. This serves mainly to protect your own privacy.</li>
 <li>If you find some inconsistencies between package output and paper content, don’t stop at saying for example “table 3 does not correspond”. Make sure to point out <em>in which way</em> it does not correspond; The fact that it does not seem to correspond on your computer does not necessarily mean that it does not correspond on the author’s computer as well (see <a href="#environments">below on environments</a>).</li>
@@ -256,10 +263,10 @@ cookieconsent.run({
 <li>In your report, try to adopt a pleasant and forthcoming tone of language, it will make any interaction easier.</li>
 </ol>
 </section>
-<section id="important-things-to-look-our-for" class="level2">
-<h2 class="anchored" data-anchor-id="important-things-to-look-our-for">Important Things to Look Our For 🧐</h2>
-<section id="hard-coded-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="hard-coded-numbers">Hard Coded Numbers</h3>
+<section id="important-things-to-look-our-for" class="level1">
+<h1>Important Things to Look Our For 🧐</h1>
+<section id="hard-coded-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="hard-coded-numbers">Hard Coded Numbers</h2>
 <ul>
 <li><p>Without proper documentation of how they were obtained, hard coded numbers are not admissible in code that generates results like plots or tables.</p></li>
 <li><p>Plots are particularly critical here.</p></li>
@@ -272,8 +279,8 @@ cookieconsent.run({
 </figure>
 </div></li>
 </ul>
-<section id="how-to-find-hard-coded-numbers" class="level4">
-<h4 class="anchored" data-anchor-id="how-to-find-hard-coded-numbers">How to find hard coded numbers?</h4>
+<section id="how-to-find-hard-coded-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-find-hard-coded-numbers">How to find hard coded numbers?</h3>
 <p>Regular expressions (Regex) are the perfect tool for this. I recommend opening the full replication package in VScode. Here is an example. You can download the example package as usual from our dropbox at <code>EJ-2-submitted-replication-packages/Oswald-123456-R1</code>.</p>
 <ol type="1">
 <li><p>Open Package in VScode</p>
@@ -307,22 +314,22 @@ cookieconsent.run({
 </ol>
 </section>
 </section>
-<section id="missing-software-libraries-in-readme" class="level3">
-<h3 class="anchored" data-anchor-id="missing-software-libraries-in-readme">Missing Software Libraries in <code>README</code></h3>
+<section id="missing-software-libraries-in-readme" class="level2">
+<h2 class="anchored" data-anchor-id="missing-software-libraries-in-readme">Missing Software Libraries in <code>README</code></h2>
 <ul>
 <li>It is very common that authors forget to list all required software libraries, or do not list the version information that goes with those libraries.</li>
 <li>Best practice would be to use an <em>empty system</em> where <em>no libraries are pre-installed</em>. The <em>nuvolos</em> platform is helpful here, because this is the case there.</li>
 </ul>
 </section>
 </section>
-<section id="environments" class="level2">
-<h2 class="anchored" data-anchor-id="environments">Environments</h2>
+<section id="environments" class="level1">
+<h1>Environments</h1>
 <ul>
 <li>What is an environment?</li>
 <li>Why does my code not work on your computer?</li>
 </ul>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python"><code>python</code></h3>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python"><code>python</code></h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -374,8 +381,8 @@ Solution: Virtual Environments
 </figure>
 </div>
 <p>There are two ways to create an environment: on the command line or by writing a <code>.yml</code> file.</p>
-<section id="creating-a-conda-env-on-the-command-line" class="level4">
-<h4 class="anchored" data-anchor-id="creating-a-conda-env-on-the-command-line">Creating a <code>conda env</code> on the command line</h4>
+<section id="creating-a-conda-env-on-the-command-line" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-conda-env-on-the-command-line">Creating a <code>conda env</code> on the command line</h3>
 <p>This is easy.</p>
 <ol type="1">
 <li><p>Open a terminal in VScode via the command palette (type shift-cmd-p or click cogwheel bottom left). In the command palette type <code>create new terminal</code> and hit enter.</p></li>
@@ -445,7 +452,6 @@ Solution: Virtual Environments
 </figure>
 </div></li>
 </ol>
-</section>
 <section id="creating-a-conda-env-via-a-.yml-file" class="level4">
 <h4 class="anchored" data-anchor-id="creating-a-conda-env-via-a-.yml-file">Creating a <code>conda env</code> via a <code>.yml</code> file</h4>
 <p>We could have equally well created a full <em>recipe</em> file, from which to build this environment. This may be useful to share with authors. You would save that as <code>author-env.yml</code> for instance:</p>
@@ -463,8 +469,9 @@ Solution: Virtual Environments
 <p>Then, one can create the env via</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> author-env.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="creating-a-conda-env-from-a-supplie-.yml-file" class="level4">
-<h4 class="anchored" data-anchor-id="creating-a-conda-env-from-a-supplie-.yml-file">Creating a <code>conda env</code> from a supplie <code>.yml</code> file</h4>
+</section>
+<section id="creating-a-conda-env-from-a-supplie-.yml-file" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-conda-env-from-a-supplie-.yml-file">Creating a <code>conda env</code> from a supplie <code>.yml</code> file</h3>
 <p>Some authors actually give us such a file! In this case, the same applies:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:49:15</span> <span class="at">-</span> nuvolos:/files$ conda env create <span class="at">-f</span> /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -499,8 +506,8 @@ Enforce Best Practice
 </div>
 </section>
 </section>
-<section id="stata" class="level3">
-<h3 class="anchored" data-anchor-id="stata"><code>stata</code></h3>
+<section id="stata" class="level2">
+<h2 class="anchored" data-anchor-id="stata"><code>stata</code></h2>
 <p>There is an excellent guide for how to lock in add-on stata packages into a certain state. By default, there is no mechanism in stata which would version add-on packages (the user is responsible to install the <em>correct</em> version - which may be extremely difficult in practice because older versions may no longer be retrievable).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -516,8 +523,8 @@ Stata Library Guide
 </div>
 </div>
 </section>
-<section id="julia" class="level3">
-<h3 class="anchored" data-anchor-id="julia"><code>julia</code></h3>
+<section id="julia" class="level2">
+<h2 class="anchored" data-anchor-id="julia"><code>julia</code></h2>
 <p>Environment creating is built-in with base julia in the package manager. In any given directory, type <code>]</code> to enter <code>Pkg</code> mode. Here we create an environment at the current directory <code>.</code> and add two packages. The resulting files <code>Project.toml</code> and <code>Manifest.toml</code> encode the exact versions of all component packages (i.e.&nbsp;including dependencies of the packages we are asking for). Any user can use those 2 files to recreate the exact same software environment as the author.</p>
 <pre><code>(@v1.10) pkg&gt; activate .
   Activating new project at `~/replications/Oswald-123456/full-package/3-replication-package`
@@ -546,24 +553,26 @@ No <code>julia</code> without <code>Project.toml</code>!
 </div>
 </section>
 </section>
-<section id="data-citations-for-exeriments" class="level2">
-<h2 class="anchored" data-anchor-id="data-citations-for-exeriments">Data Citations for exeriments</h2>
+<section id="data-citations-for-exeriments" class="level1">
+<h1>Data Citations for exeriments</h1>
 <p>If you generate your own data via an experiment, of course you cannot cite it. If you use data from a previously published experiment, you could cite it. So: no, you don’t need either citation or a DAS if you use exclusively your own generated data. You do not need the zenodo DOI. you will obtain this at the very end of the process, so that people (including yourselves) can cite your package (including generated data) in the future.</p>
 </section>
-<section id="working-on-nuvolos" class="level2">
-<h2 class="anchored" data-anchor-id="working-on-nuvolos">Working on Nuvolos</h2>
-<ol type="1">
-<li>Always invite the Data Editor to any instance you create</li>
-<li>Always configure any app you are running to run in <em>shared mode</em> so the DE can see what is running at any point in time.</li>
-</ol>
-<section id="creating-a-new-instance" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-new-instance">creating a new instance</h3>
-<p><img src="img/nuvolos-create-1.png" class="img-fluid"></p>
-<p><img src="img/nuvolos-create-2.png" class="img-fluid"></p>
-<p><img src="img/nuvolos-create-3.png" class="img-fluid"></p>
+<section id="working-on-nuvolos" class="level1">
+<h1>Working on Nuvolos</h1>
+<blockquote class="blockquote">
+<p>Ask the Data Editor to create a new instance for you.</p>
+</blockquote>
+<section id="memory-consumption" class="level2">
+<h2 class="anchored" data-anchor-id="memory-consumption">Memory Consumption</h2>
+<ul>
+<li>Nuvolos (and any shared resource like a HPC system) will strictly enforce memory (RAM) limits.</li>
+<li>If your app consumes more than what is available, the app will be killed. You will not get an error message in most cases, but your app will just freeze or shut down.</li>
+<li>You can increase the size (CPU + RAM) by clicking on the cogwheel next to the apps start button in the “Applications” view.</li>
+</ul>
+<p><img src="img/nuvolos-memory1.png" class="img-fluid"></p>
 </section>
-<section id="large-files-on-nuvolos" class="level3">
-<h3 class="anchored" data-anchor-id="large-files-on-nuvolos">large files on nuvolos</h3>
+<section id="large-files-on-nuvolos" class="level2">
+<h2 class="anchored" data-anchor-id="large-files-on-nuvolos">large files on nuvolos</h2>
 <p>You can try the web-based uploader which will take any URL directly:</p>
 <p><img src="img/nuvolos-large-upload.png" class="img-fluid"></p>
 <pre><code>(base) nuvolos@nuvolos:/files$ ls
