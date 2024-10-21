@@ -181,6 +181,11 @@ This is easy.
 
     ![executing code in notebook using our environment. Notice that python and networkx versions correspond to our specs above.](img/condaenv4.png)
 
+The preceding steps of starting a notebook - from the external drive `/space_mounts` is illustrated in this video:
+
+{{< video https://youtu.be/4-Pdk3AAxDs >}}
+
+
 #### Creating a `conda env` via a `.yml` file
 
 We could have equally well created a full _recipe_ file, from which to build this environment. This may be useful to share with authors. You would save that as `author-env.yml` for instance:
