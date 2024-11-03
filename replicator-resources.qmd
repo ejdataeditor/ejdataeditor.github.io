@@ -311,23 +311,20 @@ You can try the web-based uploader which will take any URL directly:
 
 When copying the dropbox URL, remember to change 'dl=0' to 'dl=1' inside the URL. This forces the download. For example:
 ```
-https://www.dropbox.com/scl/fo/gumryf1zs8lwk5zq5udo7/ABrnRWk5w859IIibD-_QM1Q/Szumilo-20230708-R1?*dl=1*&preview=Niko+Szumilo+-+MS20230708-replication.zip&rlkey=ei2aozcysqcchaoiwwanjcg4s&subfolder_nav_tracking=1
+https://www.dropbox.com/scl/fo/gumryf1zs8lwk5zq5udo7/ABrnRWk5w859IIib/Author-YYYYMMDD-R1?*dl=1*
 ```
 
 To rename the file, open the terminal and write
 ```
 mv 'old_file_name' 'new_file_name'
-rm 'old_file_name'
 ```
 
-If the file is very large, move it to the large file storage that you can create in the 'Project Configuration' tab.
+If the file is very large, move it to the 'large file storage' that you can create in the 'Project Configuration' tab on Nuvolos.
 ```
 (base) nuvolos@nuvolos:/files$ ls
-'"Daniel Ershov - MS20210603_replication.zip"; filename*=UTF-8'\'''\''Daniel%20Ershov%20-%20MS20210603_replication.zip'   replication
-(base) nuvolos@nuvolos:/files$ mv '"Daniel Ershov - MS20210603_replication.zip"; filename*=UTF-8'\'''\''Daniel%20Ershov%20-%20MS20210603_replication.zip' package.zip
-(base) nuvolos@nuvolos:/files$ ls
-package.zip  replication
-(base) nuvolos@nuvolos:/files$ mv package.zip /space_mounts/large_files/ershov/
+'old_file_name' 'some_folder'
+(base) nuvolos@nuvolos:/files$ mv 'old_file_name' 'new_file_name.zip'
+(base) nuvolos@nuvolos:/files$ mv 'new_file_name.zip' /space_mounts/mount_name/
 ```
 
 For very large files, however, this does not work well and you need to use the [dropbox sync integration](https://docs.nuvolos.cloud/features/file-system-and-storage/mount-dropbox). This will map a specific folder in your dropbox onto your nuvolos instance at `/dropbox`
