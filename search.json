@@ -200,7 +200,7 @@
     "href": "replicator-resources.html#large-files-on-nuvolos",
     "title": "Replicator Resources",
     "section": "large files on nuvolos",
-    "text": "large files on nuvolos\nYou can try the web-based uploader which will take any URL directly:\n\n(base) nuvolos@nuvolos:/files$ ls\n'\"Daniel Ershov - MS20210603_replication.zip\"; filename*=UTF-8'\\'''\\''Daniel%20Ershov%20-%20MS20210603_replication.zip'   replication\n(base) nuvolos@nuvolos:/files$ mv '\"Daniel Ershov - MS20210603_replication.zip\"; filename*=UTF-8'\\'''\\''Daniel%20Ershov%20-%20MS20210603_replication.zip' package.zip\n(base) nuvolos@nuvolos:/files$ ls\npackage.zip  replication\n(base) nuvolos@nuvolos:/files$ mv package.zip /space_mounts/large_files/ershov/\nFor very large files, however, this does not work well and you need to use the dropbox sync integration. This will map a specific folder in your dropbox onto your nuvolos instance at /dropbox"
+    "text": "large files on nuvolos\nYou can try the web-based uploader which will take any URL directly:\n\nWhen copying the dropbox URL, remember to change ‘dl=0’ to ‘dl=1’ inside the URL. This forces the download. For example:\nhttps://www.dropbox.com/scl/fo/gumryf1zs8lwk5zq5udo7/ABrnRWk5w859IIib/Author-YYYYMMDD-R1?*dl=1*\nTo rename the file, open the terminal and write\nmv 'old_file_name' 'new_file_name'\nIf the file is very large, move it to the ‘large file storage’ that you can create in the ‘Project Configuration’ tab on Nuvolos.\n(base) nuvolos@nuvolos:/files$ ls\n'old_file_name' 'some_folder'\n(base) nuvolos@nuvolos:/files$ mv 'old_file_name' 'new_file_name.zip'\n(base) nuvolos@nuvolos:/files$ mv 'new_file_name.zip' /space_mounts/mount_name/\nFor very large files, however, this does not work well and you need to use the dropbox sync integration. This will map a specific folder in your dropbox onto your nuvolos instance at /dropbox"
   },
   {
     "objectID": "replicator-resources.html#the-grf-random-forests-package",
@@ -291,7 +291,7 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "STATA Versioning\n\n\n\nSTATA\n\n\nversions\n\n\npackages\n\n\n\nChallenges when reproducing results with different versions of STATA\n\n\n\nFlorian Oswald\n\n\nOct 21, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "STATA Versioning\n\n\n\nSTATA\n\n\nversions\n\n\npackages\n\n\n\nChallenges when reproducing results with different versions of STATA\n\n\n\nFlorian Oswald\n\n\nDec 4, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "de.html",

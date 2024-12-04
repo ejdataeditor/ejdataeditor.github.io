@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.24">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c7f82a0559412ef11589d7b3cd53b3e8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-452a07b47526f5f2f99f8e64344f0638.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -577,12 +577,15 @@ No <code>julia</code> without <code>Project.toml</code>!
 <h2 class="anchored" data-anchor-id="large-files-on-nuvolos">large files on nuvolos</h2>
 <p>You can try the web-based uploader which will take any URL directly:</p>
 <p><img src="img/nuvolos-large-upload.png" class="img-fluid"></p>
+<p>When copying the dropbox URL, remember to change ‘dl=0’ to ‘dl=1’ inside the URL. This forces the download. For example:</p>
+<pre><code>https://www.dropbox.com/scl/fo/gumryf1zs8lwk5zq5udo7/ABrnRWk5w859IIib/Author-YYYYMMDD-R1?*dl=1*</code></pre>
+<p>To rename the file, open the terminal and write</p>
+<pre><code>mv 'old_file_name' 'new_file_name'</code></pre>
+<p>If the file is very large, move it to the ‘large file storage’ that you can create in the ‘Project Configuration’ tab on Nuvolos.</p>
 <pre><code>(base) nuvolos@nuvolos:/files$ ls
-'"Daniel Ershov - MS20210603_replication.zip"; filename*=UTF-8'\'''\''Daniel%20Ershov%20-%20MS20210603_replication.zip'   replication
-(base) nuvolos@nuvolos:/files$ mv '"Daniel Ershov - MS20210603_replication.zip"; filename*=UTF-8'\'''\''Daniel%20Ershov%20-%20MS20210603_replication.zip' package.zip
-(base) nuvolos@nuvolos:/files$ ls
-package.zip  replication
-(base) nuvolos@nuvolos:/files$ mv package.zip /space_mounts/large_files/ershov/</code></pre>
+'old_file_name' 'some_folder'
+(base) nuvolos@nuvolos:/files$ mv 'old_file_name' 'new_file_name.zip'
+(base) nuvolos@nuvolos:/files$ mv 'new_file_name.zip' /space_mounts/mount_name/</code></pre>
 <p>For very large files, however, this does not work well and you need to use the <a href="https://docs.nuvolos.cloud/features/file-system-and-storage/mount-dropbox">dropbox sync integration</a>. This will map a specific folder in your dropbox onto your nuvolos instance at <code>/dropbox</code></p>
 </section>
 </section>
@@ -608,21 +611,21 @@ package.zip  replication
 <ul>
 <li>you will miss upstream dependencies. RcppEigen was not provided here.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"HDLPrepro_1.12.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘bigtime’, ‘desla’, ‘ggpubr’, ‘rrpack’, ‘tsDyn’, ‘vars’, ‘RcppProgress’, ‘sitmo’ are not available <span class="cf">for</span> package ‘HDLPrepro’</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>HDLPrepro’</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  installation of package ‘HDLPrepro_1.<span class="fl">12.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"Backup copies of other packages/bigtime_0.2.2.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘corrplot’, ‘RcppEigen’ are not available <span class="cf">for</span> package ‘bigtime’</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>bigtime’</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  installation of package ‘Backup copies of other packages<span class="sc">/</span>bigtime_0.<span class="dv">2</span>.<span class="fl">2.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"HDLPrepro_1.12.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘bigtime’, ‘desla’, ‘ggpubr’, ‘rrpack’, ‘tsDyn’, ‘vars’, ‘RcppProgress’, ‘sitmo’ are not available <span class="cf">for</span> package ‘HDLPrepro’</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>HDLPrepro’</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  installation of package ‘HDLPrepro_1.<span class="fl">12.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"Backup copies of other packages/bigtime_0.2.2.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘corrplot’, ‘RcppEigen’ are not available <span class="cf">for</span> package ‘bigtime’</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>bigtime’</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  installation of package ‘Backup copies of other packages<span class="sc">/</span>bigtime_0.<span class="dv">2</span>.<span class="fl">2.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In general, <code>R</code> is difficult in this regard if we have complicated version environments. The most advertised solution is <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a>, but I have to say that even this fails often for reasons outside the <code>R</code> environment, for example, a certain <code>C</code> compiler or <code>fortran</code> compiler with certain support libraries being needed to build a <em>specific</em> version of an outdate R package. While <code>renv</code> is a great step ahead, it is not a silver bullet.</p>
 </section>
 <section id="dealing-with-large-files" class="level2">
@@ -746,8 +749,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -858,7 +859,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
