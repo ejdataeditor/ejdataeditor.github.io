@@ -4,4 +4,9 @@ title: "The RES Data Editor"
 
 The Data Editor of the Royal Economic Society defines and monitors the approach of both RES journals (EJ and EctJ) to data and reproducibility. In particular, s/he is the responsible of overlooking the correct implementation of the Journals' Data and Code Availability Policy for all articles, and of coordinating the team of replicators that conduct reproducibility checks on all articles that are conditionally accepted for publication in the journals. 
 
-The Data Editor of the Economic Journal and the Econometrics Journal since July 2023 is [Florian Oswald](https://floswald.github.io), Associate Professor at Sciences Po Paris.
+The Data Editor of the Economic Journal and the Econometrics Journal since July 2025 is [Damian Clarke](https://damianclarke.net), Associate Professor of Economics at the Universidad de Chile, and the University of Exeter.
+
+Past Data Editors of the Royal Economic Society are:
+
+- [Florian Oswald](https://floswald.github.io), July 2023-June 2025
+- [Joan Llull](https://joanllull.github.io), December 2019-June 2023

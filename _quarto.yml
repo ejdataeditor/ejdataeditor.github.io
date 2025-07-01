@@ -12,7 +12,6 @@ website:
   favicon: img/favicon.png
   page-footer: 
     left: "{{< var ej.short >}} Data Editor: [{{< var de.mail >}}]({{< var de.mail >}}) <br> {{< var ej.short >}} Editorial Office: [{{< var ej.mail >}}]({{< var ej.mail >}})"
-    center: "© [Florian Oswald](https://floswald.github.io) {{< var de.year >}}"
     right:
       - icon: github
         href: https://github.com/RES-reproducibility

@@ -10,8 +10,7 @@ preview:
 
 # Data Editors Collaborate
 
-
-The Data Editors of the American Economic Association ([Lars Vilhuber](https://www.vilhuber.com/lars/)) the Review of Economic Studies ([Miklós Koren](https://koren.mk/)), the Canadian Journal of Economics ([Marie Connolly](http://www.connolly.uqam.ca/index_en.html)), the Econometric Society ([Joan Llull](https://joanllull.github.io/)) and the Economic Journal and Econometrics Journal (Florian Oswald) are coordinating reproduciblity requirements and guidelines across different journals. An example of this cooperation is [this common guidance](https://social-science-data-editors.github.io/guidance/) by Social Science Data Editors, and parts of the below list.
+A number of Data Editors in the Social Sciences are coordinating reproduciblity requirements and guidelines across different journals. An example of this cooperation is [this common guidance](https://social-science-data-editors.github.io/guidance/) by Social Science Data Editors, and parts of the below list.
 :::
 
 
