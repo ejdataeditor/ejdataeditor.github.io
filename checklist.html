@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EJ Data Editor - Before you submit your paper for the first time</title>
+<title>EJ Data Editor - EJ Checklist For Authors</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./before.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./before.html" rel="" target="">
  <span class="menu-text">Before You Submit</span></a>
   </li>  
   <li class="nav-item">
@@ -151,17 +151,25 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-and-code-availability-policy" id="toc-data-and-code-availability-policy" class="nav-link active" data-scroll-target="#data-and-code-availability-policy">Data and Code Availability Policy</a></li>
-  <li><a href="#apply-to-exemptions-to-the-data-and-code-availability-policy" id="toc-apply-to-exemptions-to-the-data-and-code-availability-policy" class="nav-link" data-scroll-target="#apply-to-exemptions-to-the-data-and-code-availability-policy">Apply to exemptions to the Data and Code Availability Policy</a></li>
+  <li><a href="#style-guide-for-paper" id="toc-style-guide-for-paper" class="nav-link active" data-scroll-target="#style-guide-for-paper">1. Style Guide for Paper</a></li>
+  <li><a href="#replication-package-guide" id="toc-replication-package-guide" class="nav-link" data-scroll-target="#replication-package-guide">2. Replication Package Guide</a>
+  <ul class="collapse">
+  <li><a href="#folder-structure-of-replication-package" id="toc-folder-structure-of-replication-package" class="nav-link" data-scroll-target="#folder-structure-of-replication-package">2.0. Folder Structure of Replication package</a></li>
+  <li><a href="#folder-1-paper" id="toc-folder-1-paper" class="nav-link" data-scroll-target="#folder-1-paper">2.1. Folder <code>1-paper</code></a></li>
+  <li><a href="#folder-2-appendix-if-applicable" id="toc-folder-2-appendix-if-applicable" class="nav-link" data-scroll-target="#folder-2-appendix-if-applicable">2.2. Folder <code>2-appendix</code> (if applicable)</a></li>
+  <li><a href="#folder-3-replication-package.zip-must-be-.zip" id="toc-folder-3-replication-package.zip-must-be-.zip" class="nav-link" data-scroll-target="#folder-3-replication-package.zip-must-be-.zip">2.3. Folder <code>3-replication-package.zip</code> (<em>must</em> be <code>.zip</code>)</a></li>
+  <li><a href="#folder-4-confidential-data-not-for-publication.zip-if-applicable" id="toc-folder-4-confidential-data-not-for-publication.zip-if-applicable" class="nav-link" data-scroll-target="#folder-4-confidential-data-not-for-publication.zip-if-applicable">2.4. Folder <code>4-confidential-data-not-for-publication.zip</code> (if applicable)</a></li>
+  </ul></li>
+  <li><a href="#plagiarism-and-reproducibility-checks" id="toc-plagiarism-and-reproducibility-checks" class="nav-link" data-scroll-target="#plagiarism-and-reproducibility-checks">3. Plagiarism and Reproducibility Checks</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="checklist.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Before you submit your paper for the first time</h1>
+<h1 class="title">EJ Checklist For Authors</h1>
 </div>
 
 
@@ -176,78 +184,96 @@ cookieconsent.run({
 
 </header>
 
-<p>Read here about our Data and Code Availability Policy (DCAP) and make sure you comply with all requirements before you submit the paper for the first time. Check the cases in which exemptions to the policy can be granted and the procedures to obtain them. If you don’t request the exemption at the time of first submission, you will not be able to do it later! Also, there may still be time to gain some insights from our <a href="./best.html">best practice for reproducibility recommendations</a> before you submit.</p>
-<section id="data-and-code-availability-policy" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-code-availability-policy">Data and Code Availability Policy</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Official Policy at EJ
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a reproduction of the official Data and Code Availability Policy of the Economic Journal, which can be found <a href="https://academic.oup.com/ej/pages/General_Instructions#data">here</a>. In case of discrepancy, the official policy always prevails to the reproduction presented here.</p>
-</div>
-</div>
-<p>The Economic Journal requires authors of empirical, experimental or numerical papers to provide documentation of how their results were obtained in sufficient detail and accuracy to allow their results to be replicated. When you submit a paper for consideration, you will be asked to confirm that you are willing to comply with this policy. <strong>It is essential that you request a data exemption at the point of first submission if you face any restrictions that prevent you from publishing your data or, in general, from complying with any of the provisions of this policy.</strong> More details on this process are provided below.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-When Will my Paper be Accepted for Publication?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Your paper will be accepted for final publication <strong>only after the results have been checked for reproducibility</strong>.</p>
-</div>
-</div>
-<p>Our mission is to conduct the reproducibility checks as fast as possible. Please read the information on this website carefully, so we can achieve this goal. Please, also note the following warning:</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The editorial board of the Economic Journal reserves the right to refuse publication of papers whose authors do not comply with the requirements set out in detail below for each type of paper.</p>
-</div>
-</div>
-<p>Once the paper is accepted for publication, the replication package will be posted on the journal’s repository at <a href="https://zenodo.org/communities/ej-replication-repository">zenodo.org</a> and it will be linked with the paper. Alternative repositories may be acceptable as long as they are considered “trusted” by the journal. Submission on such online repositories indicates that the authors license users to download, copy, and modify this material. Users of the material must acknowledge all authors as the original creators and cite both the replication package and the paper accordingly.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Instructions for Replication Package
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Please follow precise instructions on how to structure your replication package <a href="./package.html">here</a>.</p>
-</div>
-</div>
+<p><img src="img/banner.png" class="img-fluid" data-fig-align="top"> </p>
+<p>Before submitting your final version, please check that you have complied with the following. We ask that you tick the relevant boxes, sign and submit this form along with folders <code>1-paper</code> and <code>2-appendix</code> as detailed below via <em>Editorial Express</em>. After successful submission, the Data Editor will invite you to submit your replication package in a separate step. You will confirm below that your replication package complies with the required structure and content.</p>
+<p>Thank you!</p>
+<section id="style-guide-for-paper" class="level2">
+<h2 class="anchored" data-anchor-id="style-guide-for-paper">1. Style Guide for Paper</h2>
+<ul class="task-list">
+<li><p><input type="checkbox">My article uses UK (not US) English.</p></li>
+<li><p><input type="checkbox">I have presented any matrices and vectors in bold, and any scalars in italics. Where possible, I have presented in-line equations so that their heights are no more than 1 standard line of text.</p></li>
+<li><p><input type="checkbox">I have checked that my reference list meets the style requirements of the journal and that my references are complete, particularly in the use of capitals and the inclusion of issue and page numbers.</p></li>
+<li><p><input type="checkbox">I have checked that all tables are large enough that they will be clearly readable when reduced to fit on a printed page.</p></li>
+<li><p><input type="checkbox">I have checked that all figures are high-resolution and readable when printed in black and white.</p></li>
+<li><p><input type="checkbox">I have obtained permission for any third-party material included in the paper.</p></li>
+<li><p><input type="checkbox">I confirm that either (i) all references made to figures in the paper are worded so that they are comprehensible in both the colour online version and the black-and-white print version or (ii) I will be taking the option for colour printing for my figures and I am aware that there will be a cost associated with this.</p></li>
+</ul>
 </section>
-<section id="apply-to-exemptions-to-the-data-and-code-availability-policy" class="level2">
-<h2 class="anchored" data-anchor-id="apply-to-exemptions-to-the-data-and-code-availability-policy">Apply to exemptions to the Data and Code Availability Policy</h2>
-<p>If you are not able to comply with some of the aspects of the Data and Code Availability Policy (e.g.&nbsp;because you are using restricted-access data or you cannot obtain permission to re-publish the data), you should request an exemption <strong>at the time of first submission of your paper</strong>. You can find a set of Frequently Asked Questions about the situations under which you can or cannot apply to an exemption to the data and code availability policy <a href="./faqs.html">here</a>.</p>
-<p>If you want to request a Data Exemption, you need to select the second option for the Data Policy box during your submission process at the Editorial Express platform, as illustrated in figure <a href="#fig-exemption">Figure&nbsp;1</a>:</p>
-<div id="fig-exemption" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="./img/Data_policy.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Data Policy Exemption</figcaption>
-</figure>
-</div>
-<p>Additionally, attach a Cover Letter along with your paper in which you indicate the reasons why you believe you are entitled to an exemption to our data and code availability policy.</p>
-<p>Once the paper is submitted, the Managing Editor will analyze whether (i) there are enough grounds to grant the exemption and (ii) the exemption or the nature of the data limits the interest of the paper. Based on her assessment of these two points, she will make one of the following decisions: (a) move forward with the process, sending your paper to referees, (b) summarily reject your paper, or (c) contact you asking to provide additional information, documentation, or any other requirement that she needs to assess the suitability of the requested exemption. The exemptions are tacitly granted by choosing option (a).</p>
-<p>Once your paper is conditionally accepted, you will be requested to supply your replication package according to the guidelines specified <a href="./package.html">here on this website</a>. If an exemption to the Data and Code Availability Policy was granted, you will be requested to either provide the Data Editor (and, by extension, to the team of replicators) with temporary access to the data affected by the exemption for the sole purpose of implementing the reproducibility checks. Alternatively, when granting temporary access to the restricted data is not possible, you will be required to include in your package a synthetic or simulated dataset that allows users to run the code and check that it produces all outputs from the paper (and appendices), even if the results do not match those in the paper. You can find a set of FAQs questions about how to proceed with the replication package when an exemption to the Data and Code Availability Policy has been granted <a href="faqs#procedures-when-exemptions-are-granted">here</a>.</p>
+<section id="replication-package-guide" class="level2">
+<h2 class="anchored" data-anchor-id="replication-package-guide">2. Replication Package Guide</h2>
+<section id="folder-structure-of-replication-package" class="level3">
+<h3 class="anchored" data-anchor-id="folder-structure-of-replication-package">2.0. Folder Structure of Replication package</h3>
+<p>You are requested to submit a single zip file called <code>MSXXXXXXX-replication.zip</code> which contains all contents of your replication package (contents detailed below).</p>
+<ul class="task-list">
+<li><input type="checkbox">I confirm to have prepared a <em>single</em> file for submission of my replication package called <code>MSXXXXXXX-replication.zip</code>.</li>
+</ul>
+<p>The folder structure needs to follow strictly the following template (please name your folders in this exact way. Notice there are <em>no spaces</em>, and <em>no capital letters in those folder names</em>):</p>
+<pre><code>├── 1-paper
+├── 2-appendices
+├── 3-replication-package.zip
+└── 4-confidential-data-not-for-publication.zip  (Optional)</code></pre>
+<ul class="task-list">
+<li><input type="checkbox">I confirm that the content <code>MSXXXXXXX-replication.zip</code> is <em>exactly identical</em> to the template (in particular, folder <code>3-replication-package.zip</code> is <code>zip</code> compressed, regardless of its size!)</li>
+</ul>
+</section>
+<section id="folder-1-paper" class="level3">
+<h3 class="anchored" data-anchor-id="folder-1-paper">2.1. Folder <code>1-paper</code></h3>
+<ul class="task-list">
+<li><p><input type="checkbox">I confirm that <code>MSXXXXXXX-replication.zip</code> contains a folder called <code>1-paper</code></p>
+<p>I confirm that <code>1-paper</code> contains:</p></li>
+<li><p><input type="checkbox">all source code needed to compile the paper named in the appropriate way. This folder includes <code>MSXXXXXXXX-main-YYYYMMDD.tex</code> (or <code>.docx</code>) and <code>MSXXXXXXXX-main-YYYYMMDD.pdf</code>, <code>MSXXXXXXXX</code> being your manuscript number, and <code>YYYYMMDD</code> standing for the date of final submission in ISO format.</p></li>
+<li><p><input type="checkbox">all required input files (graphs and tables etc.), clearly labelled.</p></li>
+<li><p><input type="checkbox">any <code>.bib</code>, <code>.bbl</code> or <code>.bst</code> files required for compilation.</p></li>
+</ul>
+</section>
+<section id="folder-2-appendix-if-applicable" class="level3">
+<h3 class="anchored" data-anchor-id="folder-2-appendix-if-applicable">2.2. Folder <code>2-appendix</code> (if applicable)</h3>
+<p>I confirm that <code>2-appendix</code> contains - if applicable:</p>
+<ul class="task-list">
+<li><input type="checkbox">source code and compiled version of <em>all appendices combined</em> in a single <code>.tex</code>/<code>.pdf</code> file, following the above naming convention: <code>MSXXXXXXXX-appendix-YYYYMMDD.tex</code></li>
+</ul>
+</section>
+<section id="folder-3-replication-package.zip-must-be-.zip" class="level3">
+<h3 class="anchored" data-anchor-id="folder-3-replication-package.zip-must-be-.zip">2.3. Folder <code>3-replication-package.zip</code> (<em>must</em> be <code>.zip</code>)</h3>
+<p>I confirm that <code>3-replication-package.zip</code> contains:</p>
+<ul class="task-list">
+<li><p><input type="checkbox">A file called <code>README.pdf</code> in PDF format. We strongly recommend using the following template: <a href="https://social-science-data-editors.github.io/template_README/template-README.html">https://social-science-data-editors.github.io/template_README/template-README.html</a>. This template can be downloaded in Markdown/txt, doc, LaTeX, and PDF in order to be edited. Alternatively, we recommend <a href="https://www.templatereadme.org/">this web app</a> to create the <code>README</code>. I confirm that my <code>README</code> includes the following information (check each item):</p>
+<ul class="task-list">
+<li><input type="checkbox">A verbal description of the content of the package (datasets, programs, folders, etc.)</li>
+<li><input type="checkbox">A Data Availability Statement</li>
+<li><input type="checkbox">A Statement about Rights, certifying that a) the author(s) of the manuscript have legitimate access to and permission to use the data used in this manuscript, and b) that the author(s) of the manuscript have <strong>documented</strong> permission to redistribute/publish the data contained within this replication package. Appropriate permissions are documented in the LICENSE.txt file.</li>
+<li><input type="checkbox">Precise instructions on how to run the code.</li>
+<li><input type="checkbox">Indications on where each piece of output is saved or displayed</li>
+<li><input type="checkbox">Software requirements, including the software version and operating system used by the authors.</li>
+<li><input type="checkbox">All packages and libraries that need to be installed to run the code and a clear indication on how to obtain them.</li>
+<li><input type="checkbox">Expected running time (even if it is a few seconds)</li>
+<li><input type="checkbox">Data citations</li>
+</ul></li>
+<li><p><input type="checkbox">The raw datasets used in the paper and online appendices.</p></li>
+<li><p><input type="checkbox">Both the data cleaning codes and the analysis codes that produce all reproducible outputs reported in the article, appendix, and online appendices (including figures, tables, and numbers reported in the text)</p></li>
+<li><p><input type="checkbox">A copy of the all data in non-proprietary format (e.g.&nbsp;<code>ASCII</code>, <code>.csv</code>, etc)</p></li>
+<li><p><input type="checkbox">My paper uses data generated via experiments. I confirm to include the following additional documents:</p>
+<ul class="task-list">
+<li><input type="checkbox">A document outlining the design of the experiment.</li>
+<li><input type="checkbox">A copy of the instructions given to participants, in both the original language and an English translation.</li>
+<li><input type="checkbox">Information on the selection and eligibility of participants.</li>
+<li><input type="checkbox">A PDF copy of the Institutional Review Board (IRB) approval.</li>
+</ul></li>
+</ul>
+</section>
+<section id="folder-4-confidential-data-not-for-publication.zip-if-applicable" class="level3">
+<h3 class="anchored" data-anchor-id="folder-4-confidential-data-not-for-publication.zip-if-applicable">2.4. Folder <code>4-confidential-data-not-for-publication.zip</code> (if applicable)</h3>
+<p><em>Optional: include only the restricted data if an exemption to the Data and Code Availability Policy have been granted to you and you are providing the replication team with temporary access to the data; all codes and unrestricted data should go to folder <code>3-replication-package.zip</code>.</em></p>
+<ul class="task-list">
+<li><input type="checkbox">I confirm to have obtained an exemption to the Data and Code Availability Policy from my managing editor and I include confidential data which will not be published with the package, but which will be destroyed by the replication team after successful checks.</li>
+</ul>
+</section>
+</section>
+<section id="plagiarism-and-reproducibility-checks" class="level2">
+<h2 class="anchored" data-anchor-id="plagiarism-and-reproducibility-checks">3. Plagiarism and Reproducibility Checks</h2>
+<p>I understand that the files submitted will be checked for plagiarism and that any code and data submitted will be checked for replicability of the results appearing in the paper, before the paper is finally accepted.</p>
+<p>Date: ________________________</p>
+<p>Signature: _______________________</p>
 
 
 </section>
@@ -490,7 +516,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">EJ Data Editor: <a href="ejdataeditor@gmail.com">ejdataeditor@gmail.com</a> <br> EJ Editorial Office: <a href="ej@res.org.uk">ej@res.org.uk</a></div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">© <a href="https://floswald.github.io">Florian Oswald</a> 2024<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

@@ -1,1 +1,1 @@
-Sitemap: git@github-ej:ejdataeditor/ejdataeditor.github.io.git/sitemap.xml
+Sitemap: git@github.com:ejdataeditor/ejdataeditor.github.io/sitemap.xml
