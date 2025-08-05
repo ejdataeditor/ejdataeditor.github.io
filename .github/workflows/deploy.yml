@@ -20,7 +20,9 @@ jobs:
 
 
       - name: Install TinyTeX
-        run: quarto install tinytex --agree-license
+        run: |
+          quarto install tinytex
+          sudo apt-get install -y ghostscript
         
       - name: Render site
         run: quarto render
