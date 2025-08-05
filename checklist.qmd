@@ -97,6 +97,10 @@ I confirm that `3-replication-package.zip` contains:
 
 - [ ] I confirm to have obtained an exemption to the Data and Code Availability Policy from my managing editor and I include confidential data which will not be published with the package, but which will be destroyed by the replication team after successful checks.
 
+### 2.5. Personally Identifiable Information (if applicable)
+
+- [ ] I confirm that all datasets shared with my replication materials contain no personally identifiable information (PII) on research subjects for which I do not have explicit approval to share, and that all data sharing complies with relevant privacy regulations and consent agreements.
+
 ## 3. Plagiarism and Reproducibility Checks
 
 I understand that the files submitted will be checked for plagiarism and that any code and data submitted will be checked for replicability of the results appearing in the paper, before the paper is finally accepted.
