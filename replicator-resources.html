@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e856ff0b582369b901d99bac0c94d2f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-baf3acd10275c4f3097d4d40980e2b7b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -144,7 +145,8 @@ cookieconsent.run({
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/logo-v2-1.png" alt="" class="navbar-logo">
+    <img src="./img/logo-v2-1.png" alt="" class="navbar-logo light-content">
+    <img src="./img/logo-v2-1.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">EJ Data Editor</span>
@@ -338,7 +340,7 @@ cookieconsent.run({
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Where to get <code>python</code>?
+<span class="screen-reader-only">Note</span>Where to get <code>python</code>?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -363,7 +365,7 @@ Where to get <code>python</code>?
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution: Virtual Environments
+<span class="screen-reader-only">Tip</span>Solution: Virtual Environments
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -389,7 +391,7 @@ Solution: Virtual Environments
 <ol type="1">
 <li><p>Open a terminal in VScode via the command palette (type shift-cmd-p or click cogwheel bottom left). In the command palette type <code>create new terminal</code> and hit enter.</p></li>
 <li><p>In the terminal window create the new environment, maybe called with the author’s name, specifying all required versions, as well as an assumed python version:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creates new virtual env called `author-name`</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creates new virtual env called `author-name`</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># notice that the nuvolos terminal runs conda by default and tells</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># you that your are in the (base) environment now:</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:35:56</span> <span class="at">-</span> nuvolos:/files$ conda create <span class="at">-n</span> author-name python=3.11 matplotlib pandas numpy networkx seaborn scipy  </span>
@@ -399,9 +401,9 @@ Solution: Virtual Environments
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> <span class="ex">-</span> conda-forge</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Platform:</span> linux-64</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Collecting</span> package metadata <span class="er">(</span><span class="ex">repodata.json</span><span class="kw">)</span><span class="bu">:</span> done</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Solving</span> environment: <span class="at">-</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Solving</span> environment: <span class="at">-</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>hit <code>y</code> when asked whether to install packages:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloading</span> and Extracting Packages:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Downloading</span> and Extracting Packages:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Preparing</span> transaction: done                                                                 </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Verifying</span> transaction: done                                                       </span>
@@ -413,12 +415,12 @@ Solution: Virtual Environments
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#                                       </span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># To deactivate an active environment, use</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#                                                                                        </span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     $ conda deactivate </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     $ conda deactivate </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>After it’s done, we can <code>activate</code> that environment. Notice the prompt switching to the new env.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:40:14</span> <span class="at">-</span> nuvolos:/files$ conda activate author-name                                                                                                       </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:41:42</span> <span class="at">-</span> nuvolos:/files$             </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:40:14</span> <span class="at">-</span> nuvolos:/files$ conda activate author-name                                                                                                       </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:41:42</span> <span class="at">-</span> nuvolos:/files$             </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>From that point on, we are <em>sure</em> what versions are being used when we say <code>import networkx</code>, for example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:41:42</span> <span class="at">-</span> nuvolos:/files$ python <span class="at">--version</span>      </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:41:42</span> <span class="at">-</span> nuvolos:/files$ python <span class="at">--version</span>      </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.11.9  <span class="co"># we *asked* for that version!</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:42:20</span> <span class="at">-</span> nuvolos:/files$ python</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.11.9 <span class="er">(</span><span class="ex">main,</span> Apr 19 2024, 16:48:06<span class="kw">)</span> <span class="ex">[GCC</span> 11.2.0] on linux</span>
@@ -426,13 +428,13 @@ Solution: Virtual Environments
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> import <span class="ex">networkx</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print<span class="kw">(</span><span class="ex">networkx.__version__</span><span class="kw">)</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">3.3</span>   <span class="co"># that is default version compatible with our env</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>So, we are now using <code>python</code> 3.11.9 and <code>networkx</code> 3.3.</p></li>
 <li><p>Oftentimes, authors supply jupyter notebooks (as in the present case). We need a way to run those <em>inside</em> our environment. So, we also install a notebook runner, while we are in the activated env:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install Python kernel in new conda env</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install Python kernel in new conda env</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:42:20</span> <span class="at">-</span> nuvolos:/files$ conda install ipykernel</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># configure new notebook kernel</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:42:20</span> <span class="at">-</span> nuvolos:/files$ ipython kernel install <span class="at">--user</span> <span class="at">--name</span><span class="op">=</span>author-kernel   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">author-name</span><span class="kw">)</span> <span class="ex">11:42:20</span> <span class="at">-</span> nuvolos:/files$ ipython kernel install <span class="at">--user</span> <span class="at">--name</span><span class="op">=</span>author-kernel   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Now we can <code>select kernel</code> in the notebook view, i.e.&nbsp;we will choose the python engine which goes together with this particular environment.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -459,7 +461,7 @@ Solution: Virtual Environments
 <section id="creating-a-conda-env-via-a-.yml-file" class="level4">
 <h4 class="anchored" data-anchor-id="creating-a-conda-env-via-a-.yml-file">Creating a <code>conda env</code> via a <code>.yml</code> file</h4>
 <p>We could have equally well created a full <em>recipe</em> file, from which to build this environment. This may be useful to share with authors. You would save that as <code>author-env.yml</code> for instance:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> author-name</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> author-name</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dependencies:</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> python=3.11</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> matplotlib</span>
@@ -469,15 +471,15 @@ Solution: Virtual Environments
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> numpy</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> scipy</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> ipykernel</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> pip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> pip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then, one can create the env via</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> author-env.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> author-env.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="creating-a-conda-env-from-a-supplie-.yml-file" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-conda-env-from-a-supplie-.yml-file">Creating a <code>conda env</code> from a supplie <code>.yml</code> file</h3>
 <p>Some authors actually give us such a file! In this case, the same applies:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:49:15</span> <span class="at">-</span> nuvolos:/files$ conda env create <span class="at">-f</span> /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">11:49:15</span> <span class="at">-</span> nuvolos:/files$ conda env create <span class="at">-f</span> /files/Replication_package_Agostini_Bloise_Tancioni/DML_python/environment.yml</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -494,14 +496,14 @@ Solution: Virtual Environments
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.9.7</span>
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">ectj_abt</span><span class="kw">)</span> <span class="ex">09:55:31</span> <span class="at">-</span> nuvolos:/files/Replication_package$ python Main.py</span>
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="ex">Conda</span> environment ectj_abt already exists. Skipping creation.</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> the estimation for dml_JJ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> the estimation for dml_JJ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Enforce Best Practice
+<span class="screen-reader-only">Warning</span>Enforce Best Practice
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -519,7 +521,7 @@ Enforce Best Practice
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Stata Library Guide
+<span class="screen-reader-only">Tip</span>Stata Library Guide
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -548,7 +550,7 @@ Stata Library Guide
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-No <code>julia</code> without <code>Project.toml</code>!
+<span class="screen-reader-only">Warning</span>No <code>julia</code> without <code>Project.toml</code>!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -613,7 +615,7 @@ No <code>julia</code> without <code>Project.toml</code>!
 <ul>
 <li>you will miss upstream dependencies. RcppEigen was not provided here.</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"HDLPrepro_1.12.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"HDLPrepro_1.12.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Installing package into ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library’</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>(as ‘lib’ is unspecified)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘bigtime’, ‘desla’, ‘ggpubr’, ‘rrpack’, ‘tsDyn’, ‘vars’, ‘RcppProgress’, ‘sitmo’ are not available <span class="cf">for</span> package ‘HDLPrepro’</span>
@@ -627,7 +629,7 @@ No <code>julia</code> without <code>Project.toml</code>!
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>ERROR<span class="sc">:</span> dependencies ‘corrplot’, ‘RcppEigen’ are not available <span class="cf">for</span> package ‘bigtime’</span>
 <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> removing ‘<span class="sc">/</span>usr<span class="sc">/</span>local<span class="sc">/</span>lib<span class="sc">/</span>R<span class="sc">/</span>site<span class="sc">-</span>library<span class="sc">/</span>bigtime’</span>
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  installation of package ‘Backup copies of other packages<span class="sc">/</span>bigtime_0.<span class="dv">2</span>.<span class="fl">2.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  installation of package ‘Backup copies of other packages<span class="sc">/</span>bigtime_0.<span class="dv">2</span>.<span class="fl">2.</span>tar.gz’ had non<span class="sc">-</span>zero exit status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In general, <code>R</code> is difficult in this regard if we have complicated version environments. The most advertised solution is <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a>, but I have to say that even this fails often for reasons outside the <code>R</code> environment, for example, a certain <code>C</code> compiler or <code>fortran</code> compiler with certain support libraries being needed to build a <em>specific</em> version of an outdate R package. While <code>renv</code> is a great step ahead, it is not a silver bullet.</p>
 </section>
 <section id="dealing-with-large-files" class="level2">
@@ -639,7 +641,7 @@ No <code>julia</code> without <code>Project.toml</code>!
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check if files are Identical?
+<span class="screen-reader-only">Tip</span>Check if files are Identical?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -720,13 +722,14 @@ Check if files are Identical?
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
