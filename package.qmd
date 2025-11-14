@@ -27,7 +27,7 @@ You are **requested** to submit a single `zip` file with the following **folder 
 :::
 
 
-For folders 1 and 2, please refer to the Economic Journal's [General Instructions to Authors](https://academic.oup.com/ej/pages/General_Instructions) and [Guide for Accepted Authors](/Guide-for-Accepted-Authors-20231027.pdf) and carefully follow the instructions indicated there. In the lines below, you will find specific guidelines about folder 3 and, if you were granted a data exemption at the time of first submission (see [here](before.qmd#apply-to-exemptions-to-the-data-and-code-availability-policy), [here](faqs.qmd#data-and-code-availability-policy-and-exemptions), and [here](faqs.qmd#procedures-when-exemptions-are-granted) for details), also folder 4.
+For folders 1 and 2, please refer to the Economic Journal's [General Instructions to Authors](https://academic.oup.com/ej/pages/General_Instructions) and [Guide for Accepted Authors](/Guide-for-Accepted-Authors-10-11-2025-1.pdf) and carefully follow the instructions indicated there. In the lines below, you will find specific guidelines about folder 3 and, if you were granted a data exemption at the time of first submission (see [here](before.qmd#apply-to-exemptions-to-the-data-and-code-availability-policy), [here](faqs.qmd#data-and-code-availability-policy-and-exemptions), and [here](faqs.qmd#procedures-when-exemptions-are-granted) for details), also folder 4.
 
 
 ::: {.callout-important}

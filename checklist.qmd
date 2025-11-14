@@ -18,7 +18,7 @@ Thank you!
 
 - [ ] I have presented any matrices and vectors in bold, and any scalars in italics. Where possible, I have presented in-line equations so that their heights are no more than 1 standard line of text.
 
-- [ ] I have checked that my reference list meets the style requirements of the journal and that my references are complete, particularly in the use of capitals and the inclusion of issue and page numbers. 
+- [ ] I have checked that my reference list meets the style requirements of the journal and that my references are complete, particularly in the use of capitals, the inclusion of issue and page numbers, and including full author names.
 
 - [ ] I have checked that all tables are large enough that they will be clearly readable when reduced to fit on a printed page.
 
