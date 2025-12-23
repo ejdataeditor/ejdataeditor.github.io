@@ -201,6 +201,7 @@ cookieconsent.run({
 <p>You are <strong>requested</strong> to submit a single <code>zip</code> file with the following <strong>folder structure</strong> (please name your folders in this <em>exact</em> way! Notice there should be <em>no spaces</em> in folder names, and <em>no capital letters</em>). In short, the content of your <code>zip</code> file looks as follows:</p>
 <pre><code>├── 1-paper
 ├── 2-appendices
+├── README.pdf
 ├── 3-replication-package.zip
 └── 4-confidential-data-not-for-publication.zip  (Optional)</code></pre>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -219,7 +220,7 @@ cookieconsent.run({
 </ol>
 </div>
 </div>
-<p>For folders 1 and 2, please refer to the Economic Journal’s <a href="https://academic.oup.com/ej/pages/General_Instructions">General Instructions to Authors</a> and <a href="./Guide-for-Accepted-Authors-10-11-2025-1.pdf">Guide for Accepted Authors</a> and carefully follow the instructions indicated there. In the lines below, you will find specific guidelines about folder 3 and, if you were granted a data exemption at the time of first submission (see <a href="./before.html#apply-to-exemptions-to-the-data-and-code-availability-policy">here</a>, <a href="./faqs.html#data-and-code-availability-policy-and-exemptions">here</a>, and <a href="./faqs.html#procedures-when-exemptions-are-granted">here</a> for details), also folder 4.</p>
+<p>For folders 1 and 2, please refer to the Economic Journal’s <a href="https://academic.oup.com/ej/pages/General_Instructions">General Instructions to Authors</a> and <a href="./Guide-for-Accepted-Authors-21-12-2025.pdf">Guide for Accepted Authors</a> and carefully follow the instructions indicated there. In the lines below, you will find specific guidelines about folder 3 and, if you were granted a data exemption at the time of first submission (see <a href="./before.html#apply-to-exemptions-to-the-data-and-code-availability-policy">here</a>, <a href="./faqs.html#data-and-code-availability-policy-and-exemptions">here</a>, and <a href="./faqs.html#procedures-when-exemptions-are-granted">here</a> for details), also folder 4.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -230,7 +231,7 @@ cookieconsent.run({
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Along with your package, you are requested to download, fill, sign and submit <a href="checklist.pdf">this checklist</a>, which refers to the content of the package below</p>
+<p>Along with your package, you are requested to download, fill, sign and submit <a href="checklist.pdf">this checklist</a>, which refers to the contents of the package below</p>
 </div>
 </div>
 </section>
@@ -238,7 +239,7 @@ cookieconsent.run({
 <h2 data-number="2" class="anchored" data-anchor-id="contents-of-replication-package"><span class="header-section-number">2</span> Contents of Replication Package</h2>
 <p>As indicated in the journal’s <a href="https://academic.oup.com/ej/pages/General_Instructions#data">Data and Code Availability Policy</a> all packages should include the following information:</p>
 <ul>
-<li>A <code>README</code> file in PDF format (<code>README.pdf</code>). We strongly recommend using <a href="https://social-science-data-editors.github.io/template_README/">this template</a>. You may find in <a href="https://www.templatereadme.org/">this web app</a> a convenient tool to create your <code>README</code> file.</li>
+<li>A <code>README</code> file in PDF format (<code>README.pdf</code>). We strongly recommend using <a href="https://social-science-data-editors.github.io/template_README/">this template</a>. You may find in <a href="https://www.templatereadme.org/">this web app</a> a convenient tool to create your <code>README</code> file. This <code>README</code> should be provided outside of the file <code>3-replication-package.zip</code> in the interests of ease of access when loaded to Zenodo upon final approval.</li>
 <li>The <strong>raw datasets</strong> used in the paper and online appendices, including a complete, transparent and precise documentation describing all variables. You can additionally provide the analysis data if this is helpful, but they are not required if the raw data are provided.</li>
 <li>If you were granted a data exemption at the time of first submission (see <a href="./before.html#apply-to-exemptions-to-the-data-and-code-availability-policy">here</a>, <a href="./faqs.html#data-and-code-availability-policy-and-exemptions">here</a>, and <a href="./faqs.html#procedures-when-exemptions-are-granted">here</a> for details), you should either provide the replication team with <strong>temporary access</strong> to the data for the sole purpose of performing the reproducibility checks, or you should submit a <strong>synthetic/simulated</strong> dataset that allows running the code and produce all outputs in the paper and appendices, even if the results do not match those in the paper. If you can provide temporary access but you cannot share the data in the <code>4-confidential-data-not-for-publication.zip</code> folder, please contact the Data Editor at ejdataeditor@gmail.com to arrange an alternative access method. The content of this folder will be destroyed after the reproducibility checks are completed. All replicators and the Data Editor have signed confidentiality agreements that protect your submission.</li>
 <li>Both the data cleaning codes and the analysis codes that produce all reproducible outputs reported in the article, appendix, and online appendices (including figures, tables, and numbers reported in the text). If some results are produced without scripts (e.g.&nbsp;ArcGIS maps), the <code>README</code> file should include step-by-step <em>very detailed instructions</em> on how to produce that output. In case of simulation/Monte Carlo studies, the authors are requested to set a seed so that the exact numbers that are reported can be obtained.</li>
@@ -303,7 +304,7 @@ cookieconsent.run({
 <li>Signed and dated <a href="checklist.pdf">checklist.pdf</a></li>
 </ol>
 <p>Notice that you will submit <code>1-paper</code> and <code>2-appendix</code> twice, once on Editorial Express to trigger the invitation link, and once as part of your replication package (see <a href="#sec-prelims" class="quarto-xref">Section&nbsp;1</a>).</p>
-<p>A few days after you submitted the package (in most of the cases, within two weeks) you will be contacted by the Data Editor with the outcome of the reproducibility checks, regardless of whether the checks were successful or there are modifications to be made. <strong>Please add ejdataeditor@gmail.com and ej_foswald@editorialexpress.com to your safe contacts to avoid that the Data Editor’s messages go to spam!</strong></p>
+<p>A few days after you submitted the package (in most of the cases, within two weeks) you will be contacted by the Data Editor with the outcome of the reproducibility checks, regardless of whether the checks were successful or there are modifications to be made. <strong>Please add ejdataeditor@gmail.com to your safe contacts to avoid that the Data Editor’s messages go to spam!</strong></p>
 <p>If you need to implement modifications of your package, you will be instructed to do so in the Data Editor’s response. You will iterate with the Data Editor until the reproducibility checks are satisfactorily concluded.</p>
 </section>
 <section id="after-the-reproducibility-checks-are-completed-publish-your-package" class="level2" data-number="7">
@@ -313,7 +314,7 @@ cookieconsent.run({
 <li>Sign up <a href="https://zenodo.org/signup/">here</a> for a free zenodo account, if you don’t have one already.</li>
 <li>Go to the Economic Journal’s community of Zenodo at <a href="https://zenodo.org/communities/ej-replication-repository">https://zenodo.org/communities/ej-replication-repository</a>.</li>
 <li>Start a new upload within the community using the top-right green button in the below figure. <img src="img/zenodo-1.png" class="img-fluid"></li>
-<li>Upload the <code>zip</code> compressed version of your replication package (i.e.&nbsp;the <strong>exact same</strong> archive <code>3-replication-package.zip</code> you sent us in your final iteration of the replication package). Drag-and-drop the zip file to upload it, as shown below. Make sure you only publish the replication package and <em>not</em> the paper or online appendices. Especially, <strong>do not publish the content of the <code>4-confidential-data-not-for-publication.zip</code> folder</strong>!</li>
+<li>Upload the <code>zip</code> compressed version of your replication package along with your <code>README.pdf</code> file (i.e.&nbsp;the <strong>exact same</strong> versions of <code>3-replication-package.zip</code> and <code>README.pdf</code> which you sent us in your final iteration of the replication package). Drag-and-drop the zip file and pdf to upload them, as shown below. Make sure you only publish the replication package and <em>not</em> the paper or online appendices. Especially, <strong>do not publish the content of the <code>4-confidential-data-not-for-publication.zip</code> folder</strong>!</li>
 <li>After your upload completes, indicate that you do <strong>not</strong> have a DOI for this package already, but that you want to <strong>Get a DOI now!</strong> <img src="img/zenodo-2.png" class="img-fluid"></li>
 <li>Fill in the required metadata:
 <ol type="1">
