@@ -1,6 +1,7 @@
 ```
 ├── 1-paper
 ├── 2-appendices
+├── README.pdf
 ├── 3-replication-package.zip
 └── 4-confidential-data-not-for-publication.zip  (Optional)
 ```

@@ -27,19 +27,19 @@ You are **requested** to submit a single `zip` file with the following **folder 
 :::
 
 
-For folders 1 and 2, please refer to the Economic Journal's [General Instructions to Authors](https://academic.oup.com/ej/pages/General_Instructions) and [Guide for Accepted Authors](/Guide-for-Accepted-Authors-10-11-2025-1.pdf) and carefully follow the instructions indicated there. In the lines below, you will find specific guidelines about folder 3 and, if you were granted a data exemption at the time of first submission (see [here](before.qmd#apply-to-exemptions-to-the-data-and-code-availability-policy), [here](faqs.qmd#data-and-code-availability-policy-and-exemptions), and [here](faqs.qmd#procedures-when-exemptions-are-granted) for details), also folder 4.
+For folders 1 and 2, please refer to the Economic Journal's [General Instructions to Authors](https://academic.oup.com/ej/pages/General_Instructions) and [Guide for Accepted Authors](/Guide-for-Accepted-Authors-21-12-2025.pdf) and carefully follow the instructions indicated there. In the lines below, you will find specific guidelines about folder 3 and, if you were granted a data exemption at the time of first submission (see [here](before.qmd#apply-to-exemptions-to-the-data-and-code-availability-policy), [here](faqs.qmd#data-and-code-availability-policy-and-exemptions), and [here](faqs.qmd#procedures-when-exemptions-are-granted) for details), also folder 4.
 
 
 ::: {.callout-important}
 # Sign and Submit Checklist ☑
-Along with your package, you are requested to download, fill, sign and submit [this checklist](checklist.pdf), which refers to the content of the package below
+Along with your package, you are requested to download, fill, sign and submit [this checklist](checklist.pdf), which refers to the contents of the package below
 :::
 
 ## Contents of Replication Package
 
 As indicated in the journal's [Data and Code Availability Policy](https://academic.oup.com/ej/pages/General_Instructions#data) all packages should include the following information: 
 
-* A `README` file in PDF format (`README.pdf`). We strongly recommend using [this template](https://social-science-data-editors.github.io/template_README/).  You may find in [this web app](https://www.templatereadme.org/) a convenient tool to create your `README` file.
+* A `README` file in PDF format (`README.pdf`). We strongly recommend using [this template](https://social-science-data-editors.github.io/template_README/).  You may find in [this web app](https://www.templatereadme.org/) a convenient tool to create your `README` file.  This `README` should be provided outside of the file `3-replication-package.zip` in the interests of ease of access when loaded to Zenodo upon final approval.
 * The **raw datasets** used in the paper and online appendices, including a complete, transparent and precise documentation describing all variables. You can additionally provide the analysis data if this is helpful, but they are not required if the raw data are provided. 
 * If you were granted a data exemption at the time of first submission (see [here](before.qmd#apply-to-exemptions-to-the-data-and-code-availability-policy), [here](faqs.qmd#data-and-code-availability-policy-and-exemptions), and [here](faqs.qmd#procedures-when-exemptions-are-granted) for details), you should either provide the replication team with **temporary access** to the data for the sole purpose of performing the reproducibility checks, or you should submit a **synthetic/simulated** dataset that allows running the code and produce all outputs in the paper and appendices, even if the results do not match those in the paper. If you can provide temporary access but you cannot share the data in the `4-confidential-data-not-for-publication.zip` folder, please contact the Data Editor at {{< var de.mail >}} to arrange an alternative access method. The content of this folder will be destroyed after the reproducibility checks are completed. All replicators and the Data Editor have signed confidentiality agreements that protect your submission.
 * Both the data cleaning codes and the analysis codes that produce all reproducible outputs reported in the article, appendix, and online appendices (including figures, tables, and numbers reported in the text). If some results are produced without scripts (e.g. ArcGIS maps), the `README` file should include step-by-step _very detailed instructions_ on how to produce that output. In case of simulation/Monte Carlo studies, the authors are requested to set a seed so that the exact numbers that are reported can be obtained.
@@ -99,7 +99,7 @@ You will be *invited* to submit your package via an upload link by the Data Edit
 
 Notice that you will submit `1-paper` and `2-appendix` twice, once on Editorial Express to trigger the invitation link, and once as part of your replication package (see @sec-prelims).
 
-A few days after you submitted the package (in most of the cases, within two weeks) you will be contacted by the Data Editor with the outcome of the reproducibility checks, regardless of whether the checks were successful or there are modifications to be made. **Please add {{< var de.mail >}} and ej_foswald@editorialexpress.com to your safe contacts to avoid that the Data Editor's messages go to spam!**
+A few days after you submitted the package (in most of the cases, within two weeks) you will be contacted by the Data Editor with the outcome of the reproducibility checks, regardless of whether the checks were successful or there are modifications to be made. **Please add {{< var de.mail >}} to your safe contacts to avoid that the Data Editor's messages go to spam!**
 
 If you need to implement modifications of your package, you will be instructed to do so in the Data Editor's response. You will iterate with the Data Editor until the reproducibility checks are satisfactorily concluded.
 
@@ -111,7 +111,7 @@ Once the reproducibility checks are concluded, and upon invitation of the Data E
 1. Sign up [here](https://zenodo.org/signup/) for a free zenodo account, if you don't have one already.
 2. Go to the Economic Journal's community of Zenodo at [{{< var ej.zenodo >}}]({{< var ej.zenodo >}}).
 3. Start a new upload within the community using the top-right green button in the below figure. ![](img/zenodo-1.png)
-1. Upload the `zip` compressed version of your replication package (i.e. the **exact same** archive `3-replication-package.zip` you sent us in your final iteration of the replication package). Drag-and-drop the zip file to upload it, as shown below. Make sure you only publish the replication package and _not_ the paper or online appendices. Especially, **do not publish the content of the `4-confidential-data-not-for-publication.zip` folder**! 
+1. Upload the `zip` compressed version of your replication package along with your `README.pdf` file (i.e. the **exact same** versions of `3-replication-package.zip` and `README.pdf` which you sent us in your final iteration of the replication package). Drag-and-drop the zip file and pdf to upload them, as shown below. Make sure you only publish the replication package and _not_ the paper or online appendices. Especially, **do not publish the content of the `4-confidential-data-not-for-publication.zip` folder**! 
 3. After your upload completes, indicate that you do **not** have a DOI for this package already, but that you want to **Get a DOI now!** ![](img/zenodo-2.png)
 4. Fill in the required metadata: 
    1. Resource type: Software or Dataset (what you find more applicable).

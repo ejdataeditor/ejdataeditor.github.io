@@ -49,11 +49,11 @@ The folder structure needs to follow strictly the following template (please nam
 
   I confirm that `1-paper` contains:
 
-- [ ] all source code needed to compile the paper named in the appropriate way. This folder includes `MSXXXXXXXX-main-YYYYMMDD.tex` (or `.docx`) and `MSXXXXXXXX-main-YYYYMMDD.pdf`, `MSXXXXXXXX` being your manuscript number, and `YYYYMMDD` standing for the date of final submission in ISO format.
+  - [ ] all source code needed to compile the paper named in the appropriate way. This folder includes `MSXXXXXXXX-main-YYYYMMDD.tex` (or `.docx`) and `MSXXXXXXXX-main-YYYYMMDD.pdf`, `MSXXXXXXXX` being your manuscript number, and `YYYYMMDD` standing for the date of final submission in ISO format.
 
-- [ ] all required input files (graphs and tables etc.), clearly labelled.
+  - [ ] all required input files (graphs and tables etc.), clearly labelled.
 
-- [ ] any `.bib`, `.bbl` or `.bst` files required for compilation.
+  - [ ] any `.bib`, `.bbl` or `.bst` files required for compilation.
 
 
 ### 2.2. Folder `2-appendix` (if applicable)
@@ -62,11 +62,9 @@ I confirm that `2-appendix` contains - if applicable:
 
 - [ ] source code and compiled version of *all appendices combined* in a single `.tex`/`.pdf` file, following the above naming convention: `MSXXXXXXXX-appendix-YYYYMMDD.tex`
 
-### 2.3. Folder `3-replication-package.zip` (*must* be `.zip`)
+### 2.3. File README.pdf
 
-I confirm that `3-replication-package.zip` contains:
-
-- [ ] A file called `README.pdf` in PDF format. We strongly recommend using the following template: [https://social-science-data-editors.github.io/template_README/template-README.html](https://social-science-data-editors.github.io/template_README/template-README.html). This template can be downloaded in Markdown/txt, doc, LaTeX, and PDF in order to be edited. Alternatively, we recommend  [this web app](https://www.templatereadme.org/) to create the `README`. I confirm that my `README` includes the following information (check each item): 
+I confirm that this README contains:
 
   - [ ] A verbal description of the content of the package (datasets, programs, folders, etc.)
   - [ ] A Data Availability Statement
@@ -77,6 +75,12 @@ I confirm that `3-replication-package.zip` contains:
   - [ ] All packages and libraries that need to be installed to run the code and a clear indication on how to obtain them.
   - [ ] Expected running time (even if it is a few seconds)
   - [ ] Data citations
+
+We strongly recommend using the following template: [https://social-science-data-editors.github.io/template_README/template-README.html](https://social-science-data-editors.github.io/template_README/template-README.html). This template can be downloaded in Markdown/txt, doc, LaTeX, and PDF in order to be edited. Alternatively, we recommend  [this web app](https://www.templatereadme.org/) to create the `README`.
+
+### 2.4. Folder `3-replication-package.zip` (*must* be `.zip`)
+
+I confirm that `3-replication-package.zip` contains:
 
 - [ ] The raw datasets used in the paper and online appendices.
 
@@ -91,13 +95,13 @@ I confirm that `3-replication-package.zip` contains:
   - [ ] Information on the selection and eligibility of participants.
   - [ ] A PDF copy of the Institutional Review Board (IRB) approval.
   
-### 2.4. Folder `4-confidential-data-not-for-publication.zip` (if applicable)
+### 2.5. Folder `4-confidential-data-not-for-publication.zip` (if applicable)
 
 *Optional: include only the restricted data if an exemption to the Data and Code Availability Policy have been granted to you and you are providing the replication team with temporary access to the data; all codes and unrestricted data should go to folder `3-replication-package.zip`.*
 
 - [ ] I confirm to have obtained an exemption to the Data and Code Availability Policy from my managing editor and I include confidential data which will not be published with the package, but which will be destroyed by the replication team after successful checks.
 
-### 2.5. Personally Identifiable Information (if applicable)
+### 2.6. Personally Identifiable Information (if applicable)
 
 - [ ] I confirm that all datasets shared with my replication materials contain no personally identifiable information (PII) on research subjects for which I do not have explicit approval to share, and that all data sharing complies with relevant privacy regulations and consent agreements.
 
@@ -105,11 +109,11 @@ I confirm that `3-replication-package.zip` contains:
 
 I understand that the files submitted will be checked for plagiarism and that any code and data submitted will be checked for replicability of the results appearing in the paper, before the paper is finally accepted.
 
-\vspace{2cm}
+\vspace{1cm}
 
 Date: ________________________          
 
-\vspace{2cm}
+\vspace{1cm}
 
 Signature: _______________________
 
